@@ -1,12 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="zh_CN">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="search" title="Search" href="../search.html" /><link rel="copyright" title="Copyright" href="../copyright.html" /><link rel="next" title="pip check" href="pip_check.html" /><link rel="prev" title="pip show" href="pip_show.html" />
+<link rel="search" title="搜索" href="../search.html" /><link rel="copyright" title="版权所有" href="../copyright.html" /><link rel="next" title="pip cache" href="pip_cache.html" /><link rel="prev" title="pip hash" href="pip_hash.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
-        <title>pip freeze - pip documentation v22.0.dev0</title>
+        <title>pip search - pip documentation v22.0.dev0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -151,19 +151,19 @@
   <span class="sidebar-brand-text">pip documentation v22.0.dev0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../topics/index.html">Topic Guides</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../topics/authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">用户指南</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../topics/index.html">主题指南</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/authentication.html">认证</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/configuration.html">配置</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/dependency-resolution.html">Dependency Resolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/repeatable-installs.html">Repeatable Installs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/vcs-support.html">VCS Support</a></li>
@@ -184,19 +184,19 @@
 <li class="toctree-l2"><a class="reference internal" href="pip_uninstall.html">pip uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_list.html">pip list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_show.html">pip show</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">pip freeze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pip_freeze.html">pip freeze</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_check.html">pip check</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_download.html">pip download</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_wheel.html">pip wheel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_hash.html">pip hash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_search.html">pip search</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">pip search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_cache.html">pip cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_config.html">pip config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip_debug.html">pip debug</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<p class="caption" role="heading"><span class="caption-text">项目</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../development/index.html">Development</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../development/getting-started.html">Getting Started</a></li>
@@ -218,7 +218,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ux_research_design.html">UX Research &amp; Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../news.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">行为准则</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/pip">GitHub</a></li>
 </ul>
 
@@ -246,127 +246,59 @@
           </label>
         </div>
         <article role="main">
-          <section id="pip-freeze">
-<span id="id1"></span><h1>pip freeze<a class="headerlink" href="#pip-freeze" title="Permalink to this headline">¶</a></h1>
+          <section id="pip-search">
+<span id="id1"></span><h1>pip search<a class="headerlink" href="#pip-search" title="永久链接至标题">¶</a></h1>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">Unix/macOS</label><div class="tab-content docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">search</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">query</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Windows</label><div class="tab-content docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">search</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">query</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><p>Output installed packages in requirements format.</p>
-<p>packages are listed in a case-insensitive sorted order.</p>
+<h2>Description<a class="headerlink" href="#description" title="永久链接至标题">¶</a></h2>
+<p><p>Search for PyPI packages whose name or summary contains &lt;query&gt;.</p>
 </p>
 </section>
 <section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<p><span class="target" id="freeze-requirement"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-r">
-<span id="cmdoption-requirement"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--requirement</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;file&gt;</span></span><a class="headerlink" href="#cmdoption-r" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the order in the given requirements file and its comments when generating output. This option can be used multiple times.</p>
-</dd></dl>
-<span class="target" id="freeze-local"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-l">
-<span id="cmdoption-local"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--local</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-l" title="Permalink to this definition">¶</a></dt>
-<dd><p>If in a virtualenv that has global access, do not output globally-installed packages.</p>
-</dd></dl>
-<span class="target" id="freeze-user"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-user">
-<span class="sig-name descname"><span class="pre">--user</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-user" title="Permalink to this definition">¶</a></dt>
-<dd><p>Only output packages installed in user-site.</p>
-</dd></dl>
-<span class="target" id="freeze-path"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-path">
-<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Restrict to the specified installation path for listing packages (can be used multiple times).</p>
-</dd></dl>
-<span class="target" id="freeze-all"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-all">
-<span class="sig-name descname"><span class="pre">--all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-all" title="Permalink to this definition">¶</a></dt>
-<dd><p>Do not skip these packages in the output: setuptools, pip, distribute, wheel</p>
-</dd></dl>
-<span class="target" id="freeze-exclude-editable"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-exclude-editable">
-<span class="sig-name descname"><span class="pre">--exclude-editable</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-exclude-editable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude editable package from output.</p>
-</dd></dl>
-<span class="target" id="freeze-exclude"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-exclude">
-<span class="sig-name descname"><span class="pre">--exclude</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;package&gt;</span></span><a class="headerlink" href="#cmdoption-exclude" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude specified package from the output</p>
+<h2>Options<a class="headerlink" href="#options" title="永久链接至标题">¶</a></h2>
+<p><span class="target" id="search-index"></span><dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-i">
+<span id="cmdoption-index"></span><span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--index</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;url&gt;</span></span><a class="headerlink" href="#cmdoption-i" title="永久链接至目标">¶</a></dt>
+<dd><p>Base URL of Python Package Index (default <a class="reference external" href="https://pypi.org/pypi">https://pypi.org/pypi</a>)</p>
 </dd></dl>
 </p>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
-<li><p>Generate output suitable for a requirements file.</p>
+<li><p>Search for “peppercorn”</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">Unix/macOS</label><div class="tab-content docutils container">
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip freeze
-<span class="go">docutils==0.11</span>
-<span class="go">Jinja2==2.7.2</span>
-<span class="go">MarkupSafe==0.19</span>
-<span class="go">Pygments==1.6</span>
-<span class="go">Sphinx==1.2.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip search peppercorn
+<span class="go">pepperedform    - Helpers for using peppercorn with formprocess.</span>
+<span class="go">peppercorn      - A library for converting a token stream into [...]</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Windows</label><div class="tab-content docutils container">
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\&gt; py -m pip freeze</span>
-<span class="go">docutils==0.11</span>
-<span class="go">Jinja2==2.7.2</span>
-<span class="go">MarkupSafe==0.19</span>
-<span class="go">Pygments==1.6</span>
-<span class="go">Sphinx==1.2.2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</li>
-<li><p>Generate a requirements file and then install from it in another environment.</p>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Unix/macOS</label><div class="tab-content docutils container">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env1/bin/python -m pip freeze &gt; requirements.txt
-env2/bin/python -m pip install -r requirements.txt
-</pre></div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Windows</label><div class="tab-content docutils container">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env1<span class="se">\b</span>in<span class="se">\p</span>ython -m pip freeze &gt; requirements.txt
-env2<span class="se">\b</span>in<span class="se">\p</span>ython -m pip install -r requirements.txt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\&gt; py -m pip search peppercorn</span>
+<span class="go">pepperedform    - Helpers for using peppercorn with formprocess.</span>
+<span class="go">peppercorn      - A library for converting a token stream into [...]</span>
 </pre></div>
 </div>
 </div>
 </div>
 </li>
 </ol>
-</section>
-<section id="fixing-permission-denied-errors">
-<h2>Fixing “Permission denied:” errors<a class="headerlink" href="#fixing-permission-denied-errors" title="Permalink to this headline">¶</a></h2>
-<p>The purpose of this section of documentation is to provide practical
-suggestions to users seeing a <a class="reference external" href="https://github.com/pypa/pip/issues/8418">“Permission denied” error</a> on <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code>.</p>
-<p>This error occurs, for instance, when the command is installed only for another
-user, and the current user doesn’t have the permission to execute the other
-user’s command.</p>
-<p>To solve that issue, you can try one of the followings:</p>
-<ul class="simple">
-<li><p>Install the command for yourself (e.g. in your home directory).</p></li>
-<li><p>Ask the system admin to allow this command for all users.</p></li>
-<li><p>Check and correct the PATH variable of your own environment.</p></li>
-<li><p>Check the <a class="reference external" href="https://en.wikipedia.org/wiki/Access-control_list">ACL (Access-Control List)</a> for this command.</p></li>
-</ul>
 </section>
 </section>
 
@@ -375,23 +307,23 @@ user’s command.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="pip_check.html">
+          <a class="next-page" href="pip_cache.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">pip check</div>
+                <div class="title">pip cache</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="pip_show.html">
+          <a class="prev-page" href="pip_hash.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">pip show</div>
+                <div class="title">pip hash</div>
                 
               </div>
             </a>
@@ -403,9 +335,9 @@ user’s command.</p>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../_sources/cli/pip_freeze.rst.txt"
+            <a class="muted-link" href="../_sources/cli/pip_search.rst.txt"
                rel="nofollow">
-              Show Source
+              显示源代码
             </a>
         </div>
         
@@ -417,18 +349,17 @@ user’s command.</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            目录
           </span>
         </div>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">pip freeze</a><ul>
+<li><a class="reference internal" href="#">pip search</a><ul>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
-<li><a class="reference internal" href="#fixing-permission-denied-errors">Fixing “Permission denied:” errors</a></li>
 </ul>
 </li>
 </ul>
@@ -448,5 +379,6 @@ user’s command.</p>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/tabs.js"></script>
+    <script src="../_static/translations.js"></script>
     </body>
 </html>

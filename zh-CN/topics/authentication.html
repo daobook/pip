@@ -1,12 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="zh_CN">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="search" title="Search" href="../search.html" /><link rel="copyright" title="Copyright" href="../copyright.html" /><link rel="next" title="pip check" href="pip_check.html" /><link rel="prev" title="pip show" href="pip_show.html" />
+<link rel="search" title="搜索" href="../search.html" /><link rel="copyright" title="版权所有" href="../copyright.html" /><link rel="next" title="Caching" href="caching.html" /><link rel="prev" title="主题指南" href="index.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
-        <title>pip freeze - pip documentation v22.0.dev0</title>
+        <title>认证 - pip documentation v22.0.dev0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -151,22 +151,22 @@
   <span class="sidebar-brand-text">pip documentation v22.0.dev0</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../topics/index.html">Topic Guides</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../topics/authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/configuration.html">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/dependency-resolution.html">Dependency Resolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/repeatable-installs.html">Repeatable Installs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/vcs-support.html">VCS Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">用户指南</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">主题指南</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">认证</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-resolution.html">Dependency Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repeatable-installs.html">Repeatable Installs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcs-support.html">VCS Support</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -178,25 +178,25 @@
 <li class="toctree-l2"><a class="reference internal" href="../reference/requirements-file-format.html">Requirements File Format</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Commands</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pip.html">pip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_install.html">pip install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_uninstall.html">pip uninstall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_list.html">pip list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_show.html">pip show</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">pip freeze</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_check.html">pip check</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_download.html">pip download</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_wheel.html">pip wheel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_hash.html">pip hash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_search.html">pip search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_cache.html">pip cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_config.html">pip config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip_debug.html">pip debug</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cli/index.html">Commands</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip.html">pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_install.html">pip install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_uninstall.html">pip uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_list.html">pip list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_show.html">pip show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_freeze.html">pip freeze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_check.html">pip check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_download.html">pip download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_wheel.html">pip wheel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_hash.html">pip hash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_search.html">pip search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_cache.html">pip cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_config.html">pip config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/pip_debug.html">pip debug</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<p class="caption" role="heading"><span class="caption-text">项目</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../development/index.html">Development</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../development/getting-started.html">Getting Started</a></li>
@@ -218,7 +218,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ux_research_design.html">UX Research &amp; Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../news.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">行为准则</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/pip">GitHub</a></li>
 </ul>
 
@@ -246,127 +246,72 @@
           </label>
         </div>
         <article role="main">
-          <section id="pip-freeze">
-<span id="id1"></span><h1>pip freeze<a class="headerlink" href="#pip-freeze" title="Permalink to this headline">¶</a></h1>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">Unix/macOS</label><div class="tab-content docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+          <section class="tex2jax_ignore mathjax_ignore" id="authentication">
+<h1>认证<a class="headerlink" href="#authentication" title="永久链接至标题">¶</a></h1>
+<section id="basic-http-authentication">
+<h2>基本 HTTP 认证<a class="headerlink" href="#basic-http-authentication" title="永久链接至标题">¶</a></h2>
+<p>pip 支持基于 HTTP 的基本认证凭证。这是通过在 URL 中提供用户名（和可选的密码）来实现的：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">username</span><span class="p">:</span><span class="n">password</span><span class="nd">@pypi</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">simple</span>
 </pre></div>
 </div>
-</div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Windows</label><div class="tab-content docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+<p>对于只需要单部分认证令牌的索引，提供令牌作为 “username”，不要提供密码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="mi">0123456789</span><span class="n">abcdef</span><span class="nd">@pypi</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">simple</span>
 </pre></div>
 </div>
+<section id="percent-encoding-special-characters">
+<h3>百分号编码的特殊字符<a class="headerlink" href="#percent-encoding-special-characters" title="永久链接至标题">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">10.0 新版功能.</span></p>
 </div>
+<p>Certain special characters are not valid in the credential part of a URL.
+If the user or password part of your login credentials contain any of these
+<a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">special characters</a>, then they must be percent-encoded. As an
+example, for a user with username <code class="docutils literal notranslate"><span class="pre">user</span></code> and password <code class="docutils literal notranslate"><span class="pre">he//o</span></code> accessing a
+repository at <code class="docutils literal notranslate"><span class="pre">pypi.company.com/simple</span></code>, the URL with credentials would look
+like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="n">he</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Fo</span><span class="nd">@pypi</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">simple</span>
+</pre></div>
 </div>
 </section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><p>Output installed packages in requirements format.</p>
-<p>packages are listed in a case-insensitive sorted order.</p>
-</p>
 </section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<p><span class="target" id="freeze-requirement"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-r">
-<span id="cmdoption-requirement"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--requirement</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;file&gt;</span></span><a class="headerlink" href="#cmdoption-r" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the order in the given requirements file and its comments when generating output. This option can be used multiple times.</p>
-</dd></dl>
-<span class="target" id="freeze-local"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-l">
-<span id="cmdoption-local"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--local</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-l" title="Permalink to this definition">¶</a></dt>
-<dd><p>If in a virtualenv that has global access, do not output globally-installed packages.</p>
-</dd></dl>
-<span class="target" id="freeze-user"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-user">
-<span class="sig-name descname"><span class="pre">--user</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-user" title="Permalink to this definition">¶</a></dt>
-<dd><p>Only output packages installed in user-site.</p>
-</dd></dl>
-<span class="target" id="freeze-path"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-path">
-<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Restrict to the specified installation path for listing packages (can be used multiple times).</p>
-</dd></dl>
-<span class="target" id="freeze-all"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-all">
-<span class="sig-name descname"><span class="pre">--all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-all" title="Permalink to this definition">¶</a></dt>
-<dd><p>Do not skip these packages in the output: setuptools, pip, distribute, wheel</p>
-</dd></dl>
-<span class="target" id="freeze-exclude-editable"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-exclude-editable">
-<span class="sig-name descname"><span class="pre">--exclude-editable</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-exclude-editable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude editable package from output.</p>
-</dd></dl>
-<span class="target" id="freeze-exclude"></span><dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-exclude">
-<span class="sig-name descname"><span class="pre">--exclude</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;package&gt;</span></span><a class="headerlink" href="#cmdoption-exclude" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exclude specified package from the output</p>
-</dd></dl>
-</p>
+<section id="netrc-support">
+<h2>netrc 支持<a class="headerlink" href="#netrc-support" title="永久链接至标题">¶</a></h2>
+<p>pip supports loading credentials from a user’s <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file. If no credentials
+are part of the URL, pip will attempt to get authentication credentials for the
+URL’s hostname from the user’s <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file. This behaviour comes from the
+underlying use of <a class="reference external" href="https://pypi.org/project/requests/">requests</a>, which in turn delegates it to the
+<a class="reference external" href="https://docs.python.org/3/library/netrc.html">Python standard library’s <code class="docutils literal notranslate"><span class="pre">netrc</span></code> module</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>As mentioned in the <a class="reference external" href="https://docs.python.org/3/library/netrc.html">standard library documentation for netrc</a>,
+only ASCII characters are allowed in <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> files. Whitespace and
+non-printable characters are not allowed in passwords.</p>
+</div>
+<p>Below is an example <code class="docutils literal notranslate"><span class="pre">.netrc</span></code>, for the host <code class="docutils literal notranslate"><span class="pre">example.com</span></code>, with a user named
+<code class="docutils literal notranslate"><span class="pre">daniel</span></code>, using the password <code class="docutils literal notranslate"><span class="pre">qwerty</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">machine</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">login</span> <span class="n">daniel</span>
+<span class="n">password</span> <span class="n">qwerty</span>
+</pre></div>
+</div>
+<p>More information about the <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file format can be found in the GNU <a class="reference external" href="https://www.gnu.org/software/inetutils/manual/html_node/The-_002enetrc-file.html"><code class="docutils literal notranslate"><span class="pre">ftp</span></code>
+man pages</a>.</p>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Generate output suitable for a requirements file.</p>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">Unix/macOS</label><div class="tab-content docutils container">
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip freeze
-<span class="go">docutils==0.11</span>
-<span class="go">Jinja2==2.7.2</span>
-<span class="go">MarkupSafe==0.19</span>
-<span class="go">Pygments==1.6</span>
-<span class="go">Sphinx==1.2.2</span>
+<section id="keyring-support">
+<h2>Keyring Support<a class="headerlink" href="#keyring-support" title="永久链接至标题">¶</a></h2>
+<p>pip supports loading credentials stored in your keyring using the
+<a class="reference external" href="https://pypi.org/project/keyring/">keyring</a> library.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install keyring  <span class="c1"># install keyring from PyPI</span>
+$ <span class="nb">echo</span> <span class="s2">"your-password"</span> <span class="p">|</span> keyring <span class="nb">set</span> pypi.company.com your-username
+$ pip install your-package --index-url https://pypi.company.com/
 </pre></div>
 </div>
-</div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Windows</label><div class="tab-content docutils container">
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\&gt; py -m pip freeze</span>
-<span class="go">docutils==0.11</span>
-<span class="go">Jinja2==2.7.2</span>
-<span class="go">MarkupSafe==0.19</span>
-<span class="go">Pygments==1.6</span>
-<span class="go">Sphinx==1.2.2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</li>
-<li><p>Generate a requirements file and then install from it in another environment.</p>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Unix/macOS</label><div class="tab-content docutils container">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env1/bin/python -m pip freeze &gt; requirements.txt
-env2/bin/python -m pip install -r requirements.txt
-</pre></div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Windows</label><div class="tab-content docutils container">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env1<span class="se">\b</span>in<span class="se">\p</span>ython -m pip freeze &gt; requirements.txt
-env2<span class="se">\b</span>in<span class="se">\p</span>ython -m pip install -r requirements.txt
-</pre></div>
-</div>
-</div>
-</div>
-</li>
-</ol>
-</section>
-<section id="fixing-permission-denied-errors">
-<h2>Fixing “Permission denied:” errors<a class="headerlink" href="#fixing-permission-denied-errors" title="Permalink to this headline">¶</a></h2>
-<p>The purpose of this section of documentation is to provide practical
-suggestions to users seeing a <a class="reference external" href="https://github.com/pypa/pip/issues/8418">“Permission denied” error</a> on <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code>.</p>
-<p>This error occurs, for instance, when the command is installed only for another
-user, and the current user doesn’t have the permission to execute the other
-user’s command.</p>
-<p>To solve that issue, you can try one of the followings:</p>
-<ul class="simple">
-<li><p>Install the command for yourself (e.g. in your home directory).</p></li>
-<li><p>Ask the system admin to allow this command for all users.</p></li>
-<li><p>Check and correct the PATH variable of your own environment.</p></li>
-<li><p>Check the <a class="reference external" href="https://en.wikipedia.org/wiki/Access-control_list">ACL (Access-Control List)</a> for this command.</p></li>
-</ul>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">keyring</span></code> (the Python package) needs to be installed separately from
+pip. This can create a bootstrapping issue if you need the credentials stored in
+the keyring to download and install keyring.</p>
+<p>It is, thus, expected that users that wish to use pip’s keyring support have
+some mechanism for downloading and installing <a class="reference external" href="https://pypi.org/project/keyring/">keyring</a> in their Python
+environment.</p>
 </section>
 </section>
 
@@ -375,23 +320,23 @@ user’s command.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="pip_check.html">
+          <a class="next-page" href="caching.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">pip check</div>
+                <div class="title">Caching</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="pip_show.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">pip show</div>
+                <div class="title">主题指南</div>
                 
               </div>
             </a>
@@ -403,9 +348,9 @@ user’s command.</p>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../_sources/cli/pip_freeze.rst.txt"
+            <a class="muted-link" href="../_sources/topics/authentication.md.txt"
                rel="nofollow">
-              Show Source
+              显示源代码
             </a>
         </div>
         
@@ -417,18 +362,19 @@ user’s command.</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            目录
           </span>
         </div>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">pip freeze</a><ul>
-<li><a class="reference internal" href="#usage">Usage</a></li>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#examples">Examples</a></li>
-<li><a class="reference internal" href="#fixing-permission-denied-errors">Fixing “Permission denied:” errors</a></li>
+<li><a class="reference internal" href="#">认证</a><ul>
+<li><a class="reference internal" href="#basic-http-authentication">基本 HTTP 认证</a><ul>
+<li><a class="reference internal" href="#percent-encoding-special-characters">百分号编码的特殊字符</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#netrc-support">netrc 支持</a></li>
+<li><a class="reference internal" href="#keyring-support">Keyring Support</a></li>
 </ul>
 </li>
 </ul>
@@ -448,5 +394,6 @@ user’s command.</p>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/tabs.js"></script>
+    <script src="../_static/translations.js"></script>
     </body>
 </html>
