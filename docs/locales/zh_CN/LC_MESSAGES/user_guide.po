@@ -31,6 +31,8 @@ msgid ""
 " added to your system, which can be run from the command prompt as "
 "follows:"
 msgstr ""
+"pip 是一个命令行程序。"
+"当你安装 pip 时，一个 ``pip`` 命令被添加到你的系统中，可以在命令提示符下运行，如下："
 
 #: ../../html/user_guide.rst:18
 msgid ""
@@ -38,53 +40,59 @@ msgid ""
 " as python. So ``/usr/bin/python3.7 -m pip`` means you are executing pip "
 "for your interpreter located at /usr/bin/python3.7."
 msgstr ""
+"``python -m pip`` 使用你指定的 Python 解释器执行 pip。"
+"所以 ``/usr/bin/python3.7 -m pip`` 意味着你正在为位于 /usr/bin/python3.7 的解释器执行 pip。"
 
 #: ../../html/user_guide.rst:28
 msgid ""
 "``py -m pip`` executes pip using the latest Python interpreter you have "
 "installed. For more details, read the `Python Windows launcher`_ docs."
 msgstr ""
+"``py -m pip`` 使用你所安装的最新 Python 解释器执行 pip。"
+"更多细节，请阅读 `Python Windows launcher`_ 文档。"
 
 #: ../../html/user_guide.rst:33
 msgid "Installing Packages"
-msgstr ""
+msgstr "安装包"
 
 #: ../../html/user_guide.rst:35
 msgid ""
 "pip supports installing from `PyPI`_, version control, local projects, "
 "and directly from distribution files."
 msgstr ""
+"pip 支持从 `PyPI`_ 、版本控制、本地项目以及直接从发行文件中安装。"
 
 #: ../../html/user_guide.rst:39
 msgid ""
 "The most common scenario is to install from `PyPI`_ using "
 ":ref:`Requirement Specifiers`"
 msgstr ""
+"最常见的情况是使用 :ref:`Requirement Specifiers` 从 `PyPI`_ 安装"
 
 #: ../../html/user_guide.rst:58
 msgid "For more information and examples, see the :ref:`pip install` reference."
-msgstr ""
+msgstr "更多信息和例子，请参见 :ref:`pip install` 参考。"
 
 #: ../../html/user_guide.rst:64
 msgid "Basic Authentication Credentials"
-msgstr ""
+msgstr "基本认证凭证"
 
 #: ../../html/user_guide.rst:66 ../../html/user_guide.rst:71
 #: ../../html/user_guide.rst:76
 msgid "This is now covered in :doc:`topics/authentication`."
-msgstr ""
+msgstr "这一点现在已经在 :doc:`topics/authentication` 中涵盖。"
 
 #: ../../html/user_guide.rst:69
 msgid "netrc Support"
-msgstr ""
+msgstr "netrc 支持"
 
 #: ../../html/user_guide.rst:74
 msgid "Keyring Support"
-msgstr ""
+msgstr "Keyring 支持"
 
 #: ../../html/user_guide.rst:79
 msgid "Using a Proxy Server"
-msgstr ""
+msgstr "使用代理服务器"
 
 #: ../../html/user_guide.rst:81
 msgid ""
@@ -92,48 +100,55 @@ msgid ""
 "which in many corporate environments requires an outbound HTTP proxy "
 "server."
 msgstr ""
+"当从 `PyPI`_ 安装软件包时，pip 需要互联网接入，在许多企业环境中，这需要一个出站的 HTTP 代理服务器。"
 
 #: ../../html/user_guide.rst:84
 msgid "pip can be configured to connect through a proxy server in various ways:"
-msgstr ""
+msgstr "pip 可以通过各种方式配置为通过代理服务器连接："
 
 #: ../../html/user_guide.rst:86
 msgid ""
 "using the ``--proxy`` command-line option to specify a proxy in the form "
 "``[user:passwd@]proxy.server:port``"
 msgstr ""
+"使用 ``--proxy`` 命令行选项，以 ``[user:passwd@]proxy.server:port`` 的形式指定一个代理。"
 
 #: ../../html/user_guide.rst:88
 msgid "using ``proxy`` in a :ref:`config-file`"
-msgstr ""
+msgstr "在 :ref:`config-file` 中使用 ``proxy``。"
 
 #: ../../html/user_guide.rst:89
 msgid ""
 "by setting the standard environment-variables ``http_proxy``, "
 "``https_proxy`` and ``no_proxy``."
 msgstr ""
+"通过设置标准环境变量 ``http_proxy``, ``https_proxy`` 和 ``no_proxy``。"
 
 #: ../../html/user_guide.rst:91
 msgid ""
 "using the environment variable ``PIP_USER_AGENT_USER_DATA`` to include a "
 "JSON-encoded string in the user-agent variable used in pip's requests."
 msgstr ""
+"使用环境变量 ``PIP_USER_AGENT_USER_DATA``，"
+"在 pip 的请求中使用的 user-agent 变量中包含一个 JSON 编码的字符串。"
 
 #: ../../html/user_guide.rst:99
 msgid "Requirements Files"
-msgstr ""
+msgstr "需求文件"
 
 #: ../../html/user_guide.rst:101
 msgid ""
 "\"Requirements files\" are files containing a list of items to be "
 "installed using :ref:`pip install` like so:"
 msgstr ""
+"“需求文件”是包含使用 :ref:`pip install` 来安装的项目列表的文件，像这样："
 
 #: ../../html/user_guide.rst:116
 msgid ""
 "Details on the format of the files are here: :ref:`requirements-file-"
 "format`."
 msgstr ""
+"关于文件格式的细节在这里： :ref:`requirements-file-format`。"
 
 #: ../../html/user_guide.rst:118
 msgid ""
@@ -141,10 +156,12 @@ msgid ""
 "arguments placed in a file. Note that you should not rely on the items in"
 " the file being installed by pip in any particular order."
 msgstr ""
+"从逻辑上讲，需求文件只是一个放在文件中的 :ref:`pip install` 参数的列表。"
+"注意，你不应该依赖文件中的项目以任何特定的顺序被 pip 安装。"
 
 #: ../../html/user_guide.rst:122
 msgid "In practice, there are 4 common uses of Requirements files:"
-msgstr ""
+msgstr 在实践中，有 4 种常见的需求文件的用途。""
 
 #: ../../html/user_guide.rst:124
 msgid ""
@@ -153,6 +170,9 @@ msgid ""
 "case, your requirement file contains a pinned version of everything that "
 "was installed when ``pip freeze`` was run."
 msgstr ""
+"需求文件被用来保存来自 :ref:`pip freeze` 的结果，"
+"以实现 :doc:`topics/repeatable-installs`。"
+"在这种情况下，你的需求文件包含了运行 ``pip freeze`` 时安装的所有东西的钉子版本。"
 
 #: ../../html/user_guide.rst:143
 msgid ""
@@ -168,6 +188,14 @@ msgid ""
 "requirements file directly along with the other top level requirements. "
 "Like so::"
 msgstr ""
+"需求文件是用来强制 pip 正确解决依赖关系的。"
+"pip 20.2 和更早的版本 `没有真正的依赖关系解决 <https://github.com/pypa/pip/issues/988>`_ ，"
+"而是简单地使用它为一个项目找到的第一个规范。"
+"例如，如果 ``pkg1`` 需要 ``pkg3>=1.0`` ，``pkg2`` 需要 ``pkg3>=1.0,<=2.0`` ，"
+"如果 ``pkg1`` 先被解决，pip 将只使用 ``pkg3>=1.0`` ，"
+"并且很容易导致安装 ``pkg3`` 的版本与 ``pkg2`` 的需求冲突。"
+"为了解决这个问题，你可以将 ``pkg3>=1.0,<=2.0`` （即正确的规格）与其他顶级需求一起直接放入你的需求文件。"
+"像这样 ::"
 
 #: ../../html/user_guide.rst:158
 msgid ""
@@ -176,6 +204,9 @@ msgid ""
 "requirements file requires ``ProjectB``, but the latest version (v1.3) "
 "has a bug, you can force pip to accept earlier versions like so::"
 msgstr ""
+"需求文件是用来强制 pip 安装子依赖的另一个版本的。"
+"例如，假设你的需求文件中的 “ProjectA” 需要 “ProjectB”，"
+"但最新版本（v1.3）有一个错误，你可以强制pip接受较早的版本，像这样 ::"
 
 #: ../../html/user_guide.rst:166
 msgid ""
@@ -186,6 +217,10 @@ msgid ""
 " VCS with the tag ``sometag``.  You'd reference it in your requirements "
 "file with a line like so::"
 msgstr ""
+"需求文件是用来覆盖依赖性的，它是一个存在于版本控制中的本地补丁。"
+"例如，假设一个来自 PyPI 的依赖 ``SomeDependency`` 有一个错误，"
+"而你不能等待上游的修复。你可以克隆/复制 src，进行修复，并以 ``sometag`` 为标签放在 VCS 中。"
+"你可以在你的需求文件中引用它，比如说 ::"
 
 #: ../../html/user_guide.rst:176
 msgid ""
@@ -193,6 +228,8 @@ msgid ""
 "requirements file, then **replace** that line with the new line. If "
 "``SomeDependency`` is a sub-dependency, then **add** the new line."
 msgstr ""
+"如果 ``SomeDependency`` 之前是你需求文件中的顶级需求，"
+"那么用新的一行 **替换** 该行。如果 ``SomeDependency`` 是一个子需求，那么 **增加** 新的一行。"
 
 #: ../../html/user_guide.rst:181
 msgid ""
@@ -201,10 +238,13 @@ msgid ""
 "<https://setuptools.readthedocs.io/en/latest/userguide/dependency_management.html>`_,"
 " not by discovering ``requirements.txt`` files embedded in projects."
 msgstr ""
+"必须明确，pip 是通过 `install_requires metadata "
+"<https://setuptools.readthedocs.io/en/latest/userguide/dependency_management.html>`_ "
+"来确定软件包的依赖性，而不是通过发现嵌入项目中的 `requirements.txt` 文件。"
 
 #: ../../html/user_guide.rst:186
 msgid "See also:"
-msgstr ""
+msgstr "另见："
 
 #: ../../html/user_guide.rst:188
 msgid ":ref:`requirements-file-format`"
@@ -222,7 +262,7 @@ msgstr ""
 
 #: ../../html/user_guide.rst:198
 msgid "Constraints Files"
-msgstr ""
+msgstr "约束文件"
 
 #: ../../html/user_guide.rst:200
 msgid ""
@@ -234,10 +274,14 @@ msgid ""
 "semantics, there is one key difference: Including a package in a "
 "constraints file does not trigger installation of the package."
 msgstr ""
+"约束文件是需求文件，只控制需求的哪个版本被安装，而不是它是否被安装。"
+"它们的语法和内容是 :ref:`Requirements Files` 的一个子集，"
+"有几种语法是不允许的：约束必须有一个名字，它们不能被编辑，也不能指定额外的东西。"
+"在语义方面，有一个关键的区别。在约束文件中包括一个包并不触发包的安装"。
 
 #: ../../html/user_guide.rst:208
 msgid "Use a constraints file like so:"
-msgstr ""
+msgstr "像这样使用一个约束文件："
 
 #: ../../html/user_guide.rst:222
 msgid ""
@@ -247,6 +291,9 @@ msgid ""
 "environment, so you have a local patched version. Some things you install"
 " depend on \"helloworld\", and some don't."
 msgstr ""
+"当你不知道你要安装什么东西时，约束文件的使用原因与需求文件完全相同。"
+"例如，假设 \"helloworld\" 包在你的环境中不工作，所以你有一个本地的补丁版本。"
+"你安装的一些东西依赖 \"helloworld\"，而一些则不依赖。"
 
 #: ../../html/user_guide.rst:228
 msgid ""
@@ -255,6 +302,8 @@ msgid ""
 "\"helloworld\" is present, write a requirements file to use when "
 "installing that thing."
 msgstr ""
+"确保统一使用补丁版本的一个方法是，手动审核你安装的所有东西的依赖关系，"
+"如果存在 \"helloworld\"，就写一个需求文件，在安装那个东西时使用。"
 
 #: ../../html/user_guide.rst:232
 msgid ""
@@ -263,6 +312,8 @@ msgid ""
 "requires \"helloworld\" to be installed, your fixed version specified in "
 "your constraints file will be used."
 msgstr ""
+"约束文件提供了一个更好的方法：为你的组织写一个单一的约束文件，然后到处使用。"
+"如果被安装的东西需要安装 \"helloworld\"，你在约束文件中指定的固定版本将被使用。"
 
 #: ../../html/user_guide.rst:237
 msgid ""
@@ -272,10 +323,14 @@ msgid ""
 " stripped constraints files down to being purely a way to specify global "
 "(version) limits for packages."
 msgstr ""
+"约束文件的支持是在 pip 7.1 中添加的。"
+"在 :ref:`Resolver changes 2020` 中，我们做了一次相当全面的整改，"
+"从以前的实现中删除了一些没有记录的和不支持的怪癖，并将约束文件剥离出来，"
+"使其成为一种纯粹的为包指定全局（版本）限制的方式。"
 
 #: ../../html/user_guide.rst:247
 msgid "Installing from Wheels"
-msgstr ""
+msgstr "从轮子开始安装"
 
 #: ../../html/user_guide.rst:249
 msgid ""
@@ -284,22 +339,27 @@ msgid ""
 "information, see the `Wheel docs <https://wheel.readthedocs.io>`_ , "
 ":pep:`427`, and :pep:`425`."
 msgstr ""
+"\"Wheel\" 是一种构建的档案格式，与从源档案构建和安装相比，可以大大加快安装速度。"
+"更多信息，请参见 `Wheel 文档 <https://wheel.readthedocs.io>`_、:pep:`427` 和 :pep:`425`。"
 
 #: ../../html/user_guide.rst:253
 msgid ""
 "pip prefers Wheels where they are available. To disable this, use the "
 ":ref:`--no-binary <install_--no-binary>` flag for :ref:`pip install`."
 msgstr ""
+"pip 更喜欢有轮子的。"
+"要禁用这一点，请使用 :ref:`--no-binary <install_--no-binary>` 标志，用于 :ref:`pip install`。"
 
 #: ../../html/user_guide.rst:256
 msgid ""
 "If no satisfactory wheels are found, pip will default to finding source "
 "archives."
 msgstr ""
+"如果没有找到满意的轮子，pip 将默认为寻找源档案。"
 
 #: ../../html/user_guide.rst:260
 msgid "To install directly from a wheel archive:"
-msgstr ""
+msgstr "要直接从轮子档案中安装："
 
 #: ../../html/user_guide.rst:274
 msgid ""
@@ -307,12 +367,15 @@ msgid ""
 "metadata in the wheel, you must add quotes around the install target "
 "name:"
 msgstr ""
+"要在轮子中包括 ``provides_extras`` 元数据中提供的可选依赖，"
+"你必须在安装目标名称周围加上引号："
 
 #: ../../html/user_guide.rst:292
 msgid ""
 "In the future, the ``path[extras]`` syntax may become deprecated. It is "
 "recommended to use PEP 508 syntax wherever possible."
 msgstr ""
+"在未来，``path[extras]`` 的语法可能会被废弃。建议尽可能使用 PEP 508 的语法。"
 
 #: ../../html/user_guide.rst:295
 msgid ""
@@ -320,6 +383,7 @@ msgid ""
 " as a convenience, to build wheels for all your requirements and "
 "dependencies."
 msgstr ""
+"对于没有轮子的情况，pip 提供了 :ref:`pip wheel` 作为一种便利，为你的所有需求和依赖建立轮子。"
 
 #: ../../html/user_guide.rst:298
 msgid ""
@@ -327,115 +391,121 @@ msgid ""
 "<https://pypi.org/project/wheel/>`_ to be installed, which provides the "
 "\"bdist_wheel\" setuptools extension that it uses."
 msgstr ""
+":ref:`pip wheel` 需要安装 `wheel package <https://pypi.org/project/wheel/>`_，"
+"它提供了其所使用的 “bdist_wheel” setuptools 扩展。"
 
 #: ../../html/user_guide.rst:302
 msgid ""
 "To build wheels for your requirements and all their dependencies to a "
 "local directory:"
 msgstr ""
+"为你的需求和所有的依赖性建立轮子到本地目录："
 
 #: ../../html/user_guide.rst:319
 msgid ""
 "And *then* to install those requirements just using your local directory "
 "of wheels (and not from PyPI):"
 msgstr ""
+"然后使用你本地的轮子目录（而不是从 PyPI）来安装这些需求："
 
 #: ../../html/user_guide.rst:336
 msgid "Uninstalling Packages"
-msgstr ""
+msgstr "卸载包"
 
 #: ../../html/user_guide.rst:338
 msgid "pip is able to uninstall most packages like so:"
-msgstr ""
+msgstr "pip 能够像这样卸载大多数软件包："
 
 #: ../../html/user_guide.rst:353
 msgid ""
 "pip also performs an automatic uninstall of an old version of a package "
 "before upgrading to a newer version."
 msgstr ""
+"在升级到较新的版本之前，pip 也会对旧版本的软件包进行自动卸载。"
 
 #: ../../html/user_guide.rst:356
 msgid "For more information and examples, see the :ref:`pip uninstall` reference."
-msgstr ""
+msgstr "更多信息和例子，请参见 :ref:`pip uninstall` 参考。"
 
 #: ../../html/user_guide.rst:360
 msgid "Listing Packages"
-msgstr ""
+msgstr "包的列表"
 
 #: ../../html/user_guide.rst:362
 msgid "To list installed packages:"
-msgstr ""
+msgstr "要列出已安装的软件包："
 
 #: ../../html/user_guide.rst:385
 msgid "To list outdated packages, and show the latest version available:"
-msgstr ""
+msgstr "列出过时的软件包，并显示可用的最新版本："
 
 #: ../../html/user_guide.rst:403
 msgid "To show details about an installed package:"
-msgstr ""
+msgstr "要显示一个已安装软件包的细节："
 
 #: ../../html/user_guide.rst:427
 msgid ""
 "For more information and examples, see the :ref:`pip list` and :ref:`pip "
 "show` reference pages."
 msgstr ""
+"更多信息和例子，请参见 :ref:`pip list` 和 :ref:`pip show` 参考页。"
 
 #: ../../html/user_guide.rst:432
 msgid "Searching for Packages"
-msgstr ""
+msgstr "搜索包"
 
 #: ../../html/user_guide.rst:434
 msgid "pip can search `PyPI`_ for packages using the ``pip search`` command:"
-msgstr ""
+msgstr "pip 可以使用 ``pip search`` 命令来搜索 `PyPI`_ 的软件包。"
 
 #: ../../html/user_guide.rst:449
 msgid "The query will be used to search the names and summaries of all packages."
-msgstr ""
+msgstr "该查询将被用来搜索所有软件包的名称和摘要。"
 
 #: ../../html/user_guide.rst:452
 msgid "For more information and examples, see the :ref:`pip search` reference."
-msgstr ""
+msgstr "更多信息和例子，请参见 :ref:`pip search` 参考。"
 
 #: ../../html/user_guide.rst:458
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../html/user_guide.rst:460 ../../html/user_guide.rst:467
 #: ../../html/user_guide.rst:472 ../../html/user_guide.rst:479
 msgid "This is now covered in :doc:`topics/configuration`."
-msgstr ""
+msgstr "这一点现在在 :doc:`topics/configuration` 中涉及。"
 
 #: ../../html/user_guide.rst:465
 msgid "Config file"
-msgstr ""
+msgstr "配置文件"
 
 #: ../../html/user_guide.rst:470
 msgid "Environment Variables"
-msgstr ""
+msgstr "环境变量"
 
 #: ../../html/user_guide.rst:477
 msgid "Config Precedence"
-msgstr ""
+msgstr "配置优先级"
 
 #: ../../html/user_guide.rst:483
 msgid "Command Completion"
-msgstr ""
+msgstr "命令补全"
 
 #: ../../html/user_guide.rst:485
 msgid "pip comes with support for command line completion in bash, zsh and fish."
-msgstr ""
+msgstr "pip 支持 bash、zsh 和 fish 的命令行补全。"
 
 #: ../../html/user_guide.rst:487
 msgid "To setup for bash::"
-msgstr ""
+msgstr "为 bash 设置:"
 
 #: ../../html/user_guide.rst:491
 msgid "To setup for zsh::"
-msgstr ""
+msgstr "为 zsh 设置:"
 
 #: ../../html/user_guide.rst:495
 msgid "To setup for fish::"
-msgstr ""
+msgstr "为 fish 设置:"
 
 #: ../../html/user_guide.rst:499
 msgid ""
@@ -443,20 +513,23 @@ msgid ""
 "directly with the eval function of your shell, e.g. by adding the "
 "following to your startup file::"
 msgstr ""
+"另外，你可以直接用 shell 的 eval 函数来使用 ``completion`` 命令的结果，"
+"例如，在你的启动文件中添加以下内容 ::"
 
 #: ../../html/user_guide.rst:511
 msgid "Installing from local packages"
-msgstr ""
+msgstr "从本地软件包安装"
 
 #: ../../html/user_guide.rst:513
 msgid ""
 "In some cases, you may want to install from local packages only, with no "
 "traffic to PyPI."
 msgstr ""
+"在某些情况下，你可能只想从本地软件包中进行安装，而不需要访问 PyPI。"
 
 #: ../../html/user_guide.rst:516
 msgid "First, download the archives that fulfill your requirements:"
-msgstr ""
+msgstr "首先，下载满足你需求的档案："
 
 #: ../../html/user_guide.rst:530
 msgid ""
@@ -466,6 +539,9 @@ msgid ""
 "that case, if some of your requirements don't come as wheels from PyPI, "
 "and you want wheels, then run this instead:"
 msgstr ""
+"注意，``pip download`` 会先查看你的轮子缓存，然后再尝试从 PyPI 下载。"
+"如果你以前从未安装过你的需求，你就不会有这些项目的轮子缓存。"
+"在这种情况下，如果你的一些需求不是以轮子的形式从 PyPI 下载的，而你想要轮子，那么就运行这个："
 
 #: ../../html/user_guide.rst:548
 msgid ""
@@ -473,10 +549,12 @@ msgid ""
 "<install_--find-links>` and :ref:`--no-index <install_--no-index>` like "
 "so:"
 msgstr ""
+"然后，要从本地安装，你将使用 :ref:`--find-links <install_--find-links>` "
+"和 :ref:`--no-index <install_--no-index>` 像这样："
 
 #: ../../html/user_guide.rst:565
 msgid "\"Only if needed\" Recursive Upgrade"
-msgstr ""
+msgstr "“只有在需要时”才递归升级"
 
 #: ../../html/user_guide.rst:567
 msgid ""
@@ -484,18 +562,22 @@ msgid ""
 "controls how pip handles upgrading of dependencies. There are 2 upgrade "
 "strategies supported:"
 msgstr ""
+"``pip install --upgrade`` 现在有一个 ``--upgrade-strategy`` 选项，"
+"控制 pip 处理升级依赖关系的方式。有两种升级策略支持："
 
 #: ../../html/user_guide.rst:571
 msgid ""
 "``eager``: upgrades all dependencies regardless of whether they still "
 "satisfy the new parent requirements"
 msgstr ""
+"``eager``：升级所有的依赖关系，不管它们是否仍然满足新的父需求"
 
 #: ../../html/user_guide.rst:573
 msgid ""
 "``only-if-needed``: upgrades a dependency only if it does not satisfy the"
 " new parent requirements"
 msgstr ""
+"``only-if-needed``：只有在不满足新的父系要求的情况下才升级一个依赖关系"
 
 #: ../../html/user_guide.rst:576
 msgid ""
@@ -503,6 +585,8 @@ msgid ""
 "due to the breaking nature of ``eager`` when upgrading conflicting "
 "dependencies."
 msgstr ""
+"默认的策略是 ``only-if-needed``。"
+"由于在升级冲突的依赖关系时，``eager`` 的破坏性，这在 pip 10.0 中被改变了。"
 
 #: ../../html/user_guide.rst:579
 msgid ""
@@ -511,6 +595,9 @@ msgid ""
 "while ``--upgrade-strategy`` affects *indirect requirements* "
 "(dependencies of direct requirements)."
 msgstr ""
+"需要注意的是，``--upgrade`` 影响的是 *直接需求* "
+"（例如那些在命令行或通过需求文件指定的需求），而 ``--upgrade-strategy`` 影响的"
+"是 *间接需求* （直接需求的依赖关系）。"
 
 #: ../../html/user_guide.rst:584
 msgid ""
@@ -518,40 +605,48 @@ msgid ""
 "and both of them are already installed but are not the latest available "
 "versions:"
 msgstr ""
+"举个例子，比如说 ``SomePackage`` 有一个依赖项 ``SomeDependency``，它们都已经安装，但不是最新的可用版本："
 
 #: ../../html/user_guide.rst:587
 msgid ""
 "``pip install SomePackage``: will not upgrade the existing "
 "``SomePackage`` or ``SomeDependency``."
 msgstr ""
+"``pip install SomePackage``：将不会升级现有的 ``SomePackage`` 或 ``SomeDependency``。"
 
 #: ../../html/user_guide.rst:589
 msgid ""
 "``pip install --upgrade SomePackage``: will upgrade ``SomePackage``, but "
 "not ``SomeDependency`` (unless a minimum requirement is not met)."
 msgstr ""
+"``pip install --upgrade SomePackage``： "
+"将升级 ``SomePackage``，但不升级 ``SomeDependency`` （除非没有满足最低要求）"。
 
 #: ../../html/user_guide.rst:591
 msgid ""
 "``pip install --upgrade SomePackage --upgrade-strategy=eager``: upgrades "
 "both ``SomePackage`` and ``SomeDependency``."
 msgstr ""
+"``pip install --upgrade SomePackage --upgrade-strategy=eager``："
+"同时升级 ``SomePackage`` 和 ``SomeDependency``。"
 
 #: ../../html/user_guide.rst:594
 msgid ""
 "As an historic note, an earlier \"fix\" for getting the ``only-if-"
 "needed`` behaviour was:"
 msgstr ""
+"作为一个历史性的说明，早期的一个获得 ``only-if-needed`` 的行为的 \"fix\" 是："
 
 #: ../../html/user_guide.rst:612
 msgid ""
 "A proposal for an ``upgrade-all`` command is being considered as a safer "
 "alternative to the behaviour of eager upgrading."
 msgstr ""
+"正在考虑一项关于 ``upgrade-all`` 命令的建议，作为对 eager 升级行为的更安全的替代。"
 
 #: ../../html/user_guide.rst:617
 msgid "User Installs"
-msgstr ""
+msgstr "用户安装"
 
 #: ../../html/user_guide.rst:619
 msgid ""
@@ -565,6 +660,12 @@ msgid ""
 "This mode of installation can be turned on by specifying the :ref:`--user"
 " <install_--user>` option to ``pip install``."
 msgstr ""
+"随着 Python 2.6 的到来，用于 `安装的"
+"“用户方案” <https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme>`_，"
+"这意味着所有 Python 发行版都支持一个特定于用户的替代安装位置。"
+"每个操作系统的默认位置在 Python 文档中的 `site.USER_BASE "
+"<https://docs.python.org/3/library/site.html#site.USER_BASE>`_ 变量中有解释。"
+"这种安装模式可以通过在 ``pip install`` 中指定 :ref:`--user <install_--user>` 选项来开启。"
 
 #: ../../html/user_guide.rst:628
 msgid ""
@@ -572,16 +673,18 @@ msgid ""
 "``PYTHONUSERBASE`` environment variable, which updates the value of "
 "``site.USER_BASE``."
 msgstr ""
+"此外，可以通过设置 ``PYTHONUSERBASE`` 环境变量，更新 ``site.USER_BASE`` 的值来定制 “用户方案”。"
 
 #: ../../html/user_guide.rst:632
 msgid ""
 "To install \"SomePackage\" into an environment with site.USER_BASE "
 "customized to '/myappenv', do the following:"
 msgstr ""
+"要在 site.USER_BASE 自定义为 '/myappenv' 的环境中安装 \"SomePackage\"，请执行以下操作："
 
 #: ../../html/user_guide.rst:649
 msgid "``pip install --user`` follows four rules:"
-msgstr ""
+msgstr "``pip install --user`` 遵循四个规则："
 
 #: ../../html/user_guide.rst:651
 msgid ""
@@ -589,6 +692,7 @@ msgid ""
 "*conflict* with the installation requirements, they are ignored, and "
 "*not* uninstalled."
 msgstr ""
+"当全局安装的软件包在 Python 路径上，并且它们 与安装要求相冲突时，它们会被忽略，并且不会被卸载。"
 
 #: ../../html/user_guide.rst:654
 msgid ""
@@ -598,6 +702,8 @@ msgid ""
 " requirements when installing packages in a ``--system-site-packages`` "
 "virtualenv)."
 msgstr ""
+"当全局安装的包在 Python 路径上，并且它们 *满足* 安装需求时，pip 什么也不做，"
+"并报告需求得到满足（类似于在 ``--system-site-packages`` 的虚拟环境中安装包时全局包可以满足需求）。"
 
 #: ../../html/user_guide.rst:659
 msgid ""
@@ -605,6 +711,9 @@ msgid ""
 "virtualenv (i.e. the default kind of virtualenv), due to the user site "
 "not being on the python path.  The installation would be pointless."
 msgstr ""
+"由于用户站点不在 python 路径上，pip 不会在 ``--no-site-packages`` 虚拟环境"
+"（即默认的虚拟环境）中执行 ``--user`` 安装。"
+"这样的安装就毫无意义了。"
 
 #: ../../html/user_guide.rst:662
 msgid ""
@@ -612,58 +721,65 @@ msgid ""
 "package that conflicts with a package in the virtualenv site-packages.  "
 "The --user installation would lack sys.path precedence and be pointless."
 msgstr ""
+"在 ``--system-site-packages`` 的 virtualenv 中，"
+"pip 不会安装与 virtualenv site-packages 有冲突的软件包。"
+"--user 安装将缺乏 sys.path 优先级，而且毫无意义。"
 
 #: ../../html/user_guide.rst:667
 msgid "To make the rules clearer, here are some examples:"
-msgstr ""
+msgstr "为了使规则更加清晰，这里有一些例子："
 
 #: ../../html/user_guide.rst:669
 msgid "From within a ``--no-site-packages`` virtualenv (i.e. the default kind):"
-msgstr ""
+msgstr "在 ``--no-site-packages`` 的虚拟环境中（即默认的那种）："
 
 #: ../../html/user_guide.rst:686
 msgid ""
 "From within a ``--system-site-packages`` virtualenv where "
 "``SomePackage==0.3`` is already installed in the virtualenv:"
 msgstr ""
+"从一个 ``--system-site-packages`` 的虚拟环境中，``SomePackage==0.3`` 已经安装在虚拟环境中："
 
 #: ../../html/user_guide.rst:703
 msgid ""
 "From within a real python, where ``SomePackage`` is *not* installed "
 "globally:"
 msgstr ""
+"在真正的 Python 中，``SomePackage`` 没有全局安装："
 
 #: ../../html/user_guide.rst:721
 msgid ""
 "From within a real python, where ``SomePackage`` *is* installed globally,"
 " but is *not* the latest version:"
 msgstr ""
+"在真正的 python 中，``SomePackage`` 是全局安装的，但不是最新的版本："
 
 #: ../../html/user_guide.rst:746
 msgid ""
 "From within a real python, where ``SomePackage`` *is* installed globally,"
 " and is the latest version:"
 msgstr ""
+"在真正的 python 中，``SomePackage`` 是全局安装的，并且是最新版本："
 
 #: ../../html/user_guide.rst:783
 msgid "Ensuring Repeatability"
-msgstr ""
+msgstr "确保可重复性"
 
 #: ../../html/user_guide.rst:785
 msgid "This is now covered in :doc:`../topics/repeatable-installs`."
-msgstr ""
+msgstr "这一点现在在 :doc:`../topics/repeatable-installs` 中已经涵盖。"
 
 #: ../../html/user_guide.rst:790
 msgid "Fixing conflicting dependencies"
-msgstr ""
+msgstr "修复冲突的依赖关系"
 
 #: ../../html/user_guide.rst:792
 msgid "This is now covered in :doc:`../topics/dependency-resolution`."
-msgstr ""
+msgstr "这一点现在在 :doc:`../topics/dependency-resolution` 中已经涵盖。"
 
 #: ../../html/user_guide.rst:797
 msgid "Using pip from your program"
-msgstr ""
+msgstr "从你的程序中使用 pip"
 
 #: ../../html/user_guide.rst:799
 msgid ""
@@ -672,6 +788,9 @@ msgid ""
 "``import pip``, you must not use pip's internal APIs in this way. There "
 "are a number of reasons for this:"
 msgstr ""
+"如前所述，pip 是一个命令行程序。"
+"虽然它是在 Python 中实现的，因此可以通过 ``import pip`` 从你的 Python 代码中获得，"
+"但你不能以这种方式使用 pip 的内部 API。这有很多原因："
 
 #: ../../html/user_guide.rst:803
 msgid ""
@@ -680,6 +799,8 @@ msgid ""
 " values of the standard IO streams, without considering the possibility "
 "that user code might be affected."
 msgstr ""
+"pip 代码假设是唯一控制程序的全局状态。"
+"pip 管理诸如日志系统配置，或标准 IO 流的值，而不考虑用户代码可能受到影响的可能性。"
 
 #: ../../html/user_guide.rst:809
 msgid ""
@@ -687,6 +808,7 @@ msgid ""
 "there is no guarantee that either your code or pip's would work as you "
 "expect."
 msgstr ""
+"pip 的代码不是线程安全的。如果你在一个线程中运行 pip，不能保证你的代码和 pip 的代码都能按你的期望工作。"
 
 #: ../../html/user_guide.rst:812
 msgid ""
@@ -695,6 +817,8 @@ msgid ""
 " continue to run after that point, so (for example) calling pip twice in "
 "the same process is likely to have issues."
 msgstr ""
+"pip假设一旦它完成了它的工作，进程就会终止。"
+"它不需要处理其他代码在那之后继续运行的可能性，所以（例如）在同一个进程中调用两次 pip 很可能会有问题。"
 
 #: ../../html/user_guide.rst:817
 msgid ""
@@ -706,6 +830,10 @@ msgid ""
 "remain available across multiple releases of pip. And we simply don't "
 "currently have the resources to even consider such a task."
 msgstr ""
+"这并不意味着 pip 的开发者原则上反对将 pip 作为一个库来使用的想法--只是它不是这样写的，"
+"要重新设计作为库使用的内部结构，处理上述所有问题，并设计一个可用的、强大的、稳定的 API，"
+"我们可以保证在 pip 的多个版本中保持可用，这将是一项大量的工作。"
+"而我们目前根本没有资源来考虑这样的任务。"
 
 #: ../../html/user_guide.rst:825
 msgid ""
@@ -716,6 +844,10 @@ msgid ""
 " time, for any reason. It also means that we generally *won't* fix issues"
 " that are a result of using pip in an unsupported way."
 msgstr ""
+"这在实践中意味着，pip 内部的一切都被认为是一个实现细节。"
+"即使是导入名称为 “pip” 这一事实，也可能在没有通知的情况下发生变化。"
+"虽然我们尽量不破坏东西，但所有的内部 API 都可以在任何时候，以任何理由改变。"
+"这也意味着，我们一般不会修复因以不支持的方式使用 pip 而导致的问题"。
 
 #: ../../html/user_guide.rst:832
 msgid ""
@@ -725,6 +857,9 @@ msgid ""
 "a program is running may not always behave as expected. In practice, "
 "there is rarely an issue, but it is something to be aware of."
 msgstr ""
+"还应该注意的是，在运行中的 Python 进程中向 ``sys.path`` 安装软件包是应该谨慎进行的事情。"
+"导入系统缓存了某些数据，在程序运行时安装新的软件包可能并不总是像预期那样。"
+"在实践中，很少出现问题，但这是需要注意的。"
 
 #: ../../html/user_guide.rst:838
 msgid ""
@@ -734,6 +869,9 @@ msgid ""
 "pip in a subprocess. This is easily done using the standard "
 "``subprocess`` module::"
 msgstr ""
+"说了以上这些，如果你决定确实想从你的程序中运行 pip，那么值得介绍一下可用的选项。"
+"最可靠的方法，也是完全被支持的方法，是在一个子进程中运行 pip。"
+"使用标准的 ``subprocess`` 模块可以很容易地做到这一点 ::"
 
 #: ../../html/user_guide.rst:845
 msgid ""
@@ -741,6 +879,8 @@ msgid ""
 "the module. We are using `freeze`_ here which outputs installed packages "
 "in requirements format.::"
 msgstr ""
+"如果你想进一步处理输出，请使用该模块中的其他 API。"
+"我们在这里使用 `freeze`_，它以需求格式输出已安装的软件包。 ::"
 
 #: ../../html/user_guide.rst:850
 msgid ""
@@ -750,28 +890,34 @@ msgid ""
 "that offer this type of ability. Some examples that you could consider "
 "include:"
 msgstr ""
+"如果你不想使用 pip 的命令行功能，"
+"而是想实现与 Python 包、它们的元数据或 PyPI 一起工作的代码，"
+"那么你应该考虑其他支持的、提供这类能力的包。你可以考虑的一些例子包括："
 
 #: ../../html/user_guide.rst:855
 msgid ""
 "``packaging`` - Utilities to work with standard package metadata "
 "(versions, requirements, etc.)"
 msgstr ""
+"``packaging`` —— 处理标准包元数据（版本、需求等）的实用程序。"
 
 #: ../../html/user_guide.rst:858
 msgid ""
 "``setuptools`` (specifically ``pkg_resources``) - Functions for querying "
 "what packages the user has installed on their system."
 msgstr ""
+"``setuptools`` （特别是 ``pkg_resources``）--用于查询用户在其系统中安装了哪些软件包的功能。"
 
 #: ../../html/user_guide.rst:861
 msgid ""
 "``distlib`` - Packaging and distribution utilities (including functions "
 "for interacting with PyPI)."
 msgstr ""
+"``distlib`` - 打包和分发工具（包括与 PyPI 交互的功能）。"
 
 #: ../../html/user_guide.rst:869
 msgid "Changes to the pip dependency resolver in 20.3 (2020)"
-msgstr ""
+msgstr "对 20.3 (2020) 中 pip 依赖关系解析器的修改"
 
 #: ../../html/user_guide.rst:871
 msgid ""
@@ -781,6 +927,10 @@ msgid ""
 "guide, how to invoke the legacy resolver, and the deprecation timeline. "
 "We also made a `two-minute video explanation`_ you can watch."
 msgstr ""
+"pip 20.3 有一个新的依赖关系解析器，对于 Python 3 用户来说默认是打开的。"
+" (pip 20.1 和 20.2 包括新的依赖关系解析器的预发布版本，隐藏在可选的用户标志后面。） "
+"请阅读下面的迁移指南，如何调用传统的解析器，以及弃用时间表。"
+"我们还制作了一个 `两分钟的视频解释`_，你可以观看。"
 
 #: ../../html/user_guide.rst:878
 msgid ""
@@ -788,16 +938,18 @@ msgid ""
 "testers' feedback. Please give us feedback through the `resolver testing "
 "survey`_."
 msgstr ""
+"我们将根据测试者的反馈继续改进 pip 依赖性解析器。请通过 `解析器测试调查`_ 向我们提供反馈。
 
 #: ../../html/user_guide.rst:885
 msgid "Watch out for"
-msgstr ""
+msgstr "注意事项"
 
 #: ../../html/user_guide.rst:887
 msgid ""
 "The big change in this release is to the pip dependency resolver within "
 "pip."
 msgstr ""
+"这个版本中最大的变化是对 pip 内部的 pip 依赖性解析器。"
 
 #: ../../html/user_guide.rst:890
 msgid ""

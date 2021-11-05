@@ -77,9 +77,6 @@ msgid ""
 "repository of software for the Python programming language where anyone "
 "can upload packages."
 msgstr ""
-"默认情况下，pip 会从 "
-"[Python Package Index][PyPI] "
-"获取软件包，这是一个 Python 编程语言的软件库，任何人都可以在这里上传软件包。"
 
 #: ../../html/getting-started.md:42
 msgid "Install a package from GitHub"

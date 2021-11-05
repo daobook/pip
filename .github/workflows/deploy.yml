@@ -23,6 +23,7 @@ jobs:
         run: |
           pip install -r docs/requirements.txt
           pip install sphinxcontrib-websupport
+          pip install sphinx-intl
           sudo apt update
 
       - name: Build the book
