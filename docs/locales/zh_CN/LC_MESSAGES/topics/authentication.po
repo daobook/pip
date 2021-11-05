@@ -19,27 +19,29 @@ msgstr ""
 
 #: ../../html/topics/authentication.md:1
 msgid "Authentication"
-msgstr ""
+msgstr "认证"
 
 #: ../../html/topics/authentication.md:3
 msgid "Basic HTTP authentication"
-msgstr ""
+msgstr "基本 HTTP 认证"
 
 #: ../../html/topics/authentication.md:5
 msgid ""
 "pip supports basic HTTP-based authentication credentials. This is done by"
 " providing the username (and optionally password) in the URL:"
 msgstr ""
+"pip 支持基于 HTTP 的基本认证凭证。这是通过在 URL 中提供用户名（和可选的密码）来实现的："
 
 #: ../../html/topics/authentication.md:12
 msgid ""
 "For indexes that only require single-part authentication tokens, provide "
 "the token as the \"username\" and do not provide a password:"
 msgstr ""
+"对于只需要单部分认证令牌的索引，提供令牌作为 \"username\"，不要提供密码："
 
 #: ../../html/topics/authentication.md:19
 msgid "Percent-encoding special characters"
-msgstr ""
+msgstr "百分号编码的特殊字符"
 
 #: ../../html/topics/authentication.md:24
 msgid ""
@@ -53,7 +55,7 @@ msgstr ""
 
 #: ../../html/topics/authentication.md:37
 msgid "netrc support"
-msgstr ""
+msgstr "netrc 支持"
 
 #: ../../html/topics/authentication.md:39
 msgid ""

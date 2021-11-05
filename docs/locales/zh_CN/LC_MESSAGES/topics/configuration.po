@@ -19,59 +19,61 @@ msgstr ""
 
 #: ../../html/topics/configuration.md:1
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../html/topics/configuration.md:3
 msgid "pip allows a user to change its behaviour via 3 mechanisms:"
-msgstr ""
+msgstr "pip 允许用户通过 3 种机制来改变其行为："
 
 #: ../../html/topics/configuration.md:5
 msgid "command line options"
-msgstr ""
+msgstr "命令行选项"
 
 #: ../../html/topics/configuration.md:6
 msgid "environment variables"
-msgstr ""
+msgstr "环境变量"
 
 #: ../../html/topics/configuration.md:7
 msgid "configuration files"
-msgstr ""
+msgstr "配置文件"
 
 #: ../../html/topics/configuration.md:9
 msgid ""
 "This page explains how the configuration files and environment variables "
 "work, and how they are related to pip's various command line options."
 msgstr ""
+"本页解释了配置文件和环境变量如何工作，以及它们与 pip 的各种命令行选项的关系。"
 
 #: ../../html/topics/configuration.md:12
 msgid "Configuration Files"
-msgstr ""
+msgstr "配置文件"
 
 #: ../../html/topics/configuration.md:14
 msgid ""
 "Configuration files can change the default values for command line "
 "option. They are written using a standard INI style configuration files."
 msgstr ""
+"配置文件可以改变命令行选项的默认值。它们是用标准的 INI 风格的配置文件编写的。"
 
 #: ../../html/topics/configuration.md:17
 msgid "pip has 3 \"levels\" of configuration files:"
-msgstr ""
+msgstr "pip有 3 个 “级别” 的配置文件。"
 
 #: ../../html/topics/configuration.md:19
 msgid "`global`: system-wide configuration file, shared across users."
-msgstr ""
+msgstr "`global`：全系统的配置文件，用户之间共享。"
 
 #: ../../html/topics/configuration.md:20
 msgid "`user`: per-user configuration file."
-msgstr ""
+msgstr "`user`：每个用户的配置文件。"
 
 #: ../../html/topics/configuration.md:21
 msgid "`site`: per-environment configuration file; i.e. per-virtualenv."
-msgstr ""
+msgstr "`site`：每个环境的配置文件；即每个虚拟环境。"
 
 #: ../../html/topics/configuration.md:23
 msgid "Location"
-msgstr ""
+msgstr "位置"
 
 #: ../../html/topics/configuration.md:25
 msgid ""
@@ -79,10 +81,12 @@ msgid ""
 "location is different on different operating systems, and has some "
 "additional complexity for backwards compatibility reasons."
 msgstr ""
+"pip 的配置文件位于相当标准的位置。"
+"这个位置在不同的操作系统上是不同的，而且由于向后兼容的原因，有一些额外的复杂性。"
 
 #: ../../html/topics/configuration.md:1 ../../html/topics/configuration.md:93
 msgid "Global"
-msgstr ""
+msgstr "全局"
 
 #: ../../html/topics/configuration.md:2
 msgid ""
@@ -90,32 +94,37 @@ msgid ""
 "variable `XDG_CONFIG_DIRS` (if it exists), for example "
 "{file}`/etc/xdg/pip/pip.conf`."
 msgstr ""
+"在环境变量 `XDG_CONFIG_DIRS`（如果存在的话）中设置的任何路径"
+"的 “pip” 子目录中，例如 {file}`/etc/xdg/pip/pip.conf` 。"
 
 #: ../../html/topics/configuration.md:5
 msgid "This will be followed by loading {file}`/etc/pip.conf`."
-msgstr ""
+msgstr "随后将加载 {file}`/etc/pip.conf`。"
 
 #: ../../html/topics/configuration.md:4 ../../html/topics/configuration.md:7
 #: ../../html/topics/configuration.md:8 ../../html/topics/configuration.md:94
 msgid "User"
-msgstr ""
+msgstr "用户"
 
 #: ../../html/topics/configuration.md:8
 msgid ""
 "{file}`$HOME/.config/pip/pip.conf`, which respects the `XDG_CONFIG_HOME` "
 "environment variable."
 msgstr ""
+"{file}`$HOME/.config/pip/pip.conf`，它遵从 `XDG_CONFIG_HOME` 环境变量。"
 
 #: ../../html/topics/configuration.md:9 ../../html/topics/configuration.md:10
 msgid ""
 "The legacy \"per-user\" configuration file is also loaded, if it exists: "
 "{file}`$HOME/.pip/pip.conf`."
 msgstr ""
+"传统的 \"per-user\" 配置文件也被加载，如果它存在的话： "
+"{file}`$HOME/.pip/pip.conf`。"
 
 #: ../../html/topics/configuration.md:11 ../../html/topics/configuration.md:12
 #: ../../html/topics/configuration.md:13 ../../html/topics/configuration.md:95
 msgid "Site"
-msgstr ""
+msgstr "站点"
 
 #: ../../html/topics/configuration.md:12 ../../html/topics/configuration.md:13
 msgid "{file}`$VIRTUAL_ENV/pip.conf`"
@@ -131,22 +140,29 @@ msgid ""
 "`$HOME/Library/Application Support/pip` exists else "
 "{file}`$HOME/.config/pip/pip.conf`"
 msgstr ""
+"{file}`$HOME/Library/Application Support/pip/pip.conf` 如果目录存在 "
+"`$HOME/Library/Application Support/pip` 否则 "
+"{file}`$HOME/.config/pip/pip.conf`"
 
 #: ../../html/topics/configuration.md:2
 msgid ""
 "On Windows 7 and later: {file}`C:\\\\ProgramData\\\\pip\\\\pip.ini` "
 "(hidden but writeable)"
 msgstr ""
+"在 Windows 7 和更高版本中： {file}`C:\\\\ProgramData\\\\pip\\\\pip.ini`"
+"（隐藏但可写）"
 
 #: ../../html/topics/configuration.md:4
 msgid "On Windows Vista: Global configuration is not supported."
-msgstr ""
+msgstr "在 Windows Vista 上：不支持全局配置。"
 
 #: ../../html/topics/configuration.md:5
 msgid ""
 "On Windows XP: {file}`C:\\\\Documents and Settings\\\\All "
 "Users\\\\Application Data\\\\pip\\\\pip.ini`"
 msgstr ""
+"在 Windows XP 上：{file}`C:\\\\Documents and Settings\\\\All "
+"Users\\\\Application Data\\\\pip\\\\pip.ini`"
 
 #: ../../html/topics/configuration.md:9
 msgid "{file}`%APPDATA%\\\\pip\\\\pip.ini`"
@@ -157,6 +173,8 @@ msgid ""
 "The legacy \"per-user\" configuration file is also loaded, if it exists: "
 "{file}`%HOME%\\\\pip\\\\pip.ini`"
 msgstr ""
+"传统的 \"per-user\" 配置文件也被加载，如果它存在的话： "
+"{file}`%HOME%\\\\pip\\\\pip.ini`"
 
 #: ../../html/topics/configuration.md:14
 msgid "{file}`%VIRTUAL_ENV%\\\\pip.ini`"
@@ -173,20 +191,23 @@ msgid ""
 "overridden by the values set in the aforementioned files. Setting this to"
 " {any}`os.devnull` disables the loading of _all_ configuration files."
 msgstr ""
+"此外，环境变量 `PIP_CONFIG_FILE` 可以用来指定一个首次加载的配置文件，"
+"其值被上述文件中设置的值所覆盖。将其设置为 {any}`os.devnull`，可以禁止加载 _所有_ 配置文件。"
 
 #: ../../html/topics/configuration.md:87
 msgid "Loading order"
-msgstr ""
+msgstr "载入顺序"
 
 #: ../../html/topics/configuration.md:89
 msgid ""
 "When multiple configuration files are found, pip combines them in the "
 "following order:"
 msgstr ""
+"当发现多个配置文件时，pip 会按照以下顺序组合它们："
 
 #: ../../html/topics/configuration.md:92
 msgid "`PIP_CONFIG_FILE`, if given."
-msgstr ""
+msgstr "`PIP_CONFIG_FILE`，若被给定"
 
 #: ../../html/topics/configuration.md:97
 msgid ""
@@ -194,6 +215,8 @@ msgid ""
 "global timeout is specified in both the global file and the per-user file"
 " then the latter value will be used."
 msgstr ""
+"每个文件的读取都会覆盖从以前的文件中读取的任何值，"
+"所以如果全局文件和每个用户文件中都指定了全局超时，那么将使用后者的值。"
 
 #: ../../html/topics/configuration.md:101
 msgid "Naming"
