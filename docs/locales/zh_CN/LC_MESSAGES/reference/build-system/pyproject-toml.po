@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/reference/build-system/pyproject-toml.md:1
+msgid "`pyproject.toml`"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:7
+msgid ""
+"Modern Python packages can contain a `pyproject.toml` file, first "
+"introduced in {pep}`518` and later expanded in {pep}`517`, {pep}`621` and"
+" {pep}`660`. This file contains build system requirements and "
+"information, which are used by pip to build the package."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:12
+msgid "Build process"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:14
+msgid "The overall process for building a package is:"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:16
+msgid "Create an isolated build environment."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:17
+msgid "Populate the build environment with build dependencies."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:18
+msgid "Generate the package's metadata, if necessary and possible."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:19
+msgid "Generate a wheel for the package."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:21
+msgid "The wheel can then be used to perform an installation, if necessary."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:23
+msgid "Build Isolation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:25
+msgid ""
+"For building packages using this interface, pip uses an _isolated "
+"environment_. That is, pip will install build-time Python dependencies in"
+" a temporary directory which will be added to `sys.path` for the build "
+"commands. This ensures that build requirements are handled independently "
+"of the user's runtime environment."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:31
+msgid ""
+"For example, a project that needs an older version of setuptools to build"
+" can still be installed, even if the user has an newer version installed "
+"(and without silently replacing that version)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:35
+msgid "Build-time dependencies"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:37
+msgid ""
+"Introduced in {pep}`518`, the `build-system.requires` key in the "
+"`pyproject.toml` file is a list of requirement specifiers for build-time "
+"dependencies of a package."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:46
+msgid ""
+"It is also possible for a build backend to provide dynamically calculated"
+" build dependencies, using {pep}`517`'s `get_requires_for_build_wheel` "
+"hook. This hook will be called by pip, and dependencies it describes will"
+" also be installed in the build environment. For example, newer versions "
+"of setuptools expose the contents of `setup_requires` to pip via this "
+"hook."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:52
+msgid "Metadata Generation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:58
+msgid ""
+"Once the build environment has been created and populated with build-time"
+" dependencies, `pip` will usually need metadata about a package (name, "
+"version, dependencies, and more)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:62
+msgid ""
+"If {pep}`517`'s `prepare_metadata_for_build_wheel` hook is provided by "
+"the build backend, that will be used to generate the packages' metadata. "
+"Otherwise, a wheel will be generated (as described below) and the "
+"metadata contained within such a wheel will be used."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:67
+msgid "Wheel Generation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:73
+msgid ""
+"For generating a wheel, pip uses the {pep}`517` `build_wheel` hook that "
+"has to be provided by the build backend. The build backend will generate "
+"a wheel, which may involve compiling extension code written in C/C++ (or "
+"other languages)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:78
+msgid ""
+"Wheels generated using this mechanism can be [cached](wheel-caching) for "
+"reuse, to speed up future installations."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:81
+msgid "Editable Installation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:87
+msgid ""
+"For performing editable installs, pip will use {pep}`660` "
+"`build_wheel_for_editable` hook that has to be provided by the build "
+"backend. The wheels generated using this mechanism are not cached."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:91
+msgid "Compatibility fallback"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:1
+msgid ""
+"If this hook is missing on the build backend _and_ there's a `setup.py` "
+"file in the project, pip will fallback to the legacy setup.py-based "
+"editable installation."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:5
+msgid ""
+"This is considered a stopgap solution until setuptools adds support for "
+"{pep}`660`, at which point this functionality will be removed; following "
+"pip's regular {ref}`deprecation policy <Deprecation Policy>`."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:101
+msgid "Build output"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:103
+msgid ""
+"It is the responsibility of the build backend to ensure that the output "
+"is in the correct encoding, as described in {pep}`517`. This likely "
+"involves dealing with [the same challenges as pip has for legacy builds"
+"](build-output)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:107
+msgid "Fallback Behaviour"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:109
+msgid ""
+"If a project does not have a `pyproject.toml` file containing a `build-"
+"system` section, it will be assumed to have the following backend "
+"settings:"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:118
+msgid "If a project has a `build-system` section but no `build-backend`, then:"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:120
+msgid ""
+"It is expected to include `setuptools` and `wheel` as build requirements."
+" An error is reported if the available version of `setuptools` is not "
+"recent enough."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:124
+msgid "The `setuptools.build_meta:__legacy__` build backend will be used."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:126
+msgid "Disabling build isolation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:128
+msgid ""
+"This can be disabled using the `--no-build-isolation` flag -- users "
+"supplying this flag are responsible for ensuring the build environment is"
+" managed appropriately, including ensuring that all required build-time "
+"dependencies are installed, since pip does not manage build-time "
+"dependencies when this flag is passed."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:134
+msgid "Historical notes"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:136
+msgid ""
+"As this feature was incrementally rolled out, there have been various "
+"notable changes and improvements in it."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:139
+msgid ""
+"setuptools 40.8.0 is the first version of setuptools that offers a "
+"{pep}`517` backend that closely mimics directly executing `setup.py`."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:141
+msgid ""
+"Prior to pip 18.0, pip only supports installing build requirements from "
+"wheels, and does not support the use of environment markers and extras "
+"(only version specifiers are respected)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:144
+msgid ""
+"Prior to pip 18.1, build dependencies using `.pth` files are not properly"
+" supported; as a result namespace packages do not work under Python 3.2 "
+"and earlier."
+msgstr ""
+

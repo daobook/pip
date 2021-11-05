@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid "Repeatable Installs"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:3
+msgid ""
+"pip can be used to achieve various levels of repeatable environments. "
+"This page walks through increasingly stricter definitions of what "
+"\"repeatable\" means."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:6
+msgid "Pinning the package versions"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:8
+msgid ""
+"Pinning package versions of your dependencies in the requirements file "
+"protects you from bugs or incompatibilities in newly released versions:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid ""
+"Pinning refers to using the `==` operator to require the package to be a "
+"specific version."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:21
+msgid ""
+"A requirements file, containing pinned package versions can be generated "
+"using {ref}`pip freeze`. This would not only the top-level packages, but "
+"also all of their transitive dependencies. Performing the installation "
+"using {ref}`--no-deps <install_--no-deps>` would provide an extra dose of"
+" insurance against installing anything not explicitly listed."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:27
+msgid ""
+"This strategy is easy to implement and works across OSes and "
+"architectures. However, it trusts the locations you're fetching the "
+"packages from (like PyPI) and the certificate authority chain. It also "
+"relies on those locations not allowing packages to change without a "
+"version increase. (PyPI does protect against this.)"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:33
+msgid "Hash-checking"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:35
+msgid ""
+"Beyond pinning version numbers, you can add hashes against which to "
+"verify downloaded packages:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:42
+msgid ""
+"This protects against a compromise of PyPI or the HTTPS certificate "
+"chain. It also guards against a package changing without its version "
+"number changing (on indexes that allow this). This approach is a good fit"
+" for automated server deployments."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:47
+msgid ""
+"Hash-checking mode is a labour-saving alternative to running a private "
+"index server containing approved packages: it removes the need to upload "
+"packages, maintain ACLs, and keep an audit trail (which a VCS gives you "
+"on the requirements file for free). It can also substitute for a vendored"
+" library, providing easier upgrades and less VCS noise. It does not, of "
+"course, provide the availability benefits of a private index or a "
+"vendored library."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:54
+msgid ""
+"[pip-tools] is a package that builds upon pip, and provides a good "
+"workflow for managing and generating requirements files."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:59
+msgid "Using a wheelhouse (AKA Installation Bundles)"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:61
+msgid ""
+"{ref}`pip wheel` can be used to generate and package all of a project's "
+"dependencies, with all the compilation performed, into a single directory"
+" that can be converted into a single archive. This archive then allows "
+"installation when index servers are unavailable and avoids time-consuming"
+" recompilation."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:66
+msgid "Example"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid "Creating the bundle, on a modern Unix system:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:10
+msgid "Installing from the bundle, on a modern Unix system:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:85
+msgid ""
+"Note that such a wheelhouse contains compiled packages, which are "
+"typically OS and architecture-specific, so these archives are not "
+"necessarily portable across machines."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:89
+msgid ""
+"Hash-checking mode can also be used along with this method (since this "
+"uses a requirements file as well), to ensure that future archives are "
+"built with identical packages."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid ""
+"Beware of the `setup_requires` keyword arg in {file}`setup.py`. The "
+"(rare) packages that use it will cause those dependencies to be "
+"downloaded by setuptools directly, skipping pip's protections. If you "
+"need to use such a package, see {ref}`Controlling setup_requires "
+"<controlling-setup_requires>`."
+msgstr ""
+

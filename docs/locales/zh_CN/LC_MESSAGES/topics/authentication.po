@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/topics/authentication.md:1
+msgid "Authentication"
+msgstr ""
+
+#: ../../html/topics/authentication.md:3
+msgid "Basic HTTP authentication"
+msgstr ""
+
+#: ../../html/topics/authentication.md:5
+msgid ""
+"pip supports basic HTTP-based authentication credentials. This is done by"
+" providing the username (and optionally password) in the URL:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:12
+msgid ""
+"For indexes that only require single-part authentication tokens, provide "
+"the token as the \"username\" and do not provide a password:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:19
+msgid "Percent-encoding special characters"
+msgstr ""
+
+#: ../../html/topics/authentication.md:24
+msgid ""
+"Certain special characters are not valid in the credential part of a URL."
+" If the user or password part of your login credentials contain any of "
+"these [special characters][reserved-chars], then they must be percent-"
+"encoded. As an example, for a user with username `user` and password "
+"`he//o` accessing a repository at `pypi.company.com/simple`, the URL with"
+" credentials would look like:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:37
+msgid "netrc support"
+msgstr ""
+
+#: ../../html/topics/authentication.md:39
+msgid ""
+"pip supports loading credentials from a user's `.netrc` file. If no "
+"credentials are part of the URL, pip will attempt to get authentication "
+"credentials for the URL's hostname from the user's `.netrc` file. This "
+"behaviour comes from the underlying use of {pypi}`requests`, which in "
+"turn delegates it to the [Python standard library's `netrc` module"
+"][netrc-std-lib]."
+msgstr ""
+
+#: ../../html/topics/authentication.md:1
+msgid ""
+"As mentioned in the [standard library documentation for netrc][netrc-std-"
+"lib], only ASCII characters are allowed in `.netrc` files. Whitespace and"
+" non-printable characters are not allowed in passwords."
+msgstr ""
+
+#: ../../html/topics/authentication.md:51
+msgid ""
+"Below is an example `.netrc`, for the host `example.com`, with a user "
+"named `daniel`, using the password `qwerty`:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:60
+msgid ""
+"More information about the `.netrc` file format can be found in the GNU "
+"[`ftp` man pages][netrc-docs]."
+msgstr ""
+
+#: ../../html/topics/authentication.md:66
+msgid "Keyring Support"
+msgstr ""
+
+#: ../../html/topics/authentication.md:68
+msgid ""
+"pip supports loading credentials stored in your keyring using the "
+"{pypi}`keyring` library."
+msgstr ""
+
+#: ../../html/topics/authentication.md:77
+msgid ""
+"Note that `keyring` (the Python package) needs to be installed separately"
+" from pip. This can create a bootstrapping issue if you need the "
+"credentials stored in the keyring to download and install keyring."
+msgstr ""
+
+#: ../../html/topics/authentication.md:81
+msgid ""
+"It is, thus, expected that users that wish to use pip's keyring support "
+"have some mechanism for downloading and installing {pypi}`keyring` in "
+"their Python environment."
+msgstr ""
+

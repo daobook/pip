@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/reference/build-system/index.md:3
+msgid "Build System Interface"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:5
+msgid ""
+"When dealing with installable source distributions of a package, pip does"
+" not directly handle the build process for the package. This "
+"responsibility is delegated to \"build backends\" -- also known as "
+"\"build systems\". This means that pip needs an interface, to interact "
+"with these build backends."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:10
+msgid "There are two main interfaces that pip uses for these interactions:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:20
+msgid "[`pyproject.toml` based](pyproject-toml)"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:21
+msgid ""
+"Standards-backed interface, that has explicit declaration and management "
+"of build dependencies."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:24
+msgid "[`setup.py` based](setup-py)"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:25
+msgid ""
+"Legacy interface, that we're working to migrate users away from. Has no "
+"good mechanisms to declare build dependencies."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:29
+msgid ""
+"Details on the individual interfaces can be found on their dedicated "
+"pages, linked above. This document covers the nuances around which build "
+"system interface pip will use for a project, as well as details that "
+"apply to all the build system interfaces that pip may use."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:34
+msgid "Determining which build system interface is used"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:36
+msgid ""
+"Currently, pip uses the `pyproject.toml` based build system interface, if"
+" a `pyproject.toml` file exists. If not, the legacy build system "
+"interface is used. The intention is to switch to using the "
+"`pyproject.toml` build system interface unconditionally and to drop "
+"support for the legacy build system interface at some point in the "
+"future."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:42
+msgid ""
+"When performing a build, pip will mention which build system interface it"
+" is using. Typically, this will take the form of a message like:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:53
+msgid ""
+"The content in the brackets, refers to which build system interface is "
+"being used."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:1
+msgid ""
+"The output uses \"pyproject.toml\" instead of \"PEP 517\" to refer to be "
+"`pyproject.toml` based build system interface."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:61
+msgid "Controlling which build system interface is used"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:63
+msgid ""
+"The [`--use-pep517`](install_--use-pep517) flag (and corresponding "
+"environment variable: `PIP_USE_PEP517`) can be used to force all packages"
+" to build using the `pyproject.toml` based build system interface. There "
+"is no way to force the use of the legacy build system interface."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:70
+msgid "Controlling `setup_requires`"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:1
+msgid ""
+"This is only relevant for projects that use setuptools as the build "
+"backend, and use the `setup_requires` keyword argument in their setup.py "
+"file."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:77
+msgid ""
+"The `setup_requires` argument in `setup.py` is used to specify build-time"
+" dependencies for a package. This has been superseded by the `build-"
+"system.requires` key in `pyproject.toml` files (per {pep}`518`). However,"
+" there are situations where you might encounter a package that uses "
+"`setup_requires` (eg: the package has not been updated to use the newer "
+"approach yet!)."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:84
+msgid ""
+"If you control the package, consider adding a `pyproject.toml` file to "
+"utilise the modern build system interface. That avoids invoking the "
+"problematic behaviour by deferring to pip for the installations."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:88
+msgid ""
+"For the end users, the best solution for dealing with packages with "
+"`setup_requires` is to install the packages listed in `setup_requires` "
+"beforehand, using a prior `pip install` command. This is because there is"
+" no way to control how these dependencies are located by `easy_install`, "
+"or how setuptools will invoke `pip` using pip's command line options -- "
+"which makes it tricky to get things working appropriately."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:95
+msgid ""
+"If you wish to ensure that `easy_install` invocations do not reach out to"
+" PyPI, you will need to configure its behaviour using a [`distutils` "
+"configuration file][distutils-config]. Here are some examples:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:99
+msgid "To have the dependency located at an alternate index with `easy_install`"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:106
+msgid ""
+"To have the dependency located from a local directory and not crawl PyPI,"
+" add this:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:114
+msgid "Historical context"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:1
+msgid ""
+"`setuptools < 52.0` will use `easy_install` to try to fulfill "
+"`setup_requires` dependencies, which can result in weird failures -- "
+"`easy_install` does not understand many of the modern Python packaging "
+"standards, and will usually attempt to install incompatible package "
+"versions or to build packages incorrectly. It also generates improper "
+"script wrappers, which don't do the right thing in many situations."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:8
+msgid ""
+"Newer versions of `setuptools` will use `pip` for these installations, "
+"but have limited ability to pass through any command line arguments. This"
+" can also result in weird failures and subtly-incorrect behaviour."
+msgstr ""
+

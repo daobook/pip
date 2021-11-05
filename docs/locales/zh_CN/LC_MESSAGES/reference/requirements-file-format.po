@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/reference/requirements-file-format.md:3
+msgid "Requirements File Format"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:5
+msgid ""
+"Requirements files serve as a list of items to be installed by pip, when "
+"using {ref}`pip install`. Files that use this format are often called "
+"\"pip requirements.txt files\", since `requirements.txt` is usually what "
+"these files are named (although, that is not a requirement)."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:1
+msgid ""
+"The requirements file format is closely tied to a number of internal "
+"details of pip (e.g., pip's command line options). The basic format is "
+"relatively stable and portable but the full syntax, as described here, is"
+" only intended for consumption by pip, and other tools should take that "
+"into account before using it for their own purposes."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:18
+msgid "Structure"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:20
+msgid ""
+"Each line of the requirements file indicates something to be installed, "
+"or arguments to {ref}`pip install`. The following forms are supported:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:23
+msgid "`[[--option]...]`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:24
+msgid "`<requirement specifier> [; markers] [[--option]...]`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:25
+msgid "`<archive url/path>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:26
+msgid "`[-e] <local project path>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:27
+msgid "`[-e] <vcs project url>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:29
+msgid ""
+"For details on requirement specifiers, see {ref}`Requirement Specifiers`."
+" For examples of all these forms, see {ref}`pip install Examples`."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:32
+msgid "Encoding"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:34
+msgid ""
+"Requirements files are `utf-8` encoding by default and also support "
+"{pep}`263` style comments to change the encoding (i.e. `# -*- coding: "
+"<encoding name> -*-`)."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:38
+msgid "Line continuations"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:40
+msgid ""
+"A line ending in an unescaped `\\` is treated as a line continuation and "
+"the newline following it is effectively ignored."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:43
+msgid "Comments"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:45
+msgid ""
+"A line that begins with `#` is treated as a comment and ignored. "
+"Whitespace followed by a `#` causes the `#` and the remainder of the line"
+" to be treated as a comment."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:49
+msgid "Comments are stripped _after_ line continuations are processed."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:51
+msgid "Supported options"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:53
+msgid ""
+"Requirements files only supports certain pip install options, which are "
+"listed below."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:56
+msgid "Global options"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:58
+msgid ""
+"The following options have an effect on the _entire_ `pip install` run, "
+"and must be specified on their individual lines."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:10
+msgid ""
+"-i, --index-url  --extra-index-url  --no-index  -c, --constraint  -r, "
+"--requirement  -e, --editable  -f, --find-links  --no-binary  --only-"
+"binary  --prefer-binary  --require-hashes  --pre  --trusted-host  --use-"
+"feature"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-i, --index-url<install_--index-url>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--extra-index-url<install_--extra-index-url>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--no-index<install_--no-index>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-c, --constraint<install_--constraint>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-r, --requirement<install_--requirement>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-e, --editable<install_--editable>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-f, --find-links<install_--find-links>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--no-binary<install_--no-binary>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--only-binary<install_--only-binary>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--prefer-binary<install_--prefer-binary>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--require-hashes<install_--require-hashes>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--pre<install_--pre>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--trusted-host<--trusted-host>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--use-feature<--use-feature>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:65
+#: ../../html/reference/requirements-file-format.md:121
+msgid "Example"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:1
+msgid ""
+"To specify {ref}`--pre <install_--pre>`, {ref}`--no-index <install_--no-"
+"index>` and two {ref}`--find-links <install_--find-links>` locations:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:77
+msgid "Per-requirement options"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:79
+msgid "The options which can be applied to individual requirements are:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:81
+msgid "{ref}`--install-option <install_--install-option>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:82
+msgid "{ref}`--global-option <install_--global-option>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:83
+msgid "`--hash` (for {ref}`Hash-Checking mode`)"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:85
+msgid "If you wish, you can refer to other requirements files, like this:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:91
+msgid ""
+"You can also refer to {ref}`constraints files <Constraints Files>`, like "
+"this:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:97
+msgid "Using environment variables"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:103
+msgid ""
+"pip supports the use of environment variables inside the requirements "
+"file."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:106
+msgid ""
+"You have to use the POSIX format for variable names including brackets "
+"around the uppercase name as shown in this example: `${API_TOKEN}`. pip "
+"will attempt to find the corresponding environment variable defined on "
+"the host system at runtime."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:1
+msgid ""
+"There is no support for other variable expansion syntaxes such as "
+"`$VARIABLE` and `%VARIABLE%`."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:116
+msgid ""
+"You can now store sensitive data (tokens, keys, etc.) in environment "
+"variables and only specify the variable name for your requirements, "
+"letting pip lookup the value at runtime. This approach aligns with the "
+"commonly used [12-factor configuration "
+"pattern](https://12factor.net/config)."
+msgstr ""
+

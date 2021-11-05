@@ -1,0 +1,1528 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/topics/authentication.md:1
+msgid "Authentication"
+msgstr ""
+
+#: ../../html/topics/authentication.md:3
+msgid "Basic HTTP authentication"
+msgstr ""
+
+#: ../../html/topics/authentication.md:5
+msgid ""
+"pip supports basic HTTP-based authentication credentials. This is done by"
+" providing the username (and optionally password) in the URL:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:12
+msgid ""
+"For indexes that only require single-part authentication tokens, provide "
+"the token as the \"username\" and do not provide a password:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:19
+msgid "Percent-encoding special characters"
+msgstr ""
+
+#: ../../html/topics/authentication.md:24
+msgid ""
+"Certain special characters are not valid in the credential part of a URL."
+" If the user or password part of your login credentials contain any of "
+"these [special characters][reserved-chars], then they must be percent-"
+"encoded. As an example, for a user with username `user` and password "
+"`he//o` accessing a repository at `pypi.company.com/simple`, the URL with"
+" credentials would look like:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:37
+msgid "netrc support"
+msgstr ""
+
+#: ../../html/topics/authentication.md:39
+msgid ""
+"pip supports loading credentials from a user's `.netrc` file. If no "
+"credentials are part of the URL, pip will attempt to get authentication "
+"credentials for the URL's hostname from the user's `.netrc` file. This "
+"behaviour comes from the underlying use of {pypi}`requests`, which in "
+"turn delegates it to the [Python standard library's `netrc` module"
+"][netrc-std-lib]."
+msgstr ""
+
+#: ../../html/topics/authentication.md:1
+msgid ""
+"As mentioned in the [standard library documentation for netrc][netrc-std-"
+"lib], only ASCII characters are allowed in `.netrc` files. Whitespace and"
+" non-printable characters are not allowed in passwords."
+msgstr ""
+
+#: ../../html/topics/authentication.md:51
+msgid ""
+"Below is an example `.netrc`, for the host `example.com`, with a user "
+"named `daniel`, using the password `qwerty`:"
+msgstr ""
+
+#: ../../html/topics/authentication.md:60
+msgid ""
+"More information about the `.netrc` file format can be found in the GNU "
+"[`ftp` man pages][netrc-docs]."
+msgstr ""
+
+#: ../../html/topics/authentication.md:66
+msgid "Keyring Support"
+msgstr ""
+
+#: ../../html/topics/authentication.md:68
+msgid ""
+"pip supports loading credentials stored in your keyring using the "
+"{pypi}`keyring` library."
+msgstr ""
+
+#: ../../html/topics/authentication.md:77
+msgid ""
+"Note that `keyring` (the Python package) needs to be installed separately"
+" from pip. This can create a bootstrapping issue if you need the "
+"credentials stored in the keyring to download and install keyring."
+msgstr ""
+
+#: ../../html/topics/authentication.md:81
+msgid ""
+"It is, thus, expected that users that wish to use pip's keyring support "
+"have some mechanism for downloading and installing {pypi}`keyring` in "
+"their Python environment."
+msgstr ""
+
+#: ../../html/topics/caching.md:1
+msgid "Caching"
+msgstr ""
+
+#: ../../html/topics/caching.md:7
+msgid ""
+"pip provides an on-by-default caching, designed to reduce the amount of "
+"time spent on duplicate downloads and builds."
+msgstr ""
+
+#: ../../html/topics/caching.md:10
+msgid "What is cached"
+msgstr ""
+
+#: ../../html/topics/caching.md:12
+msgid "HTTP responses"
+msgstr ""
+
+#: ../../html/topics/caching.md:14
+msgid "This cache functions like a web browser cache."
+msgstr ""
+
+#: ../../html/topics/caching.md:16
+msgid ""
+"When making any HTTP request, pip will first check its local cache to "
+"determine if it has a suitable response stored for that request which has"
+" not expired. If it does then it returns that response and doesn't re-"
+"download the content."
+msgstr ""
+
+#: ../../html/topics/caching.md:20
+msgid ""
+"If it has a response stored but it has expired, then it will attempt to "
+"make a conditional request to refresh the cache which will either return "
+"an empty response telling pip to simply use the cached item (and refresh "
+"the expiration timer) or it will return a whole new response which pip "
+"can then store in the cache."
+msgstr ""
+
+#: ../../html/topics/caching.md:26
+msgid ""
+"While this cache attempts to minimize network activity, it does not "
+"prevent network access altogether. If you want a local install solution "
+"that circumvents accessing PyPI, see {ref}`Installing from local "
+"packages`."
+msgstr ""
+
+#: ../../html/topics/caching.md:32
+msgid "Locally built wheels"
+msgstr ""
+
+#: ../../html/topics/caching.md:34
+msgid "pip attempts to use wheels from its local wheel cache whenever possible."
+msgstr ""
+
+#: ../../html/topics/caching.md:36
+msgid ""
+"This means that if there is a cached wheel for the same version of a "
+"specific package name, pip will use that wheel instead of rebuilding the "
+"project."
+msgstr ""
+
+#: ../../html/topics/caching.md:39
+msgid ""
+"When no wheels are found for a source distribution, pip will attempt to "
+"build a wheel using the package's build system. If the build is "
+"successful, this wheel is added to the cache and used in subsequent "
+"installs for the same package version."
+msgstr ""
+
+#: ../../html/topics/caching.md:44
+msgid ""
+"Wheels built from source distributions provided to pip as a direct path "
+"(such as `pip install .`) are not cached across runs, though they may be "
+"reused within the same `pip` execution."
+msgstr ""
+
+#: ../../html/topics/caching.md:1
+msgid ""
+"pip now caches wheels when building from an immutable Git reference (i.e."
+" a commit hash)."
+msgstr ""
+
+#: ../../html/topics/caching.md:53
+msgid "Avoiding caching"
+msgstr ""
+
+#: ../../html/topics/caching.md:55
+msgid ""
+"pip tries to use its cache whenever possible, and it is designed do the "
+"right thing by default."
+msgstr ""
+
+#: ../../html/topics/caching.md:58
+msgid ""
+"In some cases, pip's caching behaviour can be undesirable. As an example,"
+" if you have package with optional C extensions, that generates a pure "
+"Python wheel when the C extension can’t be built, pip will use that "
+"cached wheel even when you later invoke it from an environment that could"
+" have built those optional C extensions. This is because pip is seeing a "
+"cached wheel for that matches the package being built, and pip assumes "
+"that the result of building a package from a package index is "
+"deterministic."
+msgstr ""
+
+#: ../../html/topics/caching.md:66
+msgid ""
+"The recommended approach for dealing with these situations is to directly"
+" install from a source distribution instead of letting pip auto-discover "
+"the package when it is trying to install. Installing directly from a "
+"source distribution will make pip build a wheel, regardless of whether "
+"there is a matching cached wheel. This usually means doing something "
+"like:"
+msgstr ""
+
+#: ../../html/topics/caching.md:13
+msgid ""
+"Linux  $ python -m pip download sampleproject==1.0.0 --no-binary :all: $ "
+"python -m pip install sampleproject-1.0.0.tar.gz MacOS  $ python -m pip "
+"download sampleproject==1.0.0 --no-binary :all: $ python -m pip install "
+"sampleproject-1.0.0.tar.gz Windows  C:> py -m pip download "
+"sampleproject==1.0.0 --no-binary :all: C:> py -m pip install "
+"sampleproject-1.0.0.tar.gz"
+msgstr ""
+
+#: ../../html/topics/caching.md:77
+msgid ""
+"It is also a good idea to remove the offending cached wheel using the "
+"{ref}`pip cache` command."
+msgstr ""
+
+#: ../../html/topics/caching.md:80
+msgid "Cache management"
+msgstr ""
+
+#: ../../html/topics/caching.md:82
+msgid "The {ref}`pip cache` command can be used to manage pip's cache."
+msgstr ""
+
+#: ../../html/topics/caching.md:84
+msgid ""
+"The exact filesystem structure of pip's cache is considered to be an "
+"implementation detail and may change between any two versions of pip."
+msgstr ""
+
+#: ../../html/topics/caching.md:87
+msgid "Disabling caching"
+msgstr ""
+
+#: ../../html/topics/caching.md:89
+msgid ""
+"pip's caching behaviour is disabled by passing the `--no-cache-dir` "
+"option."
+msgstr ""
+
+#: ../../html/topics/caching.md:91
+msgid ""
+"It is, however, recommended to **NOT** disable pip's caching. Doing so "
+"can significantly slow down pip (due to repeated operations and package "
+"builds) and result in significantly more network usage."
+msgstr ""
+
+#: ../../html/topics/configuration.md:1
+msgid "Configuration"
+msgstr ""
+
+#: ../../html/topics/configuration.md:3
+msgid "pip allows a user to change its behaviour via 3 mechanisms:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid "command line options"
+msgstr ""
+
+#: ../../html/topics/configuration.md:6
+msgid "environment variables"
+msgstr ""
+
+#: ../../html/topics/configuration.md:7
+msgid "configuration files"
+msgstr ""
+
+#: ../../html/topics/configuration.md:9
+msgid ""
+"This page explains how the configuration files and environment variables "
+"work, and how they are related to pip's various command line options."
+msgstr ""
+
+#: ../../html/topics/configuration.md:12
+msgid "Configuration Files"
+msgstr ""
+
+#: ../../html/topics/configuration.md:14
+msgid ""
+"Configuration files can change the default values for command line "
+"option. They are written using a standard INI style configuration files."
+msgstr ""
+
+#: ../../html/topics/configuration.md:17
+msgid "pip has 3 \"levels\" of configuration files:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:19
+msgid "`global`: system-wide configuration file, shared across users."
+msgstr ""
+
+#: ../../html/topics/configuration.md:20
+msgid "`user`: per-user configuration file."
+msgstr ""
+
+#: ../../html/topics/configuration.md:21
+msgid "`site`: per-environment configuration file; i.e. per-virtualenv."
+msgstr ""
+
+#: ../../html/topics/configuration.md:23
+msgid "Location"
+msgstr ""
+
+#: ../../html/topics/configuration.md:25
+msgid ""
+"pip's configuration files are located in fairly standard locations. This "
+"location is different on different operating systems, and has some "
+"additional complexity for backwards compatibility reasons."
+msgstr ""
+
+#: ../../html/topics/configuration.md:1 ../../html/topics/configuration.md:93
+msgid "Global"
+msgstr ""
+
+#: ../../html/topics/configuration.md:2
+msgid ""
+"In a \"pip\" subdirectory of any of the paths set in the environment "
+"variable `XDG_CONFIG_DIRS` (if it exists), for example "
+"{file}`/etc/xdg/pip/pip.conf`."
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid "This will be followed by loading {file}`/etc/pip.conf`."
+msgstr ""
+
+#: ../../html/topics/configuration.md:4 ../../html/topics/configuration.md:7
+#: ../../html/topics/configuration.md:8 ../../html/topics/configuration.md:94
+msgid "User"
+msgstr ""
+
+#: ../../html/topics/configuration.md:8
+msgid ""
+"{file}`$HOME/.config/pip/pip.conf`, which respects the `XDG_CONFIG_HOME` "
+"environment variable."
+msgstr ""
+
+#: ../../html/topics/configuration.md:9 ../../html/topics/configuration.md:10
+msgid ""
+"The legacy \"per-user\" configuration file is also loaded, if it exists: "
+"{file}`$HOME/.pip/pip.conf`."
+msgstr ""
+
+#: ../../html/topics/configuration.md:11 ../../html/topics/configuration.md:12
+#: ../../html/topics/configuration.md:13 ../../html/topics/configuration.md:95
+msgid "Site"
+msgstr ""
+
+#: ../../html/topics/configuration.md:12 ../../html/topics/configuration.md:13
+msgid "{file}`$VIRTUAL_ENV/pip.conf`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:2
+msgid "{file}`/Library/Application Support/pip/pip.conf`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid ""
+"{file}`$HOME/Library/Application Support/pip/pip.conf` if directory "
+"`$HOME/Library/Application Support/pip` exists else "
+"{file}`$HOME/.config/pip/pip.conf`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:2
+msgid ""
+"On Windows 7 and later: {file}`C:\\\\ProgramData\\\\pip\\\\pip.ini` "
+"(hidden but writeable)"
+msgstr ""
+
+#: ../../html/topics/configuration.md:4
+msgid "On Windows Vista: Global configuration is not supported."
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid ""
+"On Windows XP: {file}`C:\\\\Documents and Settings\\\\All "
+"Users\\\\Application Data\\\\pip\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:9
+msgid "{file}`%APPDATA%\\\\pip\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:11
+msgid ""
+"The legacy \"per-user\" configuration file is also loaded, if it exists: "
+"{file}`%HOME%\\\\pip\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:14
+msgid "{file}`%VIRTUAL_ENV%\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:80
+msgid "`PIP_CONFIG_FILE`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:82
+msgid ""
+"Additionally, the environment variable `PIP_CONFIG_FILE` can be used to "
+"specify a configuration file that's loaded first, and whose values are "
+"overridden by the values set in the aforementioned files. Setting this to"
+" {any}`os.devnull` disables the loading of _all_ configuration files."
+msgstr ""
+
+#: ../../html/topics/configuration.md:87
+msgid "Loading order"
+msgstr ""
+
+#: ../../html/topics/configuration.md:89
+msgid ""
+"When multiple configuration files are found, pip combines them in the "
+"following order:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:92
+msgid "`PIP_CONFIG_FILE`, if given."
+msgstr ""
+
+#: ../../html/topics/configuration.md:97
+msgid ""
+"Each file read overrides any values read from previous files, so if the "
+"global timeout is specified in both the global file and the per-user file"
+" then the latter value will be used."
+msgstr ""
+
+#: ../../html/topics/configuration.md:101
+msgid "Naming"
+msgstr ""
+
+#: ../../html/topics/configuration.md:103
+msgid "The names of the settings are derived from the long command line option."
+msgstr ""
+
+#: ../../html/topics/configuration.md:105
+msgid ""
+"As an example, if you want to use a different package index (`--index-"
+"url`) and set the HTTP timeout (`--default-timeout`) to 60 seconds, your "
+"config file would look like this:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:115
+msgid "Per-command section"
+msgstr ""
+
+#: ../../html/topics/configuration.md:117
+msgid ""
+"Each subcommand can be configured optionally in its own section. This "
+"overrides the global setting with the same name."
+msgstr ""
+
+#: ../../html/topics/configuration.md:120
+msgid ""
+"As an example, if you want to decrease the `timeout` to `10` seconds when"
+" running the {ref}`pip freeze`, and use `60` seconds for all other "
+"commands:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:131
+msgid "Boolean options"
+msgstr ""
+
+#: ../../html/topics/configuration.md:133
+msgid ""
+"Boolean options like `--ignore-installed` or `--no-dependencies` can be "
+"set like this:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:142
+msgid ""
+"To enable the boolean options `--no-compile`, `--no-warn-script-location`"
+" and `--no-cache-dir`, falsy values have to be used:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:154
+msgid "Repeatable options"
+msgstr ""
+
+#: ../../html/topics/configuration.md:156
+msgid ""
+"For options which can be repeated like `--verbose` and `--quiet`, a non-"
+"negative integer can be used to represent the level to be specified:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:165
+msgid ""
+"It is possible to append values to a section within a configuration file."
+" This is applicable to appending options like `--find-links` or "
+"`--trusted-host`, which can be written on multiple lines:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:184
+msgid ""
+"This enables users to add additional values in the order of entry for "
+"such command line arguments."
+msgstr ""
+
+#: ../../html/topics/configuration.md:187
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../html/topics/configuration.md:189
+msgid ""
+"pip's command line options can be set with environment variables using "
+"the format `PIP_<UPPER_LONG_NAME>` . Dashes (`-`) have to be replaced "
+"with underscores (`_`)."
+msgstr ""
+
+#: ../../html/topics/configuration.md:193
+msgid "`PIP_DEFAULT_TIMEOUT=60` is the same as `--default-timeout=60`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:198
+msgid "is the same as"
+msgstr ""
+
+#: ../../html/topics/configuration.md:204
+msgid ""
+"Repeatable options that do not take a value (such as `--verbose`) can be "
+"specified using the number of repetitions:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:207
+msgid "`PIP_VERBOSE=3` is the same as `pip install -vvv`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:1
+msgid ""
+"Environment variables set to an empty string (like with `export X=` on "
+"Unix) will **not** be treated as false. Use `no`, `false` or `0` instead."
+msgstr ""
+
+#: ../../html/topics/configuration.md:214
+msgid "Precedence / Override order"
+msgstr ""
+
+#: ../../html/topics/configuration.md:216
+msgid ""
+"Command line options have override environment variables, which override "
+"the values in a configuration file. Within the configuration file, values"
+" in command-specific sections over values in the global section."
+msgstr ""
+
+#: ../../html/topics/configuration.md:220
+msgid "Examples:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:222
+msgid "`--host=foo` overrides `PIP_HOST=foo`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:223
+msgid "`PIP_HOST=foo` overrides a config file with `[global] host = foo`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:224
+msgid ""
+"A command specific section in the config file `[<command>] host = bar` "
+"overrides the option with same name in the `[global]` config file "
+"section."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:1
+msgid "Dependency Resolution"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:3
+msgid ""
+"pip is capable of determining and installing the dependencies of "
+"packages. The process of determining which version of a dependency to "
+"install is known as dependency resolution. This behaviour can be disabled"
+" by passing {any}`--no-deps` to {any}`pip install`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:8
+msgid "How it works"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:10
+msgid ""
+"When a user does a `pip install` (e.g. `pip install tea`), pip needs to "
+"work out the package's dependencies (e.g. `spoon`, `hot-water`, `tea-"
+"leaves` etc.) and what the versions of each of those dependencies it "
+"should install."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:14
+msgid ""
+"At the start of a `pip install` run, pip does not have all the dependency"
+" information of the requested packages. It needs to work out the "
+"dependencies of the requested packages, the dependencies of those "
+"dependencies, and so on. Over the course of the dependency resolution "
+"process, pip will need to download distribution files of the packages "
+"which are used to get the dependencies of a package."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:21
+msgid "Backtracking"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:1
+msgid "pip's dependency resolver is now capable of backtracking."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:27
+msgid ""
+"During dependency resolution, pip needs to make assumptions about the "
+"package versions it needs to install and, later, check these assumptions "
+"were not incorrect. When pip finds that an assumption it made earlier is "
+"incorrect, it has to backtrack, which means also discarding some of the "
+"work that has already been done, and going back to choose another path."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:33
+msgid ""
+"This can look like pip downloading multiple versions of the same package,"
+" since pip explicitly presents each download to the user. The "
+"backtracking of choices made during is not unexpected behaviour or a bug."
+" It is part of how dependency resolution for Python packages works."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+#: ../../html/topics/dependency-resolution.md:38
+#: ../../html/topics/repeatable-installs.md:66
+#: ../../html/topics/vcs-support.md:145
+msgid "Example"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:1
+msgid ""
+"The user requests `pip install tea`. The package `tea` declares a "
+"dependency on `hot-water`, `spoon`, `cup`, amongst others."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:4
+msgid ""
+"pip starts by picking the most recent version of `tea` and get the list "
+"of dependencies of that version of `tea`. It will then repeat the process"
+" for those packages, picking the most recent version of `spoon` and then "
+"`cup`. Now, pip notices that the version of `cup` it has chosen is not "
+"compatible with the version of `spoon` it has chosen. Thus, pip will \"go"
+" back\" (backtrack) and try to use another version of `cup`. If it is "
+"successful, it will continue onto the next package (like `sugar`). "
+"Otherwise, it will continue to backtrack on `cup` until it finds a "
+"version of `cup` that is compatible with all the other packages."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:14
+msgid "This can look like:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:55
+msgid ""
+"These multiple `Downloading cup-{version}` lines show that pip is "
+"backtracking choices it is making during dependency resolution."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:97
+msgid ""
+"If pip starts backtracking during dependency resolution, it does not know"
+" how many choices it will reconsider, and how much computation would be "
+"needed."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:100
+msgid ""
+"For the user, this means it can take a long time to complete when pip "
+"starts backtracking. In the case where a package has a lot of versions, "
+"arriving at a good candidate can take a lot of time. The amount of time "
+"depends on the package size, the number of versions pip must try, and "
+"various other factors."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:105
+msgid ""
+"Backtracking reduces the risk that installing a new package will "
+"accidentally break an existing installed package, and so reduces the risk"
+" that your environment gets messed up. To do this, pip has to do more "
+"work, to find out which version of a package is a good candidate to "
+"install."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:110
+msgid "Possible ways to reduce backtracking"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:112
+msgid ""
+"There is no one-size-fits-all answer to situations where pip is "
+"backtracking excessively during dependency resolution. There are ways to "
+"reduce the degree to which pip might backtrack though. Nearly all of "
+"these approaches require some amount of trial and error."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:117
+msgid "Allow pip to complete its backtracking"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:119
+msgid ""
+"In most cases, pip will complete the backtracking process successfully. "
+"This could take a very long time to complete, so this may not be your "
+"preferred option."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:123
+msgid ""
+"However, it is a possible that pip will not be able to find a set of "
+"compatible versions. For this, pip will try every possible combination "
+"that it needs to and determine that there is no compatible set."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:127
+msgid ""
+"If you'd prefer not to wait, you can interrupt pip (Ctrl+c) and try the "
+"strategies listed below."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:130
+msgid "Reduce the number of versions pip is trying to use"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:132
+msgid ""
+"It is usually a good idea to add constraints the package(s) that pip is "
+"backtracking on (e.g. in the above example - `cup`)."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:134
+msgid "You could try something like:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:11
+msgid ""
+"Linux  $ python -m pip install tea \"cup >= 3.13\" MacOS  $ python -m pip"
+" install tea \"cup >= 3.13\" Windows  C:> py -m pip install tea \"cup >= "
+"3.13\""
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:140
+msgid ""
+"This will reduce the number of versions of `cup` it tries, and possibly "
+"reduce the time pip takes to install."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:143
+msgid ""
+"There is a possibility that the addition constraint is incorrect. When "
+"this happens, the reduced search space makes it easier for pip to more "
+"quickly determine what caused the conflict and present that to the user. "
+"It could also result in pip backtracking on a different package due to "
+"some other conflict."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:148
+msgid "Use constraint files or lockfiles"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:150
+msgid ""
+"This option is a progression of the previous section. It requires users "
+"to know how to inspect:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:153
+msgid "the packages they're trying to install"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:154
+msgid "the package release frequency and compatibility policies"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:155
+msgid "their release notes and changelogs from past versions"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:157
+msgid ""
+"During deployment, you can create a lockfile stating the exact package "
+"and version number for for each dependency of that package. You can "
+"create this with `pip-tools <https://github.com/jazzband/pip-"
+"tools/>`\\_\\_."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:161
+msgid ""
+"This means the \"work\" is done once during development process, and thus"
+" will avoid performing dependency resolution during deployment."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:164
+msgid "Dealing with dependency conflicts"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:166
+msgid ""
+"This section provides practical suggestions to pip users who encounter a "
+"`ResolutionImpossible` error, where pip cannot install their specified "
+"packages due to conflicting dependencies."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:170
+msgid "Understanding your error message"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:172
+msgid ""
+"When you get a `ResolutionImpossible` error, you might see something like"
+" this:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid ""
+"Linux  $ python -m pip install \"pytest < 4.6\" pytest-cov==2.12.1 "
+"[regular pip output] ERROR: Cannot install pytest-cov==2.12.1 and "
+"pytest<4.6 because these package versions have conflicting dependencies."
+"  The conflict is caused by:     The user requested pytest<4.6     "
+"pytest-cov 2.12.1 depends on pytest>=4.6 MacOS  $ python -m pip install "
+"\"pytest < 4.6\" pytest-cov==2.12.1 [regular pip output] ERROR: Cannot "
+"install pytest-cov==2.12.1 and pytest<4.6 because these package versions "
+"have conflicting dependencies.  The conflict is caused by:     The user "
+"requested pytest<4.6     pytest-cov 2.12.1 depends on pytest>=4.6 Windows"
+"  C:> py -m pip install \"pytest < 4.6\" pytest-cov==2.12.1 [regular pip "
+"output] ERROR: Cannot install pytest-cov==2.12.1 and pytest<4.6 because "
+"these package versions have conflicting dependencies.  The conflict is "
+"caused by:     The user requested pytest<4.6     pytest-cov 2.12.1 "
+"depends on pytest>=4.6"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:185
+msgid ""
+"In this example, pip cannot install the packages requested because they "
+"are asking for conflicting versions of pytest."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:188
+msgid ""
+"`pytest-cov` version `2.12.1`, requires `pytest` with a version or equal "
+"to `4.6`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:190
+msgid ""
+"`package_tea` version `4.3.0` depends on version `2.3.1` of "
+"`package_water`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:193
+msgid ""
+"Sometimes these messages are straightforward to read, because they use "
+"commonly understood comparison operators to specify the required version "
+"(e.g. `<` or `>`)."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:197
+msgid ""
+"However, Python packaging also supports some more complex ways for "
+"specifying package versions (e.g. `~=` or `*`):"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Operator"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Description"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`>`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Any version greater than the specified version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`>3.1`: any version greater than `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`<`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Any version less than the specified version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`<3.1`: any version less than `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`<=`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Any version less than or equal to the specified version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`<=3.1`: any version less than or equal to `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`>=`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Any version greater than or equal to the specified version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`>=3.1`: version `3.1` and greater."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`==`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Exactly the specified version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`==3.1`: only `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`!=`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Any version not equal to the specified version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`!=3.1`: any version other than `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`~=`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Any compatible{sup}`1` version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`~=3.1`: any version compatible{sup}`1` with `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`*`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "Can be used at the end of a version number to represent _all_."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:23
+msgid "`==3.1.*`: any version that starts with `3.1`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:211
+msgid ""
+"{sup}`1` Compatible versions are higher versions that only differ in the "
+"final segment. `~=3.1.2` is equivalent to `>=3.1.2, ==3.1.*`. `~=3.1` is "
+"equivalent to `>=3.1, ==3.*`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:214
+msgid ""
+"The detailed specification of supported comparison operators can be found"
+" in {pep}`440`."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:217
+msgid "Possible solutions"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:219
+msgid ""
+"The solution to your error will depend on your individual use case. Here "
+"are some things to try:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:222
+msgid "Audit your top level requirements"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:224
+msgid ""
+"As a first step, it is useful to audit your project and remove any "
+"unnecessary or out of date requirements (e.g. from your `setup.py` or "
+"`requirements.txt` files). Removing these can significantly reduce the "
+"complexity of your dependency tree, thereby reducing opportunities for "
+"conflicts to occur."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:230
+msgid "Loosen your top level requirements"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:232
+msgid ""
+"Sometimes the packages that you have asked pip to install are "
+"incompatible because you have been too strict when you specified the "
+"package version."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:236
+msgid ""
+"In our first example both `package_coffee` and `package_tea` have been "
+"_pinned_ to use specific versions (`package_coffee==0.44.1b0 "
+"package_tea==4.3.0`)."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:240
+msgid ""
+"To find a version of both `package_coffee` and `package_tea` that depend "
+"on the same version of `package_water`, you might consider:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:243
+msgid ""
+"Loosening the range of packages that you are prepared to install (e.g. "
+"`pip install \"package_coffee>0.44.*\" \"package_tea>4.0.0\"`)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:245
+msgid ""
+"Asking pip to install _any_ version of `package_coffee` and `package_tea`"
+" by removing the version specifiers altogether (e.g. `pip install "
+"package_coffee package_tea`)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:249
+msgid ""
+"In the second case, pip will automatically find a version of both "
+"`package_coffee` and `package_tea` that depend on the same version of "
+"`package_water`, installing:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:253
+msgid "`package_coffee 0.46.0b0`, which depends on `package_water 2.6.1`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:254
+msgid "`package_tea 4.3.0` which _also_ depends on `package_water 2.6.1`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:256
+msgid ""
+"If you want to prioritize one package over another, you can add version "
+"specifiers to _only_ the more important package:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:11
+msgid ""
+"Linux  $ python -m pip install package_coffee==0.44.1b0 package_tea MacOS"
+"  $ python -m pip install package_coffee==0.44.1b0 package_tea Windows  "
+"C:> py -m pip install package_coffee==0.44.1b0 package_tea"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:263
+msgid "This will result in:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:265
+msgid "`package_coffee 0.44.1b0`, which depends on `package_water 2.6.1`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:266
+msgid "`package_tea 4.1.3` which also depends on `package_water 2.6.1`"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:268
+msgid ""
+"Now that you have resolved the issue, you can repin the compatible "
+"package versions as required."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:271
+msgid "Loosen the requirements of your dependencies"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:273
+msgid ""
+"Assuming that you cannot resolve the conflict by loosening the version of"
+" the package you require (as above), you can try to fix the issue on your"
+" _dependency_ by:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:277
+msgid "Requesting that the package maintainers loosen _their_ dependencies"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:278
+msgid "Forking the package and loosening the dependencies yourself"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:280
+msgid ""
+":::{warning} If you choose to fork the package yourself, you are _opting "
+"out_ of any support provided by the package maintainers. Proceed at your "
+"own risk! :::"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:285
+msgid "All requirements are appropriate, but a solution does not exist"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:287
+msgid ""
+"Sometimes it's simply impossible to find a combination of package "
+"versions that do not conflict. Welcome to [dependency hell]."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:290
+msgid "In this situation, you could consider:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:292
+msgid ""
+"Using an alternative package, if that is acceptable for your project. See"
+" [Awesome Python] for similar packages."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:294
+msgid ""
+"Refactoring your project to reduce the number of dependencies (for "
+"example, by breaking up a monolithic code base into smaller pieces)."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:297
+msgid "Getting help"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:299
+msgid ""
+"If none of the suggestions above work for you, we recommend that you ask "
+"for help on:"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:302
+msgid "[Python user Discourse](https://discuss.python.org/c/users/7)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:303
+msgid "[Python user forums](https://www.python.org/community/forums/)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:304
+msgid "[Python developers Slack channel](https://pythondev.slack.com/)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:305
+msgid "[Python IRC](https://www.python.org/community/irc/)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:306
+msgid "[Stack Overflow](https://stackoverflow.com/questions/tagged/python)"
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:308
+msgid "See [\"How do I ask a good question?\"] for tips on asking for help."
+msgstr ""
+
+#: ../../html/topics/dependency-resolution.md:310
+msgid ""
+"Unfortunately, **the pip team cannot provide support for individual "
+"dependency conflict errors**. Please _only_ open a ticket on [pip's issue"
+" tracker](https://github.com/pypa/pip/issues) if you believe that your "
+"problem has exposed a bug in pip."
+msgstr ""
+
+#: ../../html/topics/index.md:1
+msgid "Topic Guides"
+msgstr ""
+
+#: ../../html/topics/index.md:3
+msgid "These pages provide detailed information on individual topics."
+msgstr ""
+
+#: ../../html/topics/index.md:1
+msgid ""
+"This section of the documentation is currently being fleshed out. See "
+"{issue}`9475` for more details."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid "Repeatable Installs"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:3
+msgid ""
+"pip can be used to achieve various levels of repeatable environments. "
+"This page walks through increasingly stricter definitions of what "
+"\"repeatable\" means."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:6
+msgid "Pinning the package versions"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:8
+msgid ""
+"Pinning package versions of your dependencies in the requirements file "
+"protects you from bugs or incompatibilities in newly released versions:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid ""
+"Pinning refers to using the `==` operator to require the package to be a "
+"specific version."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:21
+msgid ""
+"A requirements file, containing pinned package versions can be generated "
+"using {ref}`pip freeze`. This would not only the top-level packages, but "
+"also all of their transitive dependencies. Performing the installation "
+"using {ref}`--no-deps <install_--no-deps>` would provide an extra dose of"
+" insurance against installing anything not explicitly listed."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:27
+msgid ""
+"This strategy is easy to implement and works across OSes and "
+"architectures. However, it trusts the locations you're fetching the "
+"packages from (like PyPI) and the certificate authority chain. It also "
+"relies on those locations not allowing packages to change without a "
+"version increase. (PyPI does protect against this.)"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:33
+msgid "Hash-checking"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:35
+msgid ""
+"Beyond pinning version numbers, you can add hashes against which to "
+"verify downloaded packages:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:42
+msgid ""
+"This protects against a compromise of PyPI or the HTTPS certificate "
+"chain. It also guards against a package changing without its version "
+"number changing (on indexes that allow this). This approach is a good fit"
+" for automated server deployments."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:47
+msgid ""
+"Hash-checking mode is a labour-saving alternative to running a private "
+"index server containing approved packages: it removes the need to upload "
+"packages, maintain ACLs, and keep an audit trail (which a VCS gives you "
+"on the requirements file for free). It can also substitute for a vendored"
+" library, providing easier upgrades and less VCS noise. It does not, of "
+"course, provide the availability benefits of a private index or a "
+"vendored library."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:54
+msgid ""
+"[pip-tools] is a package that builds upon pip, and provides a good "
+"workflow for managing and generating requirements files."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:59
+msgid "Using a wheelhouse (AKA Installation Bundles)"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:61
+msgid ""
+"{ref}`pip wheel` can be used to generate and package all of a project's "
+"dependencies, with all the compilation performed, into a single directory"
+" that can be converted into a single archive. This archive then allows "
+"installation when index servers are unavailable and avoids time-consuming"
+" recompilation."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid "Creating the bundle, on a modern Unix system:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:10
+msgid "Installing from the bundle, on a modern Unix system:"
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:85
+msgid ""
+"Note that such a wheelhouse contains compiled packages, which are "
+"typically OS and architecture-specific, so these archives are not "
+"necessarily portable across machines."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:89
+msgid ""
+"Hash-checking mode can also be used along with this method (since this "
+"uses a requirements file as well), to ensure that future archives are "
+"built with identical packages."
+msgstr ""
+
+#: ../../html/topics/repeatable-installs.md:1
+msgid ""
+"Beware of the `setup_requires` keyword arg in {file}`setup.py`. The "
+"(rare) packages that use it will cause those dependencies to be "
+"downloaded by setuptools directly, skipping pip's protections. If you "
+"need to use such a package, see {ref}`Controlling setup_requires "
+"<controlling-setup_requires>`."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:1
+msgid "VCS Support"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:3
+msgid ""
+"pip supports installing from various version control systems (VCS). This "
+"support requires a working executable to be available (for the version "
+"control system being used). It is used through URL prefixes:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:7
+msgid "Git -- `git+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:8
+msgid "Mercurial -- `hg+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:9
+msgid "Subversion -- `svn+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:10
+msgid "Bazaar -- `bzr+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:12
+msgid "Supported VCS"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:14
+msgid "Git"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:16
+msgid ""
+"The supported schemes are `git+file`, `git+https`, `git+ssh`, `git+http`,"
+" `git+git` and `git`. Here are some of the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:1
+msgid ""
+"The use of `git`, `git+git`, and `git+http` schemes is discouraged. The "
+"former two use [the Git Protocol], which lacks authentication, and HTTP "
+"is insecure due to lack of TLS based encryption."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:33
+msgid ""
+"It is also possible to specify a \"git ref\" such as branch name, a "
+"commit hash or a tag name:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:43
+msgid ""
+"When passing a commit hash, specifying a full hash is preferable to a "
+"partial hash because a full hash allows pip to operate more efficiently "
+"(e.g. by making fewer network calls)."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:47
+msgid "Mercurial"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:49
+msgid ""
+"The supported schemes are `hg+file`, `hg+http`, `hg+https`, `hg+ssh` and "
+"`hg+static-http`. Here are some of the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:59
+msgid ""
+"It is also possible to specify a revision number, a revision hash, a tag "
+"name or a local branch name:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:69
+msgid "Subversion"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:71
+msgid ""
+"The supported schemes are `svn`, `svn+svn`, `svn+http`, `svn+https` and "
+"`svn+ssh`. Here are some of the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:80
+msgid "You can also give specific revisions to an SVN URL, like so:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:87
+msgid ""
+"Note that you need to use [Editable VCS installs](#editable-vcs-installs)"
+" for using specific revisions from Subversion."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:90
+msgid "Bazaar"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:92
+msgid ""
+"The supported schemes are `bzr+http`, `bzr+https`, `bzr+ssh`, `bzr+sftp`,"
+" `bzr+ftp` and `bzr+lp`. Here are the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:103
+msgid "Tags or revisions can be installed like so:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:112
+msgid "Editable VCS installs"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:114
+msgid ""
+"VCS projects can be installed in {ref}`editable mode <editable-installs>`"
+" (using the {ref}`--editable <install_--editable>` option) or not."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:117
+msgid "The default clone location (for editable installs) is:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:119
+msgid "`<venv path>/src/SomeProject` in virtual environments"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:120
+msgid "`<cwd>/src/SomeProject` for global Python installs"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:122
+msgid ""
+"The {ref}`--src <install_--src>` option can be used to modify this "
+"location."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:124
+msgid ""
+"For non-editable installs, the project is built locally in a temp dir and"
+" then installed normally."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:127
+msgid ""
+"Note that if a satisfactory version of the package is already installed, "
+"the VCS source will not overwrite it without an `--upgrade` flag. "
+"Further, pip looks at the package version, at the target revision to "
+"determine what action to take on the VCS requirement (not the commit "
+"itself)."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:132
+msgid ""
+"The {ref}`pip freeze` subcommand will record the VCS requirement "
+"specifier (referencing a specific commit) only if the install is done "
+"with the editable option."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:136
+msgid "URL fragments"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:138
+msgid "pip looks at 2 fragments for VCS URLs:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:140
+msgid ""
+"`egg`: For specifying the \"project name\" for use in pip's dependency "
+"resolution logic. eg: `egg=project_name`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:142
+msgid ""
+"`subdirectory`: For specifying the path to the Python package, when it is"
+" not in the root of the VCS directory. eg: `pkg_dir`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:1
+msgid "If your repository layout is:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:12
+msgid "Then, to install from this repository, the syntax would be:"
+msgstr ""
+

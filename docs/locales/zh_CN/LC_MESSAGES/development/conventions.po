@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/conventions.rst:5
+msgid "Documentation Conventions"
+msgstr ""
+
+#: ../../html/development/conventions.rst:7
+msgid ""
+"This document describes the conventions used in pip's documentation. We "
+"expect it to evolve over time as additional conventions are identified "
+"and past conventions are rendered obsolete."
+msgstr ""
+
+#: ../../html/development/conventions.rst:13
+msgid ""
+"Currently, these conventions are not enforced automatically, and need to "
+"be verified manually during code review. We are interested in linters "
+"that can help us enforce these conventions automatically."
+msgstr ""
+
+#: ../../html/development/conventions.rst:19
+msgid "Files"
+msgstr ""
+
+#: ../../html/development/conventions.rst:22
+msgid "Naming"
+msgstr ""
+
+#: ../../html/development/conventions.rst:24
+msgid "Folder names should be a single word, all lowercase."
+msgstr ""
+
+#: ../../html/development/conventions.rst:26
+msgid ""
+"File names must use the kebab-case style (all lowercase, hyphen for "
+"separating words) and have the extension ``.rst``."
+msgstr ""
+
+#: ../../html/development/conventions.rst:30
+msgid "Encoding"
+msgstr ""
+
+#: ../../html/development/conventions.rst:32
+msgid "All files in our documentation must use UTF-8 encoding."
+msgstr ""
+
+#: ../../html/development/conventions.rst:35
+msgid "Line Length"
+msgstr ""
+
+#: ../../html/development/conventions.rst:37
+msgid ""
+"Limit all lines to a maximum of 72 characters, where possible. This may "
+"be exceeded when it does not make sense to abide by it (eg. long links, "
+"code blocks)."
+msgstr ""
+
+#: ../../html/development/conventions.rst:42
+msgid "Headings"
+msgstr ""
+
+#: ../../html/development/conventions.rst:44
+msgid "Use the following symbols to create headings:"
+msgstr ""
+
+#: ../../html/development/conventions.rst:46
+msgid "``=`` with overline"
+msgstr ""
+
+#: ../../html/development/conventions.rst:47
+msgid "``=``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:48
+msgid "``-``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:49
+msgid "``^``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:50
+msgid "``'``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:51
+msgid "``*``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:53
+msgid ""
+"For visual separation from the rest of the content, all other headings "
+"must have one empty line before and after. Heading 2 (``=``) should have "
+"two empty lines before, for indicating the end of the section prior to "
+"it."
+msgstr ""
+
+#: ../../html/development/conventions.rst:94
+msgid "Writing"
+msgstr ""
+
+#: ../../html/development/conventions.rst:98
+msgid ""
+"We're still discussing *how* pip should be capitalized in prose. The "
+"current statement here is tentative."
+msgstr ""
+
+#: ../../html/development/conventions.rst:101
+msgid ""
+"pip is a proper noun, and spelt all lowercase. Do not capitalize pip as "
+"\"Pip\" at the start of a sentence."
+msgstr ""
+
+#: ../../html/development/conventions.rst:104
+msgid ""
+"Avoid using phrases such as \"easy\", \"just\", \"simply\" etc, which "
+"imply that the task is trivial. If it were trivial, the user wouldn't be "
+"reading the documentation for it."
+msgstr ""
+

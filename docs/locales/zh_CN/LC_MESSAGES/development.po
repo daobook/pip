@@ -1,0 +1,3750 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/architecture/anatomy.rst:3
+#: ../../html/development/architecture/overview.rst:3
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue`_."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:9
+msgid "Repository anatomy & directory structure"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:11
+msgid ""
+"``pip``’s codebase (`GitHub repository`_) is structured as a standard "
+"Python package."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:15
+msgid "Root and tools"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:17
+msgid ""
+"The ``README``, license, ``pyproject.toml``, ``setup.py``, and so on are "
+"in the top level."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:19
+msgid "``AUTHORS.txt``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:20
+msgid "``LICENSE.txt``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:21
+msgid "``MANIFEST.in``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:22
+msgid "``NEWS.rst``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:23
+msgid "``pyproject.toml``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:24
+msgid "``README.rst``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:25
+msgid "``setup.cfg``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:26
+msgid "``setup.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:27
+msgid ""
+"``tox.ini`` -- ``pip`` uses Tox, an automation tool, configured by this "
+"`tox.ini`_ file. ``tox.ini`` describes a few environments ``pip`` uses "
+"during development for simplifying how tests are run (complicated "
+"situation there). Example: ``tox -e -py36``. We can run tests for "
+"different versions of Python by changing “36” to “27” or similar."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:28
+msgid "``.coveragerc``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:29
+msgid "``.gitattributes``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:30
+msgid "``.gitignore``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:31
+msgid "``.mailmap``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:32
+msgid "``.readthedocs.yml``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:33
+msgid "``docs/`` *[documentation, built with Sphinx]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:35
+msgid "``html/`` *[sources to HTML documentation avail. online]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:36
+msgid "``man/`` has man pages the distros can use by running ``man pip``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:37
+msgid ""
+"``pip_sphinxext.py`` *[an extension -- pip-specific plugins to Sphinx "
+"that do not apply to other packages]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:39
+msgid ""
+"``news/`` *[pip stores news fragments… Every time pip makes a user-facing"
+" change, a file is added to this directory (usually a short note "
+"referring to a GitHub issue) with the right extension & name so it gets "
+"included in changelog…. So every release the maintainers will be deleting"
+" old files in this directory? Yes - we use the towncrier automation to "
+"generate a NEWS file, and auto-delete old stuff. There’s more about this "
+"in the contributor documentation!]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:41
+msgid ""
+"``template.rst`` *[template for changelog -- this is a file towncrier "
+"uses…. Is this jinja? I don’t know, check towncrier docs]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:43
+msgid "``src/`` *[source; see below]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:44
+msgid ""
+"``tasks/`` *[invoke is a PyPI library which uses files in this directory "
+"to define automation commands that are used in pip’s development "
+"processes -- not discussing further right now. For instance, automating "
+"the release.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:45
+msgid ""
+"``tests/`` -- contains tests you can run. There are instructions in :doc"
+":`../getting-started`."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:47
+#: ../../html/development/architecture/anatomy.rst:73
+#: ../../html/development/architecture/anatomy.rst:78
+msgid "``__init__.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:48
+msgid "``conftest.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:49
+msgid ""
+"``data/`` *[test data for running tests -- pseudo package index in it!  "
+"Lots of small packages that are invalid or are valid. Test fixtures.  "
+"Used by functional tests]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:50
+msgid ""
+"``functional/`` *[functional tests of pip’s CLI -- end-to-end, invoke pip"
+" in subprocess & check results of execution against desired result. This "
+"also is what makes test suite slow]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:51
+msgid "``lib/`` *[helpers for tests]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:52
+msgid "``unit/`` *[unit tests -- fast and small and nice!]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:54
+msgid ""
+"``tools`` *[misc development workflow tools, like requirements files & CI"
+" files & helpers for tox]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:55
+msgid "``.github``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:56
+msgid "``.tox``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:61
+msgid "src directory"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:63
+msgid ""
+"In the root directory, the ``src/`` directory contains pip's core source "
+"code. Within ``src/pip/``, ``_internal/`` has the pip code that's written"
+" by pip maintainers, and ``_vendor/`` is pip's dependencies (code from "
+"other packages)."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:68
+msgid "Within ``src/``:"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:70
+msgid "``pip.egg-info/`` *[ignore the contents for now]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:71
+msgid "``pip/``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:74
+msgid "``__main__.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:75
+msgid "``__pycache__/`` *[not discussing contents right now]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:76
+msgid ""
+"``_internal/`` *[where all the pip code lives that’s written by pip "
+"maintainers -- underscore means private. pip is not a library -- it’s a "
+"command line tool! A very important distinction! People who want to "
+"install stuff with pip should not use the internals -- they should use "
+"the CLI. There’s a note on this in the docs.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:79
+msgid "``build_env.py`` [not discussing now]"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:80
+msgid ""
+"``cache.py`` *[has all the info for how to handle caching within pip -- "
+"cache-handling stuff. Uses cachecontrol from PyPI, vendored into pip]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:81
+msgid ""
+"``cli/`` *[subpackage containing helpers & additional code for managing "
+"the command line interface. Uses argparse from stdlib]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:82
+msgid ""
+"``commands/`` *[literally - each file is the name of the command on the "
+"pip CLI. Each has a class that defines what’s needed to set it up, what "
+"happens]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:83
+msgid "``configuration.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:84
+msgid "``download.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:85
+msgid "``exceptions.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:86
+msgid "``index.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:87
+msgid "``locations.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:88
+msgid ""
+"``models/`` *[in-process refactoring! Goal: improve how pip internally "
+"models representations it has for data -- data representation. General "
+"overall cleanup. Data reps are spread throughout codebase….link is "
+"defined in a class in 1 file, and then another file imports Link from "
+"that file. Sometimes cyclic dependency?!?! To prevent future situations "
+"like this, etc., Pradyun started moving these into a models directory.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:89
+msgid ""
+"``operations/`` -- a bit of a weird directory….. ``Freeze.py`` used to be"
+" in there. Freeze is an operation -- there was an operations.freeze. Then"
+" “prepare” got added (the operation of preparing a pkg). Then “check” got"
+" added for checking the state of an env.] [what’s a command vs an "
+"operation? Command is on CLI; an operation would be an internal bit of "
+"code that actually does some subset of the operation the command says. "
+"``install`` command uses bits of ``check`` and ``prepare``, for instance."
+" In the long run, Pradyun’s goal: ``prepare.py`` goes away (gets "
+"refactored into other files) such that ``operations`` is just ``check`` "
+"and ``freeze``..... … Pradyun plans to refactor this. [how does this "
+"compare to ``utils``?]"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:91
+msgid ""
+"``install/`` -- for modules related to installing projects of various "
+"kinds"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:93
+msgid ""
+"``wheel.py`` is a file that manages installation of a wheel file. This "
+"handles unpacking wheels -- “unpack and spread”. There is a package on "
+"PyPI called ``wheel`` that builds wheels -- do not confuse it with this."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:95
+msgid ""
+"``pep425tags.py`` -- getting refactored into packaging.tags (a library on"
+" PyPI) which is external to pip (but vendored by pip). :pep:`425` tags: "
+"turns out lots of people want this! Compatibility tags for built "
+"distributions -> e.g., platform, Python version, etc."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:96
+msgid ""
+"``pyproject.py`` -- ``pyproject.toml`` is a new standard (:pep:`518` and "
+":pep:`517`). This file reads pyproject.toml and passes that info "
+"elsewhere. The rest of the processing happens in a different file. All "
+"the handling for 517 and 518 is in a different file."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:97
+msgid ""
+"``req/`` *[*\\ **A DIRECTORY THAT NEEDS REFACTORING. A LOT**\\ *\\ …… "
+"Remember Step 3? Dependency resolution etc.? This is that step! Each file"
+" represents … have the entire flow of installing & uninstalling, getting "
+"info about packages…. Some files here are more than 1,000 lines long! "
+"(used to be longer?!) Refactor will deeply improve developer experience. "
+"Also, we're `improving the pip dependency resolver`_ in 2020 so a bunch "
+"of this is changing.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:98
+msgid ""
+"``utils/`` *[everything that is not “operationally” pip ….. Misc "
+"functions and files get dumped. There’s some organization here. There’s a"
+" models.py here which needs refactoring. Deprecation.py is useful, as are"
+" other things, but some things do not belong here. There ought to be some"
+" GitHub issues for refactoring some things here. Maybe a few issues with "
+"checkbox lists.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:99
+msgid ""
+"``vcs/`` *[stands for Version Control System. Where pip handles all "
+"version control stuff -- one of the ``pip install`` arguments you can use"
+" is a version control link. Are any of these commands vendored? No, via "
+"subprocesses. For performance, it makes sense (we think) to do this "
+"instead of pygitlib2 or similar -- and has to be pure Python, can’t "
+"include C libraries, because you can’t include compiled C stuff, because "
+"you might not have it for the platform you are running on.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:101
+msgid ""
+"``_vendor/`` *[code from other packages -- pip’s own dependencies…. Has "
+"them in its own source tree, because pip cannot depend on pip being "
+"installed on the machine already!]*"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:3
+msgid "Command Line Interface"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:5
+msgid ""
+"The ``pip._internal.cli`` package is responsible for processing and "
+"providing pip's command line interface. This package handles:"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:8
+msgid "CLI option definition and parsing"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:9
+msgid "autocompletion"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:10
+msgid "dispatching to the various commands"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:11
+msgid "utilities like progress bars and spinners"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:15
+#: ../../html/development/architecture/configuration-files.rst:12
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue "
+"<https://github.com/pypa/pip/issues/6831>`_."
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:24
+#: ../../html/development/architecture/configuration-files.rst:21
+#: ../../html/development/architecture/package-finding.rst:13
+msgid "Overview"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:26
+msgid ""
+"A ``ConfigOptionParser`` instance is used as the \"main parser\", for "
+"parsing top level args."
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:29
+msgid ""
+"``Command`` then uses another ``ConfigOptionParser`` instance, to parse "
+"command-specific args."
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:31
+msgid ""
+"TODO: How & where options are defined (cmdoptions, command-specific "
+"files)."
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:34
+msgid ""
+"TODO: How & where arguments are processed. (main_parser, command-specific"
+" parser)"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:37
+msgid ""
+"TODO: How processed arguments are accessed. (attributes on argument to "
+"``Command.run()``)"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:40
+msgid ""
+"TODO: How configuration and CLI \"blend\". (implemented in "
+"``ConfigOptionParser``)"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:43
+msgid "TODO: progress bars and spinners"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:45
+msgid ""
+"TODO: quirks / standard practices / broad ideas. (avoiding lists in "
+"option def'n, special cased option value types, )"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:51
+#: ../../html/development/architecture/configuration-files.rst:146
+msgid "Future Refactoring Ideas"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:53
+msgid ""
+"Change option definition to be a more declarative, consistent, static "
+"data-structure, replacing the current ``partial(Option, ...)`` form"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:55
+msgid "Move progress bar and spinner to a ``cli.ui`` subpackage"
+msgstr ""
+
+#: ../../html/development/architecture/command-line-interface.rst:56
+msgid ""
+"Move all ``Command`` classes into a ``cli.commands`` subpackage "
+"(including base classes)"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:3
+msgid "Configuration File Handling"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:5
+msgid ""
+"The ``pip._internal.configuration`` module is responsible for handling "
+"(eg. loading from and saving values to) configuration files that are used"
+" by pip. The module's functionality is largely exposed through and "
+"coordinated by the module's ``Configuration`` class."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:23
+msgid ""
+"pip stores configuration files in standard OS-appropriate locations, "
+"which are determined by ``appdirs``. These files are in the INI format "
+"and are processed with ``RawConfigParser``."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:27
+msgid "pip uses configuration files in two operations:"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:29
+msgid "During processing of command line options."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:31
+#: ../../html/development/architecture/configuration-files.rst:35
+msgid "Reading from *all* configuration sources"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:33
+msgid "As part of ``pip config`` command."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:36
+#: ../../html/development/architecture/configuration-files.rst:101
+msgid "Manipulating a single configuration file"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:38
+msgid ""
+"Both of these operations utilize functionality provided the "
+"``Configuration`` object, which encapsulates all the logic for handling "
+"configuration files and provides APIs for the same."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:42
+msgid ""
+"The remainder of this section documents the ``Configuration`` class, and "
+"discusses potential future refactoring ideas."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:49
+msgid "``Configuration`` class"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:51
+msgid ""
+"``Configuration`` loads configuration values from sources in the local "
+"environment: a combination of configuration files and environment "
+"variables."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:54
+msgid ""
+"It can be used in two \"modes\", for reading all the values from the "
+"local environment and for manipulating a single configuration file. It "
+"differentiates between these two modes using the ``load_only`` attribute,"
+" which can be None or represent the :ref:`kind <config-kinds>` of the "
+"configuration file to be manipulated."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:60
+msgid ""
+"The ``isolated`` attribute determines which sources are used when loading"
+" the configuration. If ``isolated`` is ``True``, user-specific "
+"configuration files and environment variables are not used."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:65
+msgid "Reading from local environment"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:67
+msgid ""
+"``Configuration`` can be used to read from all configuration sources in "
+"the local environment and access the values, as per the precedence logic "
+"described in the :ref:`Config Precedence <config-precedence>` section."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:71
+msgid ""
+"For this use case, the ``Configuration.load_only`` attribute would be "
+"``None``, and the methods used would be:"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:78
+msgid ""
+"Handles all the interactions with the environment, to load all the "
+"configuration data into objects in memory."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:83
+msgid ""
+"Provides key-value pairs (like ``dict.items()``) from the loaded-in-"
+"memory information, handling all of the override ordering logic."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:88
+msgid ""
+"Provides the value of the given key from the loaded configuration. The "
+"loaded configuration may have ``load_only`` be None or non-None. This "
+"uses the same underlying mechanism as ``Configuration.items()`` and does "
+"follow the precedence logic described in :ref:`Config Precedence <config-"
+"precedence>`."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:94
+msgid ""
+"At the time of writing, the parts of the codebase that use "
+"``Configuration`` in this manner are: ``ConfigOptionParser``, to "
+"transparently include configuration handling as part of the command line "
+"processing logic, and ``pip config get``, for printing the entire "
+"configuration when no :ref:`kind <config-kinds>` is specified via the "
+"CLI."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:103
+msgid ""
+"``Configuration`` can be used to manipulate a single configuration file, "
+"such as to add, change or remove certain key-value pairs."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:106
+msgid ""
+"For this use case, the ``load_only`` attribute would be non-None, and "
+"would represent the :ref:`kind <config-kinds>` of the configuration file "
+"to be manipulated. In addition to the methods discussed in the previous "
+"section, the methods used would be:"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:116
+msgid ""
+"Provides the \"highest priority\" file, for the :ref:`kind <config-"
+"kinds>` of configuration file specified by ``load_only``. This requires "
+"``load_only`` to be non-None."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:122
+msgid ""
+"Provides a way to add/change a single key-value pair, in the file "
+"specified by ``Configuration.get_file_to_edit()``."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:127
+msgid ""
+"Provides a way to remove a single key-value pair, in the file specified "
+"by ``Configuration.get_file_to_edit()``."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:132
+msgid ""
+"Saves the in-memory state of to the original files, saving any "
+"modifications made to the ``Configuration`` object back into the local "
+"environment."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:138
+msgid "kinds"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:140
+msgid ""
+"This is an enumeration that provides values to represent a \"source\" for"
+" configuration. This includes environment variables and various types of "
+"configuration files (global, site-specific, user_specific, specified via "
+"``PIP_CONFIG_FILE``)."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:149
+msgid "Break up the ``Configuration`` class into 2 smaller classes, by use case"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:149
+msgid "``Command`` use-case (read only) -- ``ConfigurationReader``"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:150
+msgid ""
+"``pip config`` use-case (read / write) -- ``ConfigurationModifier`` "
+"(inherit from ``ConfigurationReader``)"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:151
+msgid "Eagerly populate ``Configuration._dictionary`` on load."
+msgstr ""
+
+#: ../../html/development/architecture/index.rst:5
+msgid "Architecture of pip's internals"
+msgstr ""
+
+#: ../../html/development/architecture/index.rst:9
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue`_, "
+"or just go ahead and submit a pull request and mention it in that "
+"tracking issue."
+msgstr ""
+
+#: ../../html/development/architecture/index.rst:17
+msgid ""
+"Direct use of pip's internals is *not supported*, and these internals can"
+" change at any time. For more details, see :ref:`Using pip from your "
+"program`."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:10
+msgid "Broad functionality overview"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:12
+msgid "pip is a package installer."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:14
+msgid ""
+"pip does a lot more than installation; it also has a cache, and it has "
+"configuration, and it has a CLI, which has its own quirks. But mainly:"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:17
+msgid "Things pip does:"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst
+msgid ""
+"Manages the building of packages (offloads package building to a backend)"
+" when that’s necessary (a source distribution package -- this is not "
+"necessary if the package is a wheel)."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst
+msgid ""
+"By default, pip delegates package-building to setuptools, for backwards "
+"compatibility reasons. But thing with setuptools: has a ``setup.py`` file"
+" that it invokes to …… get info?"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:27
+msgid ""
+"Decides where to install stuff. Once the package is built, resulting "
+"artifact is then installed into system in appropriate place. :pep:`517` "
+"defines interface between build backend & installer."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:32
+msgid "Broad overview of flow"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:34
+msgid "In sequence, what does pip do?:"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:36
+msgid "Get user input (user-supplied string saying what package they want)"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:37
+msgid ""
+"Figure out what that means: exactly what the user requested -- translate "
+"to a thing pip can operate on (user input to requirements)"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:39
+msgid ""
+"CORE OF THE WHOLE PROCESS, MAYBE? Once you have a set of reqs from Step "
+"2, you have to expand those into a concrete “things to install” -- Figure"
+" out what other requirements it has to install based on user-given "
+"requirements, and where to get them from."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:46
+msgid "this step is convoluted - also exploratory, involves dependency"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:45
+msgid "resolution -- we need to get to the index, see what versions are available"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:51
+msgid "Sometimes you need to build the package itself in order to get"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:49
+msgid ""
+"dependency information, which means fetching the package from package "
+"index, which means knowing whether it exists. For a single package,"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:53
+msgid "Install the actual items to be installed."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:55
+msgid ""
+"Why? pip installs from places other than PyPI! But also, we’ve never had "
+"guarantees of PyPI’s JSON API before now, so no one has been getting "
+"metadata from PyPI separate from downloading the package itself."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:59
+msgid "In terms of flow of the install process:"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:61
+msgid ""
+"For 1 package: Get abstract requirement(s) for that package, and try and "
+"see what that means (this abstract requirement can take various forms). "
+"Define abstract dependencies."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:65
+msgid ""
+"Once we have a set of \"this package, get it from here, this is that "
+"version of that package\","
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:68
+msgid ""
+"Modify the environment to install those things (which means: place the "
+"files in the right place). For example: if you already have version 6.0 "
+"of a requirement and you are installing 7.2, uninstall 6.0 and install "
+"7.2."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:74
+msgid "Download process"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:76
+msgid ""
+"What happens in an install? Well, a subset of ``install``, a process pip "
+"usually does during a ``pip install``, is ``download`` (also available to"
+" the user as the :ref:`pip download` command). And we download and "
+"INSPECT packages to get manifests. For any given package name, we need to"
+" know what files are available and what their filenames are."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:83
+msgid ""
+"pip can download from a Python package repository, where packages are "
+"stored in a structured format so an installer like pip can find them."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:86
+msgid ":pep:`503` defines the API we use to talk to a Python package repository."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:89
+msgid "PyPI"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:91
+msgid ""
+"What happens if we run ``pip download somepackage`` with no other "
+"arguments?  By default we look at `PyPI`_, which is where pip knows where"
+" to look to get more info for what the package index knows about "
+"``somepackage``."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:96
+msgid ""
+"``pip`` then knows: what files are available, and what their filenames "
+"are."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:99
+msgid "IN OTHER WORDS"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:101
+msgid "While all dependencies have not been resolved, do the following:"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:103
+msgid ""
+"Following the API defined in :pep:`503`, fetch the index page from "
+"`http://{pypi_index}/simple/{package_name "
+"<http://pypi.org/simple/%7Bpackage_name>`__}"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:105
+msgid "Parse all of the file links from the page."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:106
+msgid "Select a single file to download from the list of links."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:107
+msgid "Extract the metadata from the downloaded package."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:108
+msgid "Update the dependency tree based on the metadata."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:110
+msgid ""
+"The package index gives pip a list of files for that package (via the "
+"existing PyPI API). The files have the version and some other info that "
+"helps pip decide whether that's something pip ought to download."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:112
+msgid "pip chooses from the list a single file to download."
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:114
+msgid "It may go back and choose another file to download"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:116
+msgid ""
+"When pip looks at the package index, the place where it looks has "
+"basically a link. The link’s text is the name of the file"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:119
+msgid ""
+"This is the `PyPI Simple API`_ (PyPI has several APIs, some are being "
+"deprecated). pip looks at Simple API, documented initially at :pep:`503` "
+"-- packaging.python.org has PyPA specifications with more details for "
+"Simple Repository API"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:124
+msgid "For this package name -- this is the list of files available"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:126
+msgid "Looks there for:"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:128
+msgid "The list of filenames"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:129
+msgid "Other info"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:131
+msgid "Once it has those, selects one file, downloads it"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:133
+msgid ""
+"(Question: If I want to ``pip install flask``, I think the whole list of "
+"filenames cannot….should not be …. ? I want only the Flask …. Why am I "
+"getting the whole list?"
+msgstr ""
+
+#: ../../html/development/architecture/overview.rst:137
+msgid ""
+"Answer: It's not every file, just files of Flask. No API for getting "
+"alllllll files on PyPI. It’s for getting all files of Flask.)"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:2
+msgid "Finding and choosing files (``index`` and ``PackageFinder``)"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:4
+msgid ""
+"The ``pip._internal.index`` sub-package in pip is responsible for "
+"deciding what file to download and from where, given a requirement for a "
+"project. The package's functionality is largely exposed through and "
+"coordinated by the package's ``PackageFinder`` class."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:15
+msgid ""
+"Here is a rough description of the process that pip uses to choose what "
+"file to download for a package, given a requirement:"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:18
+msgid ""
+"Collect together the various network and file system locations containing"
+" project package files. These locations are derived, for example, from "
+"pip's :ref:`--index-url <install_--index-url>` (with default "
+"https://pypi.org/simple/ ) setting and any configured :ref:`--extra-"
+"index-url <install_--extra-index-url>` locations. Each of the project "
+"page URL's is an HTML page of anchor links, as defined in `PEP 503`_, the"
+" \"Simple Repository API.\""
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:25
+msgid ""
+"For each project page URL, fetch the HTML and parse out the anchor links,"
+" creating a ``Link`` object from each one. The :ref:`LinkCollector <link-"
+"collector-class>` class is responsible for both the previous step and "
+"fetching the HTML over the network."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:29
+msgid ""
+"Determine which of the links are minimally relevant, using the "
+":ref:`LinkEvaluator <link-evaluator-class>` class.  Create an "
+"``InstallationCandidate`` object (aka candidate for install) for each of "
+"these relevant links."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:33
+msgid ""
+"Further filter the collection of ``InstallationCandidate`` objects (using"
+" the :ref:`CandidateEvaluator <candidate-evaluator-class>` class) to a "
+"collection of \"applicable\" candidates."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:36
+msgid ""
+"If there are applicable candidates, choose the best candidate by sorting "
+"them (again using the :ref:`CandidateEvaluator <candidate-evaluator-"
+"class>` class)."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:40
+msgid ""
+"The remainder of this section is organized by documenting some of the "
+"classes inside the ``index`` package, in the following order:"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:43
+msgid "the main :ref:`PackageFinder <package-finder-class>` class,"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:44
+msgid "the :ref:`LinkCollector <link-collector-class>` class,"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:45
+msgid "the :ref:`LinkEvaluator <link-evaluator-class>` class,"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:46
+msgid "the :ref:`CandidateEvaluator <candidate-evaluator-class>` class,"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:47
+msgid "the :ref:`CandidatePreferences <candidate-preferences-class>` class, and"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:48
+msgid "the :ref:`BestCandidateResult <best-candidate-result-class>` class."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:54
+msgid "The ``PackageFinder`` class"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:56
+msgid ""
+"The ``PackageFinder`` class is the primary way through which code in pip "
+"interacts with ``index`` package. It is an umbrella class that "
+"encapsulates and groups together various package-finding functionality."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:60
+msgid ""
+"The ``PackageFinder`` class is responsible for searching the network and "
+"file system for what versions of a package pip can install, and also for "
+"deciding which version is most preferred, given the user's preferences, "
+"target Python environment, etc."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:65
+msgid "The pip commands that use the ``PackageFinder`` class are:"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:67
+msgid ":ref:`pip download`"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:68
+msgid ":ref:`pip install`"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:69
+msgid ":ref:`pip list`"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:70
+msgid ":ref:`pip wheel`"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:72
+msgid ""
+"The pip commands requiring use of the ``PackageFinder`` class generally "
+"instantiate ``PackageFinder`` only once for the whole pip invocation. In "
+"fact, pip creates this ``PackageFinder`` instance when command options "
+"are first parsed."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:77
+msgid ""
+"With the exception of :ref:`pip list`, each of the above commands is "
+"implemented as a ``Command`` class inheriting from ``RequirementCommand``"
+" (for example :ref:`pip download` is implemented by ``DownloadCommand``),"
+" and the ``PackageFinder`` instance is created by calling the "
+"``RequirementCommand`` class's ``_build_package_finder()`` method. ``pip "
+"list``, on the other hand, constructs its ``PackageFinder`` instance by "
+"calling the ``ListCommand`` class's ``_build_package_finder()``. (This "
+"difference may simply be historical and may not actually be necessary.)"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:86
+msgid ""
+"Each of these commands also uses the ``PackageFinder`` class for pip's "
+"\"self-check,\" (i.e. to check whether a pip upgrade is available). In "
+"this case, the ``PackageFinder`` instance is created by the "
+"``self_outdated_check.py`` module's ``pip_self_version_check()`` "
+"function."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:91
+msgid ""
+"The ``PackageFinder`` class is responsible for doing all of the things "
+"listed in the :ref:`Overview <index-overview>` section like fetching and "
+"parsing `PEP 503`_ simple repository HTML pages, evaluating which links "
+"in the simple repository pages are relevant for each requirement, and "
+"further filtering and sorting by preference the candidates for install "
+"coming from the relevant links."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:98
+msgid ""
+"One of ``PackageFinder``'s main top-level methods is "
+"``find_best_candidate()``. This method does the following two things:"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:101
+msgid ""
+"Calls its ``find_all_candidates()`` method, which gathers all possible "
+"package links by reading and parsing the index URL's and locations "
+"provided by the user (the :ref:`LinkCollector <link-collector-class>` "
+"class's ``collect_sources()`` method), constructs a :ref:`LinkEvaluator "
+"<link-evaluator-class>` object to filter out some of those links, and "
+"then returns a list of ``InstallationCandidates`` (aka candidates for "
+"install). This corresponds to steps 1-3 of the :ref:`Overview <index-"
+"overview>` above."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:109
+msgid ""
+"Constructs a ``CandidateEvaluator`` object and uses that to determine the"
+" best candidate. It does this by calling the ``CandidateEvaluator`` "
+"class's ``compute_best_candidate()`` method on the return value of "
+"``find_all_candidates()``. This corresponds to steps 4-5 of the Overview."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:114
+msgid ""
+"``PackageFinder`` also has a ``process_project_url()`` method (called by "
+"``find_best_candidate()``) to process a `PEP 503`_ \"simple repository\" "
+"project page. This method fetches and parses the HTML from a PEP 503 "
+"project page URL, extracts the anchor elements and creates ``Link`` "
+"objects from them, and then evaluates those links."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:124
+msgid "The ``LinkCollector`` class"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:126
+msgid ""
+"The :ref:`LinkCollector <link-collector-class>` class is the class "
+"responsible for collecting the raw list of \"links\" to package files "
+"(represented as ``Link`` objects) from file system locations, as well as "
+"the `PEP 503`_ project page URL's that ``PackageFinder`` should access."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:131
+msgid ""
+"The ``LinkCollector`` class takes into account the user's :ref:`--find-"
+"links <install_--find-links>`, :ref:`--extra-index-url <install_--extra-"
+"index-url>`, and related options when deciding which locations to collect"
+" links from. The class's main method is the ``collect_sources()`` method."
+" The :ref:`PackageFinder <package-finder-class>` class invokes this "
+"method as the first step of its ``find_all_candidates()`` method."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:138
+msgid ""
+"``LinkCollector`` also has a ``fetch_page()`` method to fetch the HTML "
+"from a project page URL. This method is \"unintelligent\" in that it "
+"doesn't parse the HTML."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:142
+msgid ""
+"The ``LinkCollector`` class is the only class in the ``index`` sub-"
+"package that makes network requests and is the only class in the sub-"
+"package that depends directly on ``PipSession``, which stores pip's "
+"configuration options and state for making requests."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:151
+msgid "The ``LinkEvaluator`` class"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:153
+msgid ""
+"The ``LinkEvaluator`` class contains the business logic for determining "
+"whether a link (e.g. in a simple repository page) satisfies minimal "
+"conditions to be a candidate for install (resulting in an "
+"``InstallationCandidate`` object). When making this determination, the "
+"``LinkEvaluator`` instance uses information like the target Python "
+"interpreter as well as user preferences like whether binary files are "
+"allowed or preferred, etc."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:161
+msgid ""
+"Specifically, the ``LinkEvaluator`` class has an ``evaluate_link()`` "
+"method that returns whether a link is a candidate for install."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:164
+msgid ""
+"Instances of this class are created by the ``PackageFinder`` class's "
+"``make_link_evaluator()`` on a per-requirement basis."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:171
+msgid "The ``CandidateEvaluator`` class"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:173
+msgid ""
+"The ``CandidateEvaluator`` class contains the business logic for "
+"evaluating which ``InstallationCandidate`` objects should be preferred. "
+"This can be viewed as a determination that is finer-grained than that "
+"performed by the ``LinkEvaluator`` class."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:178
+msgid ""
+"In particular, the ``CandidateEvaluator`` class uses the whole set of "
+"``InstallationCandidate`` objects when making its determinations, as "
+"opposed to evaluating each candidate in isolation, as ``LinkEvaluator`` "
+"does. For example, whether a pre-release is eligible for selection or "
+"whether a file whose hash doesn't match is eligible depends on properties"
+" of the collection as a whole."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:185
+msgid ""
+"The ``CandidateEvaluator`` class uses information like the list of `PEP "
+"425`_ tags compatible with the target Python interpreter, hashes provided"
+" by the user, and other user preferences, etc."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:189
+msgid ""
+"Specifically, the class has a ``get_applicable_candidates()`` method. "
+"This accepts the ``InstallationCandidate`` objects resulting from the "
+"links accepted by the ``LinkEvaluator`` class's ``evaluate_link()`` "
+"method, filters them to a list of \"applicable\" candidates and orders "
+"them by preference."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:194
+msgid ""
+"The ``CandidateEvaluator`` class also has a ``sort_best_candidate()`` "
+"method that returns the best (i.e. most preferred) candidate."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:197
+msgid ""
+"Finally, the class has a ``compute_best_candidate()`` method that calls "
+"``get_applicable_candidates()`` followed by ``sort_best_candidate()``, "
+"and then returning a :ref:`BestCandidateResult <best-candidate-result-"
+"class>` object encapsulating both the intermediate and final results of "
+"the decision."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:202
+msgid ""
+"Instances of ``CandidateEvaluator`` are created by the ``PackageFinder`` "
+"class's ``make_candidate_evaluator()`` method on a per-requirement basis."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:209
+msgid "The ``CandidatePreferences`` class"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:211
+msgid ""
+"The ``CandidatePreferences`` class is a simple container class that "
+"groups together some of the user preferences that ``PackageFinder`` uses "
+"to construct ``CandidateEvaluator`` objects (via the ``PackageFinder`` "
+"class's ``make_candidate_evaluator()`` method)."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:216
+msgid ""
+"A ``PackageFinder`` instance has a ``_candidate_prefs`` attribute whose "
+"value is a ``CandidatePreferences`` instance. Since ``PackageFinder`` has"
+" a number of responsibilities and options that control its behavior, "
+"grouping the preferences specific to ``CandidateEvaluator`` helps "
+"maintainers know which attributes are needed only for "
+"``CandidateEvaluator``."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:226
+msgid "The ``BestCandidateResult`` class"
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:228
+msgid ""
+"The ``BestCandidateResult`` class is a convenience \"container\" class "
+"that encapsulates the result of finding the best candidate for a "
+"requirement. (By \"container\" we mean an object that simply contains "
+"data and has no business logic or state-changing methods of its own.) It "
+"stores not just the final result but also intermediate values used to "
+"determine the result."
+msgstr ""
+
+#: ../../html/development/architecture/package-finding.rst:234
+msgid ""
+"The class is the return type of both the ``CandidateEvaluator`` class's "
+"``compute_best_candidate()`` method and the ``PackageFinder`` class's "
+"``find_best_candidate()`` method."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:3
+msgid "Options that control the installation process"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:5
+msgid ""
+"When installing packages, pip chooses a distribution file, and installs "
+"it in the user's environment. There are many choices (which are `still "
+"evolving`_) involved in deciding which file to install, and these are "
+"controlled by a variety of options."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:12
+msgid ""
+"This section of the documentation needs to be updated per :ref:`Resolver "
+"changes 2020`."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:16
+msgid "Controlling what gets installed"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:18
+msgid ""
+"These options directly affect how the resolver uses the list of available"
+" distribution files to decide which one to install. So these modify the "
+"resolution algorithm itself, rather than the input to that algorithm."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:22
+msgid "``--upgrade``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:24
+msgid ""
+"Allow installing a newer version of an installed package. In principle, "
+"this option actually affects \"what gets considered\", in the sense that "
+"it allows the resolver to see other versions of installed packages. "
+"Without ``--upgrade``, the resolver will only see the installed version "
+"as a candidate."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:30
+msgid "``--upgrade-strategy``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:32
+msgid ""
+"This option affects which packages are allowed to be installed. It is "
+"only relevant if ``--upgrade`` is specified (except for the ``to-satisfy-"
+"only`` option mentioned below). The base behaviour is to allow packages "
+"specified on pip's command line to be upgraded. This option controls what"
+" *other* packages can be upgraded:"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:38
+msgid ""
+"``eager`` - all packages will be upgraded to the latest possible version."
+" It should be noted here that pip's current resolution algorithm isn't "
+"even aware of packages other than those specified on the command line, "
+"and those identified as dependencies. This may or may not be true of the "
+"new resolver."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:43
+msgid ""
+"``only-if-needed`` - packages are only upgraded if they are named in the "
+"pip command or a requirement file (i.e, they are direct requirements), or"
+" an upgraded parent needs a later version of the dependency than is "
+"currently installed."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:47
+msgid ""
+"``to-satisfy-only`` (**undocumented, please avoid**) - packages are not "
+"upgraded (not even direct requirements) unless the currently installed "
+"version fails to satisfy a requirement (either explicitly specified or a "
+"dependency)."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:52
+msgid ""
+"This is actually the \"default\" upgrade strategy when ``--upgrade`` is "
+"*not set*, i.e. ``pip install AlreadyInstalled`` and ``pip install "
+"--upgrade --upgrade-strategy=to-satisfy-only AlreadyInstalled`` yield the"
+" same behavior."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:57
+msgid "``--force-reinstall``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:59
+msgid ""
+"Doesn't affect resolution, but if the resolved result is the same as what"
+" is currently installed, uninstall and reinstall it rather than leaving "
+"the current version in place. This occurs even if ``--upgrade`` is not "
+"set."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:63
+msgid "``--ignore-installed``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:65
+msgid ""
+"Act as if the currently installed version isn't there - so don't care "
+"about ``--upgrade``, and don't uninstall before (re-)installing."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:70
+msgid "Controlling what gets considered"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:72
+msgid ""
+"These options affect the list of distribution files that the resolver "
+"will consider as candidates for installation. As such, they affect the "
+"data that the resolver has to work with, rather than influencing what pip"
+" does with the resolution result."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:77
+msgid "Prereleases"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:79
+msgid "``--pre``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:81
+msgid "Source vs Binary"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:83
+msgid "``--no-binary``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:85
+msgid "``--only-binary``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:87
+msgid "``--prefer-binary``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:89
+msgid "Wheel tag specification"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:91
+msgid "``--platform``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:93
+msgid "``--implementation``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:95
+msgid "``--abi``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:97
+msgid "Index options"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:99
+msgid "``--index-url``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:101
+msgid "``--extra-index-url``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:103
+msgid "``--no-index``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:105
+msgid "``--find-links``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:109
+msgid "Controlling dependency data"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:111
+msgid ""
+"These options control what dependency data the resolver sees for any "
+"given package (or, in the case of ``--python-version``, the environment "
+"information the resolver uses to *check* the dependency)."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:115
+msgid "``--no-deps``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:117
+msgid "``--python-version``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:119
+msgid "``--ignore-requires-python``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:123
+msgid "Special cases"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:125
+msgid ""
+"These need further investigation. They affect the install process, but "
+"not necessarily resolution or what gets installed."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:128
+msgid "``--require-hashes``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:130
+msgid "``--constraint``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:132
+msgid "``--editable <LOCATION>``"
+msgstr ""
+
+#: ../../html/development/ci.rst:3
+msgid "This section of the documentation is currently out of date."
+msgstr ""
+
+#: ../../html/development/ci.rst:5
+msgid ""
+"pip developers welcome your help to update this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue`_, "
+"or just submit a pull request and mention it in that tracking issue."
+msgstr ""
+
+#: ../../html/development/ci.rst:14
+msgid "Continuous Integration"
+msgstr ""
+
+#: ../../html/development/ci.rst:17
+msgid "Supported interpreters"
+msgstr ""
+
+#: ../../html/development/ci.rst:19
+msgid "pip support a variety of Python interpreters:"
+msgstr ""
+
+#: ../../html/development/ci.rst:21
+msgid "CPython 3.6"
+msgstr ""
+
+#: ../../html/development/ci.rst:22
+msgid "CPython 3.7"
+msgstr ""
+
+#: ../../html/development/ci.rst:23
+msgid "CPython 3.8"
+msgstr ""
+
+#: ../../html/development/ci.rst:24
+msgid "CPython 3.9"
+msgstr ""
+
+#: ../../html/development/ci.rst:25
+msgid "Latest PyPy3"
+msgstr ""
+
+#: ../../html/development/ci.rst:27
+msgid "on different operating systems:"
+msgstr ""
+
+#: ../../html/development/ci.rst:29 ../../html/development/ci.rst:80
+#: ../../html/development/ci.rst:120
+msgid "Linux"
+msgstr ""
+
+#: ../../html/development/ci.rst:30 ../../html/development/ci.rst:81
+#: ../../html/development/ci.rst:100
+msgid "Windows"
+msgstr ""
+
+#: ../../html/development/ci.rst:31 ../../html/development/ci.rst:82
+#: ../../html/development/ci.rst:140
+msgid "MacOS"
+msgstr ""
+
+#: ../../html/development/ci.rst:33
+msgid "and on different architectures:"
+msgstr ""
+
+#: ../../html/development/ci.rst:35 ../../html/development/ci.rst:103
+#: ../../html/development/ci.rst:123 ../../html/development/ci.rst:143
+msgid "x64"
+msgstr ""
+
+#: ../../html/development/ci.rst:36 ../../html/development/ci.rst:93
+#: ../../html/development/ci.rst:113 ../../html/development/ci.rst:133
+msgid "x86"
+msgstr ""
+
+#: ../../html/development/ci.rst:38
+msgid "so 42 hypothetical interpreters."
+msgstr ""
+
+#: ../../html/development/ci.rst:42
+msgid "Checks"
+msgstr ""
+
+#: ../../html/development/ci.rst:44
+msgid "``pip`` CI runs different kind of tests:"
+msgstr ""
+
+#: ../../html/development/ci.rst:46
+msgid "lint (defined in ``.pre-commit-config.yaml``)"
+msgstr ""
+
+#: ../../html/development/ci.rst:47 ../../html/development/ci.rst:78
+msgid "docs"
+msgstr ""
+
+#: ../../html/development/ci.rst:48
+msgid "vendoring (is the ``src/_internal/_vendor`` directory cleanly vendored)"
+msgstr ""
+
+#: ../../html/development/ci.rst:49
+msgid "unit tests (present in ``tests/unit``)"
+msgstr ""
+
+#: ../../html/development/ci.rst:50
+msgid "\"integration\" tests (mostly present in ``tests/functional``)"
+msgstr ""
+
+#: ../../html/development/ci.rst:51
+msgid "package (test the packaging steps)"
+msgstr ""
+
+#: ../../html/development/ci.rst:53
+msgid ""
+"Since lint, docs, vendoring and package tests only need to run on a pip "
+"developer/contributor machine, they only need to be tested on the x64 "
+"variant of the 3 different operating systems, and when an interpreter "
+"needs to be specified it's ok to require the latest CPython interpreter."
+msgstr ""
+
+#: ../../html/development/ci.rst:58
+msgid ""
+"So only unit tests and integration tests would need to be run with the "
+"different interpreters."
+msgstr ""
+
+#: ../../html/development/ci.rst:63
+msgid "Services"
+msgstr ""
+
+#: ../../html/development/ci.rst:65
+msgid ""
+"pip test suite and checks are distributed on `GitHub Actions`_ which "
+"provides free executors for open source packages."
+msgstr ""
+
+#: ../../html/development/ci.rst:72
+msgid "Current run tests"
+msgstr ""
+
+#: ../../html/development/ci.rst:75
+msgid "Developer tasks"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "OS"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "lint"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "vendoring"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "packaging"
+msgstr ""
+
+#: ../../html/development/ci.rst:80 ../../html/development/ci.rst:81
+#: ../../html/development/ci.rst:82 ../../html/development/ci.rst:101
+#: ../../html/development/ci.rst:107 ../../html/development/ci.rst:121
+#: ../../html/development/ci.rst:123 ../../html/development/ci.rst:125
+#: ../../html/development/ci.rst:127 ../../html/development/ci.rst:141
+#: ../../html/development/ci.rst:143 ../../html/development/ci.rst:145
+#: ../../html/development/ci.rst:147
+msgid "Github"
+msgstr ""
+
+#: ../../html/development/ci.rst:86
+msgid "Actual testing"
+msgstr ""
+
+#: ../../html/development/ci.rst:89
+msgid "**interpreter**"
+msgstr ""
+
+#: ../../html/development/ci.rst:89
+msgid "**unit**"
+msgstr ""
+
+#: ../../html/development/ci.rst:89
+msgid "**integration**"
+msgstr ""
+
+#: ../../html/development/ci.rst:91 ../../html/development/ci.rst:101
+#: ../../html/development/ci.rst:111 ../../html/development/ci.rst:121
+#: ../../html/development/ci.rst:131 ../../html/development/ci.rst:141
+msgid "CP3.6"
+msgstr ""
+
+#: ../../html/development/ci.rst:93 ../../html/development/ci.rst:103
+#: ../../html/development/ci.rst:113 ../../html/development/ci.rst:123
+#: ../../html/development/ci.rst:133 ../../html/development/ci.rst:143
+msgid "CP3.7"
+msgstr ""
+
+#: ../../html/development/ci.rst:95 ../../html/development/ci.rst:105
+#: ../../html/development/ci.rst:115 ../../html/development/ci.rst:125
+#: ../../html/development/ci.rst:135 ../../html/development/ci.rst:145
+msgid "CP3.8"
+msgstr ""
+
+#: ../../html/development/ci.rst:97 ../../html/development/ci.rst:107
+#: ../../html/development/ci.rst:117 ../../html/development/ci.rst:127
+#: ../../html/development/ci.rst:137 ../../html/development/ci.rst:147
+msgid "CP3.9"
+msgstr ""
+
+#: ../../html/development/ci.rst:99 ../../html/development/ci.rst:109
+#: ../../html/development/ci.rst:119 ../../html/development/ci.rst:129
+#: ../../html/development/ci.rst:139 ../../html/development/ci.rst:149
+msgid "PyPy3"
+msgstr ""
+
+#: ../../html/development/contributing.rst:3
+msgid "Contributing"
+msgstr ""
+
+#: ../../html/development/contributing.rst:6
+msgid "Pip's internals"
+msgstr ""
+
+#: ../../html/development/contributing.rst:8
+msgid ""
+"We have an in-progress guide to the :ref:`architecture-pip-internals`. It"
+" might be helpful as you dive in."
+msgstr ""
+
+#: ../../html/development/contributing.rst:12
+msgid "Submitting Pull Requests"
+msgstr ""
+
+#: ../../html/development/contributing.rst:14
+msgid ""
+"Submit pull requests against the ``main`` branch, providing a good "
+"description of what you're doing and why. You must have legal permission "
+"to distribute any code you contribute to pip and it must be available "
+"under the MIT License."
+msgstr ""
+
+#: ../../html/development/contributing.rst:19
+msgid ""
+"Provide tests that cover your changes and run the tests locally first. "
+"pip :ref:`supports <compatibility-requirements>` multiple Python versions"
+" and operating systems. Any pull request must consider and work on all "
+"these platforms."
+msgstr ""
+
+#: ../../html/development/contributing.rst:24
+msgid ""
+"Pull requests should be small to facilitate easier review. Keep them "
+"self-contained, and limited in scope. `Studies have shown`_ that review "
+"quality falls off as patch size grows. Sometimes this will result in many"
+" small PRs to land a single large feature. In particular, pull requests "
+"must not be treated as \"feature branches\", with ongoing development "
+"work happening within the PR. Instead, the feature should be broken up "
+"into smaller, independent parts which can be reviewed and merged "
+"individually."
+msgstr ""
+
+#: ../../html/development/contributing.rst:32
+msgid ""
+"Additionally, avoid including \"cosmetic\" changes to code that is "
+"unrelated to your change, as these make reviewing the PR more difficult. "
+"Examples include re-flowing text in comments or documentation, or adding "
+"or removing blank lines or whitespace within lines. Such changes can be "
+"made separately, as a \"formatting cleanup\" PR, if needed."
+msgstr ""
+
+#: ../../html/development/contributing.rst:40
+msgid "Automated Testing"
+msgstr ""
+
+#: ../../html/development/contributing.rst:42
+msgid ""
+"All pull requests and merges to 'main' branch are tested using `GitHub "
+"Actions`_ based on our `.github/workflows`_ files. More details about "
+"pip's Continuous Integration can be found in the `CI Documentation`_"
+msgstr ""
+
+#: ../../html/development/contributing.rst:47
+msgid ""
+"You can find the status and results to the CI runs for your PR on "
+"GitHub's web UI for the pull request. You can also find links to the CI "
+"services' pages for the specific builds in the form of \"Details\" links,"
+" in case the CI run fails and you wish to view the output."
+msgstr ""
+
+#: ../../html/development/contributing.rst:52
+msgid ""
+"To trigger CI to run again for a pull request, you can close and open the"
+" pull request or submit another change to the pull request. If needed, "
+"project maintainers can manually trigger a restart of a job/build."
+msgstr ""
+
+#: ../../html/development/contributing.rst:56
+msgid ""
+"To understand the broader software architecture around dependency "
+"resolution in pip, and how we automatically test this functionality, see "
+"`Testing the next-gen pip dependency resolver`_."
+msgstr ""
+
+#: ../../html/development/contributing.rst:61
+msgid "NEWS Entries"
+msgstr ""
+
+#: ../../html/development/contributing.rst:63
+msgid ""
+"The ``NEWS.rst`` file is managed using `towncrier`_ and all non trivial "
+"changes must be accompanied by a news entry."
+msgstr ""
+
+#: ../../html/development/contributing.rst:66
+msgid ""
+"To add an entry to the news file, first you need to have created an issue"
+" describing the change you want to make. A Pull Request itself *may* "
+"function as such, but it is preferred to have a dedicated issue (for "
+"example, in case the PR ends up rejected due to code quality reasons)."
+msgstr ""
+
+#: ../../html/development/contributing.rst:71
+msgid ""
+"Once you have an issue or pull request, you take the number and you "
+"create a file inside of the ``news/`` directory, named after that issue "
+"number with a \"type\" of ``removal``, ``feature``, ``bugfix``, or "
+"``doc`` associated with it."
+msgstr ""
+
+#: ../../html/development/contributing.rst:75
+msgid ""
+"If your issue or PR number is ``1234`` and this change is fixing a bug, "
+"then you would create a file ``news/1234.bugfix.rst``. PRs can span "
+"multiple categories by creating multiple files (for instance, if you "
+"added a feature and deprecated/removed the old feature at the same time, "
+"you would create ``news/NNNN.feature.rst`` and "
+"``news/NNNN.removal.rst``)."
+msgstr ""
+
+#: ../../html/development/contributing.rst:81
+msgid ""
+"If a PR touches multiple issues/PRs, you may create a file for each of "
+"them with the exact same contents and Towncrier will deduplicate them."
+msgstr ""
+
+#: ../../html/development/contributing.rst:85
+msgid "Contents of a NEWS entry"
+msgstr ""
+
+#: ../../html/development/contributing.rst:87
+msgid ""
+"The contents of this file are reStructuredText formatted text that will "
+"be used as the content of the news file entry. You do not need to "
+"reference the issue or PR numbers in the entry, since ``towncrier`` will "
+"automatically add a reference to all of the affected issues when "
+"rendering the NEWS file."
+msgstr ""
+
+#: ../../html/development/contributing.rst:93
+msgid ""
+"In order to maintain a consistent style in the ``NEWS.rst`` file, it is "
+"preferred to keep the news entry to the point, in sentence case, shorter "
+"than 80 characters and in an imperative tone -- an entry should complete "
+"the sentence \"This change will ...\". In rare cases, where one line is "
+"not enough, use a summary line in an imperative tone followed by a blank "
+"line separating it from a description of the feature/change in one or "
+"more paragraphs, each wrapped at 80 characters. Remember that a news "
+"entry is meant for end users and should only contain details relevant to "
+"an end user."
+msgstr ""
+
+#: ../../html/development/contributing.rst:105
+msgid "Choosing the type of NEWS entry"
+msgstr ""
+
+#: ../../html/development/contributing.rst:107
+msgid ""
+"A trivial change is anything that does not warrant an entry in the news "
+"file. Some examples are: Code refactors that don't change anything as far"
+" as the public is concerned, typo fixes, white space modification, etc. "
+"To mark a PR as trivial a contributor simply needs to add a randomly "
+"named, empty file to the ``news/`` directory with the extension of "
+"``.trivial.rst``. If you are on a POSIX like operating system, one can be"
+" added by running ``touch news/$(uuidgen).trivial.rst``. On Windows, the "
+"same result can be achieved in Powershell using ``New-Item "
+"\"news/$([guid]::NewGuid()).trivial.rst\"``. Core committers may also add"
+" a \"trivial\" label to the PR which will accomplish the same thing."
+msgstr ""
+
+#: ../../html/development/contributing.rst:118
+msgid ""
+"Upgrading, removing, or adding a new vendored library gets a special "
+"mention using a ``news/<library>.vendor.rst`` file. This is in addition "
+"to any features, bugfixes, or other kinds of news that pulling in this "
+"library may have. This uses the library name as the key so that updating "
+"the same library twice doesn't produce two news file entries."
+msgstr ""
+
+#: ../../html/development/contributing.rst:124
+msgid ""
+"Changes to the processes, policies, or other non code related changed "
+"that are otherwise notable can be done using a "
+"``news/<name>.process.rst`` file. This is not typically used, but can be "
+"used for things like changing version schemes, updating deprecation "
+"policy, etc."
+msgstr ""
+
+#: ../../html/development/contributing.rst:131
+msgid "Updating your branch"
+msgstr ""
+
+#: ../../html/development/contributing.rst:133
+msgid ""
+"As you work, you might need to update your local main branch up-to-date "
+"with the ``main`` branch in the main pip repository, which moves forward "
+"as the maintainers merge pull requests. Most people working on the "
+"project use the following workflow."
+msgstr ""
+
+#: ../../html/development/contributing.rst:138
+msgid ""
+"This assumes that you have Git configured so that when you run the "
+"following command:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:145
+msgid "Your output looks like this:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:154
+msgid "In the example above, ``USERNAME`` is your username on GitHub."
+msgstr ""
+
+#: ../../html/development/contributing.rst:156
+msgid ""
+"First, fetch the latest changes from the main pip repository, "
+"``upstream``:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:162
+msgid ""
+"Then, check out your local ``main`` branch, and rebase the changes on top"
+" of it:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:170
+msgid ""
+"At this point, you might have to `resolve merge conflicts`_. Once this is"
+" done, push the updates you have just made to your local ``main`` branch "
+"to your ``origin`` repository on GitHub:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:179
+msgid ""
+"Now your local ``main`` branch and the ``main`` branch in your ``origin``"
+" repo have been updated with the most recent changes from the main pip "
+"repository."
+msgstr ""
+
+#: ../../html/development/contributing.rst:183
+msgid "To keep your branches updated, the process is similar:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:191
+msgid ""
+"Now your branch has been updated with the latest changes from the "
+"``main`` branch on the upstream pip repository."
+msgstr ""
+
+#: ../../html/development/contributing.rst:194
+msgid ""
+"It's good practice to back up your branches by pushing them to your "
+"``origin`` on GitHub as you are working on them. To push a branch, run "
+"this command:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:202
+msgid ""
+"In this example, ``<awesome-feature>`` is the name of your branch. This "
+"will push the branch you are working on to GitHub, but will not create a "
+"PR."
+msgstr ""
+
+#: ../../html/development/contributing.rst:206
+msgid ""
+"Once you have pushed your branch to your ``origin``, if you need to "
+"update it again, you will have to force push your changes by running the "
+"following command:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:214
+msgid ""
+"The ``-f`` (or ``--force``) flag after ``push`` forces updates from your "
+"local branch to update your ``origin`` branch. If you have a PR open on "
+"your branch, force pushing will update your PR. (This is a useful command"
+" when someone requests changes on a PR.)"
+msgstr ""
+
+#: ../../html/development/contributing.rst:219
+msgid "If you get an error message like this:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:230
+msgid "Try force-pushing your branch with ``push -f``."
+msgstr ""
+
+#: ../../html/development/contributing.rst:232
+msgid ""
+"The ``main`` branch in the main pip repository gets updated frequently, "
+"so you might have to update your branch at least once while you are "
+"working on it."
+msgstr ""
+
+#: ../../html/development/contributing.rst:235
+msgid "Thank you for your contribution!"
+msgstr ""
+
+#: ../../html/development/contributing.rst:239
+msgid "Becoming a maintainer"
+msgstr ""
+
+#: ../../html/development/contributing.rst:241
+msgid "If you want to become an official maintainer, start by helping out."
+msgstr ""
+
+#: ../../html/development/contributing.rst:243
+msgid ""
+"As a first step, we welcome you to triage issues on pip's issue tracker. "
+"pip maintainers provide triage abilities to contributors once they have "
+"been around for some time (probably at least 2-3 months) and contributed "
+"positively to the project. This is optional and highly recommended for "
+"becoming a pip maintainer."
+msgstr ""
+
+#: ../../html/development/contributing.rst:249
+msgid ""
+"Later, when you think you're ready (probably at least 5 months after "
+"starting to triage), get in touch with one of the maintainers and they "
+"will initiate a vote among the existing maintainers."
+msgstr ""
+
+#: ../../html/development/contributing.rst:255
+msgid ""
+"Upon becoming a maintainer, a person should be given access to various "
+"pip-related tooling across multiple platforms. These are noted here for "
+"future reference by the maintainers:"
+msgstr ""
+
+#: ../../html/development/contributing.rst:259
+msgid "GitHub Push Access"
+msgstr ""
+
+#: ../../html/development/contributing.rst:260
+msgid "PyPI Publishing Access"
+msgstr ""
+
+#: ../../html/development/contributing.rst:261
+msgid "CI Administration capabilities"
+msgstr ""
+
+#: ../../html/development/contributing.rst:262
+msgid "ReadTheDocs Administration capabilities"
+msgstr ""
+
+#: ../../html/development/conventions.rst:5
+msgid "Documentation Conventions"
+msgstr ""
+
+#: ../../html/development/conventions.rst:7
+msgid ""
+"This document describes the conventions used in pip's documentation. We "
+"expect it to evolve over time as additional conventions are identified "
+"and past conventions are rendered obsolete."
+msgstr ""
+
+#: ../../html/development/conventions.rst:13
+msgid ""
+"Currently, these conventions are not enforced automatically, and need to "
+"be verified manually during code review. We are interested in linters "
+"that can help us enforce these conventions automatically."
+msgstr ""
+
+#: ../../html/development/conventions.rst:19
+msgid "Files"
+msgstr ""
+
+#: ../../html/development/conventions.rst:22
+msgid "Naming"
+msgstr ""
+
+#: ../../html/development/conventions.rst:24
+msgid "Folder names should be a single word, all lowercase."
+msgstr ""
+
+#: ../../html/development/conventions.rst:26
+msgid ""
+"File names must use the kebab-case style (all lowercase, hyphen for "
+"separating words) and have the extension ``.rst``."
+msgstr ""
+
+#: ../../html/development/conventions.rst:30
+msgid "Encoding"
+msgstr ""
+
+#: ../../html/development/conventions.rst:32
+msgid "All files in our documentation must use UTF-8 encoding."
+msgstr ""
+
+#: ../../html/development/conventions.rst:35
+msgid "Line Length"
+msgstr ""
+
+#: ../../html/development/conventions.rst:37
+msgid ""
+"Limit all lines to a maximum of 72 characters, where possible. This may "
+"be exceeded when it does not make sense to abide by it (eg. long links, "
+"code blocks)."
+msgstr ""
+
+#: ../../html/development/conventions.rst:42
+msgid "Headings"
+msgstr ""
+
+#: ../../html/development/conventions.rst:44
+msgid "Use the following symbols to create headings:"
+msgstr ""
+
+#: ../../html/development/conventions.rst:46
+msgid "``=`` with overline"
+msgstr ""
+
+#: ../../html/development/conventions.rst:47
+msgid "``=``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:48
+msgid "``-``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:49
+msgid "``^``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:50
+msgid "``'``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:51
+msgid "``*``"
+msgstr ""
+
+#: ../../html/development/conventions.rst:53
+msgid ""
+"For visual separation from the rest of the content, all other headings "
+"must have one empty line before and after. Heading 2 (``=``) should have "
+"two empty lines before, for indicating the end of the section prior to "
+"it."
+msgstr ""
+
+#: ../../html/development/conventions.rst:94
+msgid "Writing"
+msgstr ""
+
+#: ../../html/development/conventions.rst:98
+msgid ""
+"We're still discussing *how* pip should be capitalized in prose. The "
+"current statement here is tentative."
+msgstr ""
+
+#: ../../html/development/conventions.rst:101
+msgid ""
+"pip is a proper noun, and spelt all lowercase. Do not capitalize pip as "
+"\"Pip\" at the start of a sentence."
+msgstr ""
+
+#: ../../html/development/conventions.rst:104
+msgid ""
+"Avoid using phrases such as \"easy\", \"just\", \"simply\" etc, which "
+"imply that the task is trivial. If it were trivial, the user wouldn't be "
+"reading the documentation for it."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:3
+msgid "Getting Started"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:5
+msgid "We’re pleased that you are interested in working on pip."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:7
+msgid ""
+"This document is meant to get you setup to work on pip and to act as a "
+"guide and reference to the development setup. If you face any issues "
+"during this process, please `open an issue`_ about it on the issue "
+"tracker."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:13
+msgid "Get the source code"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:15
+msgid ""
+"To work on pip, you first need to get the source code of pip. The source "
+"code is available on `GitHub`_."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:25
+msgid "Development Environment"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:27
+msgid ""
+"pip is a command line application written in Python. For developing pip, "
+"you should `install Python`_ on your computer."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:30
+msgid ""
+"For developing pip, you need to install :pypi:`tox`. Often, you can run "
+"``python -m pip install tox`` to install and use it."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:35
+msgid "Running pip From Source Tree"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:37
+msgid ""
+"To run the pip executable from your source tree during development, "
+"install pip locally using editable installation (inside a virtualenv). "
+"You can then invoke your local source tree pip normally."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:60
+msgid "Running Tests"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:62
+msgid ""
+"pip's tests are written using the :pypi:`pytest` test framework and "
+":mod:`unittest.mock`. :pypi:`tox` is used to automate the setup and "
+"execution of pip's tests."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:66
+msgid ""
+"It is preferable to run the tests in parallel for better experience "
+"during development, since the tests can take a long time to finish when "
+"run sequentially."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:69
+msgid "To run tests:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:75
+msgid "To run tests without parallelization, run:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:81
+msgid ""
+"The example above runs tests against Python 3.6. You can also use other "
+"versions like ``py39`` and ``pypy3``."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:84
+msgid ""
+"``tox`` has been configured to forward any additional arguments it is "
+"given to ``pytest``. This enables the use of pytest's `rich CLI`_. As an "
+"example, you can select tests using the various ways that pytest "
+"provides:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:97
+msgid ""
+"Running pip's test suite requires supported version control tools "
+"(subversion, bazaar, git, and mercurial) to be installed. If you are "
+"missing one of the VCS tools, you can tell pip to skip those tests:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:108
+msgid "Running Linters"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:110
+msgid ""
+"pip uses :pypi:`pre-commit` for managing linting of the codebase. ``pre-"
+"commit`` performs various checks on all files in pip and uses tools that "
+"help follow a consistent code style within the codebase."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:114
+msgid "To use linters locally, run:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:122
+msgid ""
+"Avoid using ``# noqa`` comments to suppress linter warnings - wherever "
+"possible, warnings should be fixed instead. ``# noqa`` comments are "
+"reserved for rare cases where the recommended style causes severe "
+"readability problems."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:129
+msgid "Running pip under a debugger"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:131
+msgid "In order to debug pip's behavior, you can run it under a debugger like so:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:138
+msgid ""
+"Replace the ``...`` with arguments you'd like to run pip with. Give PDB "
+"the ``c`` (\"continue\") command afterwards, to run the process."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:141
+msgid ""
+"The ``--debug`` flag disables pip's exception handler, which would "
+"normally catch all unhandled exceptions. With this flag, pip will let "
+"these exceptions propagate outside of its main subroutine, letting them "
+"get caught by the debugger. This way you'll be able to debug an exception"
+" post-mortem via PDB."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:148
+msgid "Building Documentation"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:150
+msgid ""
+"pip's documentation is built using :pypi:`Sphinx`. The documentation is "
+"written in reStructuredText."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:153
+msgid "To build it locally, run:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:159
+msgid "The built documentation can be found in the ``docs/build`` folder."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:161
+msgid ""
+"For each Pull Request made the documentation is deployed following this "
+"link:"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:169
+msgid "What Next?"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:171
+msgid ""
+"The following pages may be helpful for new contributors on where to look "
+"next in order to start contributing."
+msgstr ""
+
+#: ../../html/development/getting-started.rst:174
+msgid "Some `good first issues`_ on GitHub for new contributors"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:175
+msgid "A deep dive into `pip's architecture`_"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:176
+msgid "A guide on `triaging issues`_ for issue tracker"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:177
+msgid "Getting started with Git"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:179
+msgid "`Hello World for Git`_"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:180
+msgid "`Understanding the GitHub flow`_"
+msgstr ""
+
+#: ../../html/development/getting-started.rst:181
+msgid "`Start using Git on the command line`_"
+msgstr ""
+
+#: ../../html/development/index.rst:3
+msgid "Development"
+msgstr ""
+
+#: ../../html/development/index.rst:5
+msgid ""
+"pip is a volunteer maintained open source project and we welcome "
+"contributions of all forms. The sections below will help you get started "
+"with development, testing, and documentation."
+msgstr ""
+
+#: ../../html/development/index.rst:9
+msgid ""
+"You can also join ``#pypa`` (general packaging discussion and user "
+"support) and ``#pypa-dev`` (discussion about development of packaging "
+"tools) `on Libera.chat`_, or the `distutils-sig mailing list`_, to ask "
+"questions or get involved."
+msgstr ""
+
+#: ../../html/development/index.rst:26
+msgid ""
+"pip's development documentation has been rearranged and some older "
+"references might be broken."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:3
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue "
+"<https://github.com/pypa/pip/issues/6583>`__, or just submit a pull "
+"request and mention it in that tracking issue."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:11
+msgid "Issue Triage"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:13
+msgid ""
+"This serves as an introduction to issue tracking in pip as well as how to"
+" help triage reported issues."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:18
+msgid "Issue Tracker"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:20
+msgid ""
+"The `pip issue tracker <https://github.com/pypa/pip/issues>`__ is hosted "
+"on GitHub alongside the project."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:23
+msgid ""
+"Currently, the issue tracker is used for bugs, feature requests, and "
+"general user support."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:26
+msgid ""
+"In the pip issue tracker, we make use of labels and milestones to "
+"organize and track work."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:30
+msgid "Labels"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:32
+msgid "Issue labels are used to:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:34
+msgid "Categorize issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:35
+msgid "Provide status information for contributors and reporters"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:36
+msgid "Help contributors find tasks to work on"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:38
+msgid ""
+"The current set of labels are divided into several categories identified "
+"by prefix:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:42
+msgid "**C - Category**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:42
+msgid ""
+"which area of ``pip`` functionality a feature request or issue is related"
+" to"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:44
+msgid "**K - Kind**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:47
+msgid "**O - Operating System**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:47
+msgid "for issues that are OS-specific"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:50
+msgid "**P - Project/Platform**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:50
+msgid "related to something external to ``pip``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:54
+msgid "**R - Resolution**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:53
+msgid ""
+"no more discussion is really needed, an action has been identified and "
+"the issue is waiting or closed"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:57
+msgid "**S - State**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:57
+msgid "for some automatic labels and other indicators that work is needed"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:60
+msgid "**type**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:60
+msgid "the role or flavor of an issue"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:62
+msgid ""
+"The specific labels falling into each category have a description that "
+"can be seen on the `Labels <https://github.com/pypa/pip/labels>`__ page."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:65
+msgid "In addition, there are several standalone labels:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:69
+msgid "**good first issue**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:68
+msgid ""
+"this label marks an issue as beginner-friendly and shows up in banners "
+"that GitHub displays for first-time visitors to the repository"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:72
+msgid "**triage**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:72
+msgid "default label given to issues when they are created"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:76
+msgid "**trivial**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:75
+msgid ""
+"special label for pull requests that removes the :ref:`news file "
+"requirement <choosing-news-entry-type>`"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:80
+msgid "**needs rebase or merge**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:79
+msgid ""
+"this is a special label used by BrownTruck to mark PRs that have merge "
+"conflicts"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:83
+msgid "Automation"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:85
+msgid "There are several helpers to manage issues and pull requests."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:87
+msgid ""
+"Issues created on the issue tracker are automatically given the "
+"``triage`` label by the `triage-new-issues <https://github.com/apps"
+"/triage-new-issues>`__ bot. The label is automatically removed when "
+"another label is added."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:92
+msgid ""
+"When an issue needs feedback from the author we can label it with ``S: "
+"awaiting response``. When the author responds, the `no-response "
+"<https://github.com/apps/no-response>`__ bot removes the label."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:96
+msgid ""
+"After an issue has been closed for 30 days, the `lock "
+"<https://github.com/apps/lock>`__ bot locks the issue and adds the ``S: "
+"auto-locked`` label. This allows us to avoid monitoring existing closed "
+"issues, but unfortunately prevents and references to issues from showing "
+"up as links on the closed issue."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:104
+msgid "Triage Issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:106
+msgid "Users can make issues for a number of reasons:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:108
+msgid "Suggestions about pip features that could be added or improved"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:109
+msgid "Problems using pip"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:110
+msgid "Concerns about pip usability"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:111
+msgid "General packaging problems to be solved with pip"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:112
+msgid "Problems installing or using Python packages"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:113
+msgid "Problems managing virtual environments"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:114
+msgid "Problems managing Python installations"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:116
+msgid "To triage issues means to identify what kind of issue is happening and"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:118
+msgid "confirm bugs"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:119
+msgid "provide support"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:120
+msgid "discuss and design around the uses of the tool"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:122
+msgid "Specifically, to address an issue:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:124
+msgid "Read issue title"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:125
+msgid "Scan issue description"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:126
+msgid "Ask questions"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:127
+msgid "If time is available, try to reproduce"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:128
+msgid "Search for or remember related issues and link to them"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:129
+msgid "Identify an appropriate area of concern (if applicable)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:131
+msgid ""
+"Keep in mind that all communication is happening with other people and "
+"should be done with respect per the `Code of Conduct "
+"<https://www.pypa.io/en/latest/code-of-conduct/>`__."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:135
+msgid "The lifecycle of an issue (bug or support) generally looks like:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:137
+msgid "waiting for triage (marked with label ``triage``)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:138
+msgid ""
+"confirming issue - some discussion with the user, gathering details, "
+"trying to reproduce the issue (may be marked with a specific category, "
+"``S: awaiting-response``, ``S: discussion-needed``, or ``S: need-repro``)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:142
+msgid ""
+"confirmed - the issue is pretty consistently reproducible in a "
+"straightforward way, or a mechanism that could be causing the issue has "
+"been identified"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:145
+msgid ""
+"awaiting fix - the fix is identified and no real discussion on the issue "
+"is needed, should be marked ``R: awaiting PR``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:147
+msgid "closed - can be for several reasons"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:149
+msgid "fixed"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:150
+msgid ""
+"could not be reproduced, no more details could be obtained, and no "
+"progress can be made"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:152
+msgid ""
+"actual issue was with another project or related to system configuration "
+"and pip cannot (or will not) be adapted for it"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:157
+msgid "Requesting information"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:159
+msgid ""
+"Requesting more information to better understand the context and "
+"environment that led to the issue. Examples of specific information that "
+"may be useful depending on the situation:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:163
+msgid "pip debug: ``pip debug``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:164
+msgid "pip version: ``pip -V``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:165
+msgid "Python version: ``python -VV``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:166
+msgid "Python path: ``python -c 'import sys; print(sys.executable)'``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:167
+msgid "``python`` on ``PATH``: Unix: ``which python``; Windows: ``where python``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:168
+msgid "Python as resolved by the shell: ``type python``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:169
+msgid ""
+"Origin of pip (get-pip.py, OS-level package manager, ensurepip, manual "
+"installation)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:171
+msgid "Using a virtual environment (with ``--system-site-packages``?)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:172
+msgid "Using a conda environment"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:173
+msgid "``PATH`` environment variable"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:174
+msgid "Network situation (e.g. airgapped environment, firewalls)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:175
+msgid "``--verbose`` output of a failing command"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:176
+msgid ""
+"(Unix) ``strace`` output from a failing command (be careful not to output"
+" into the same directory as a package that's being installed, otherwise "
+"pip will loop forever copying the log file...)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:179
+msgid ""
+"(Windows) `procmon <https://docs.microsoft.com/en-"
+"us/sysinternals/downloads/procmon>`__ output during a failing command "
+"(`example request "
+"<https://github.com/pypa/pip/issues/6814#issuecomment-516611389>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:183
+msgid ""
+"Listing of files relevant to the issue (e.g. ``ls -l venv/lib/pythonX.Y"
+"/problem-package.dist-info/``)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:184
+msgid ""
+"whether the unexpected behavior ever worked as expected - if so then what"
+" were the details of the setup (same information as above)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:188
+msgid ""
+"Generally, information is good to request if it can help confirm or rule "
+"out possible sources of error. We shouldn't request information that does"
+" not improve our understanding of the situation."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:194
+msgid "Reproducing issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:196
+msgid ""
+"Whenever an issue happens and the cause isn't obvious, it is important "
+"that we be able to reproduce it independently. This serves several "
+"purposes:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:199
+msgid ""
+"If it is a pip bug, then any fix will need tests - a good reproducer is "
+"most of the way towards that."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:201
+msgid ""
+"If it is not reproducible using the provided instructions, that helps "
+"rule out a lot of possible causes."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:203
+msgid ""
+"A clear set of instructions is an easy way to get on the same page as "
+"someone reporting an issue."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:206
+msgid "The best way to reproduce an issue is with a script."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:208
+msgid ""
+"A script can be copied into a file and executed, whereas shell output has"
+" to be manually copied a line at a time."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:211
+msgid "Scripts to reproduce issues should be:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:213
+msgid ""
+"portable (few/no assumptions about the system, other that it being Unix "
+"or Windows as applicable)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:214
+msgid "non-destructive"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:215
+msgid "convenient"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:216
+msgid "require little/no setup on the part of the runner"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:218
+msgid "Examples:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:220
+msgid ""
+"creating and installing multiple wheels with different versions (`link "
+"<https://github.com/pypa/pip/issues/4331#issuecomment-520156471>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:222
+msgid ""
+"using a small web server for authentication errors (`link "
+"<https://github.com/pypa/pip/issues/2920#issuecomment-508953118>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:224
+msgid ""
+"using docker to test system or global configuration-related issues (`link"
+" <https://github.com/pypa/pip/issues/5533#issuecomment-520159896>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:226
+msgid ""
+"using docker to test special filesystem permission/configurations (`link "
+"<https://github.com/pypa/pip/issues/6364#issuecomment-507074729>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:228
+msgid ""
+"using docker for global installation with get-pip (`link "
+"<https://github.com/pypa/pip/issues/6498#issuecomment-513501112>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:230
+msgid ""
+"get-pip on system with no ``/usr/lib64`` (`link "
+"<https://github.com/pypa/pip/issues/5379#issuecomment-515270576>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:232
+msgid ""
+"reproducing with ``pip`` from current development branch (`link "
+"<https://github.com/pypa/pip/issues/6707#issue-467770959>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:237
+msgid "Reaching resolution"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:239
+msgid ""
+"Some user support questions are more related to system configuration than"
+" pip. It's important to treat these issues with the same care and "
+"attention as others, specifically:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:243
+msgid ""
+"Unless the issue is very old and the user doesn't seem active, wait for "
+"confirmation before closing the issue"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:245
+msgid "Direct the user to the most appropriate forum for their questions:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:247
+msgid "For Ubuntu, `askubuntu <https://askubuntu.com/>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:248
+msgid "For Other linuxes/unixes, `serverfault <https://serverfault.com/>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:249
+msgid ""
+"For network connectivity issues, `serverfault "
+"<https://serverfault.com/>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:252
+msgid ""
+"Just because a user support question is best solved using some other "
+"forum doesn't mean that we can't make things easier. Try to extract and "
+"understand from the user query how things could have been made easier for"
+" them or you, for example with better warning or error messages. If an "
+"issue does not exist covering that case then create one. If an issue does"
+" exist then make sure to reference that issue before closing this one."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:258
+msgid ""
+"A user may be having trouble installing a package, where the package "
+"``setup.py`` or build-backend configuration is non-trivial. In these "
+"cases we can help to troubleshoot but the best advice is going to be to "
+"direct them to the support channels for the related projects."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:262
+msgid ""
+"Do not be hasty to assume it is one cause or another. What looks like "
+"someone else's problem may still be an issue in pip or at least something"
+" that could be improved."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:265
+msgid "For general discussion on Python packaging:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:267
+msgid "`pypa/packaging <https://github.com/pypa/packaging-problems>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:268
+msgid "`discuss.python.org/packaging <https://discuss.python.org/c/packaging>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:272
+msgid "Closing issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:274
+msgid "An issue may be considered resolved and closed when:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:276
+msgid ""
+"for each possible improvement or problem represented in the issue "
+"discussion:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:279
+msgid ""
+"Consensus has been reached on a specific action and the actions appear to"
+" be external to the project, with no follow up needed in the project "
+"afterwards."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:283
+msgid ""
+"PEP updates (with a corresponding issue in `python/peps "
+"<https://github.com/python/peps>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:285
+msgid "already tracked by another issue"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:287
+msgid ""
+"A project-specific issue has been identified and the issue no longer "
+"occurs as of the latest commit on the main branch."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:290
+msgid ""
+"An enhancement or feature request no longer has a proponent and the "
+"maintainers don't think it's worth keeping open."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:292
+msgid ""
+"An issue has been identified as a duplicate, and it is clearly a "
+"duplicate (i.e. the original report was very good and points directly to "
+"the issue)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:294
+msgid ""
+"The issue has been fixed, and can be independently validated as no longer"
+" being an issue. If this is with code then the specific change/PR that "
+"led to it should be identified and posted for tracking."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:300
+msgid "Common issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:302
+msgid ""
+"network-related issues - any issue involving retries, address lookup, or "
+"anything like that are typically network issues."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:304
+msgid ""
+"issues related to having multiple Python versions, or an OS package "
+"manager-managed pip/python installation (specifically with "
+"Debian/Ubuntu). These typically present themselves as:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:308
+msgid "Not being able to find installed packages"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:309
+msgid "basic libraries not able to be found, fundamental OS components missing"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:310
+msgid ""
+"In these situations you will want to make sure that we know how they got "
+"their Python and pip. Knowing the relevant package manager commands can "
+"help, e.g. ``dpkg -S``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:3
+msgid "Release process"
+msgstr ""
+
+#: ../../html/development/release-process.rst:8
+msgid "Release Cadence"
+msgstr ""
+
+#: ../../html/development/release-process.rst:10
+msgid ""
+"The pip project has a release cadence of releasing whatever is on "
+"``main`` every 3 months. This gives users a predictable pattern for when "
+"releases are going to happen and prevents locking up improvements for "
+"fixes for long periods of time, while still preventing massively "
+"fracturing the user base with version numbers."
+msgstr ""
+
+#: ../../html/development/release-process.rst:16
+msgid ""
+"Our release months are January, April, July, October. The release date "
+"within that month will be up to the release manager for that release. If "
+"there are no changes, then that release month is skipped and the next "
+"release will be 3 months later."
+msgstr ""
+
+#: ../../html/development/release-process.rst:21
+msgid ""
+"The release manager may, at their discretion, choose whether or not there"
+" will be a pre-release period for a release, and if there is may extend "
+"that period into the next month if needed."
+msgstr ""
+
+#: ../../html/development/release-process.rst:25
+msgid ""
+"Because releases are made direct from the ``main`` branch, it is "
+"essential that ``main`` is always in a releasable state. It is acceptable"
+" to merge PRs that partially implement a new feature, but only if the "
+"partially implemented version is usable in that state (for example, with "
+"reduced functionality or disabled by default). In the case where a merged"
+" PR is found to need extra work before being released, the release "
+"manager always has the option to back out the partial change prior to a "
+"release. The PR can then be reworked and resubmitted for the next "
+"release."
+msgstr ""
+
+#: ../../html/development/release-process.rst:37
+msgid "Deprecation Policy"
+msgstr ""
+
+#: ../../html/development/release-process.rst:39
+msgid ""
+"Any change to pip that removes or significantly alters user-visible "
+"behavior that is described in the pip documentation will be deprecated "
+"for a minimum of 6 months before the change occurs."
+msgstr ""
+
+#: ../../html/development/release-process.rst:43
+msgid ""
+"Certain changes may be fast tracked and have a deprecation period of 3 "
+"months. This requires at least two members of the pip team to be in favor"
+" of doing so, and no pip maintainers opposing."
+msgstr ""
+
+#: ../../html/development/release-process.rst:47
+msgid ""
+"Deprecation will take the form of a warning being issued by pip when the "
+"feature is used. Longer deprecation periods, or deprecation warnings for "
+"behavior changes that would not normally be covered by this policy, are "
+"also possible depending on circumstances, but this is at the discretion "
+"of the pip maintainers."
+msgstr ""
+
+#: ../../html/development/release-process.rst:53
+msgid ""
+"Note that the documentation is the sole reference for what counts as "
+"agreed behavior. If something isn't explicitly mentioned in the "
+"documentation, it can be changed without warning, or any deprecation "
+"period, in a pip release. However, we are aware that the documentation "
+"isn't always complete - PRs that document existing behavior with the "
+"intention of covering that behavior with the above deprecation process "
+"are always acceptable, and will be considered on their merits."
+msgstr ""
+
+#: ../../html/development/release-process.rst:63
+msgid ""
+"pip has a helper function for making deprecation easier for pip "
+"maintainers. The supporting documentation can be found in the source code"
+" of ``pip._internal.utils.deprecation.deprecated``. The function is not a"
+" part of pip's public API."
+msgstr ""
+
+#: ../../html/development/release-process.rst:71
+msgid "Python 2 Support"
+msgstr ""
+
+#: ../../html/development/release-process.rst:73
+msgid ""
+"pip 20.3 was the last version of pip that supported Python 2. Bugs "
+"reported with pip which only occur on Python 2.7 will likely be closed as"
+" \"won't fix\" issues by pip's maintainers."
+msgstr ""
+
+#: ../../html/development/release-process.rst:78
+msgid "Python Support Policy"
+msgstr ""
+
+#: ../../html/development/release-process.rst:80
+msgid ""
+"In general, a given Python version is supported until its usage on PyPI "
+"falls below 5%. This is at the maintainers' discretion, in case "
+"extraordinary circumstances arise."
+msgstr ""
+
+#: ../../html/development/release-process.rst:86
+msgid "Feature Flags"
+msgstr ""
+
+#: ../../html/development/release-process.rst:89
+msgid "``--use-deprecated``"
+msgstr ""
+
+#: ../../html/development/release-process.rst:91
+msgid "Example: ``--use-deprecated=legacy-resolver``"
+msgstr ""
+
+#: ../../html/development/release-process.rst:93
+msgid ""
+"Use for features that will be deprecated. Deprecated features should "
+"remain available behind this flag for at least six months, as per the "
+"deprecation policy."
+msgstr ""
+
+#: ../../html/development/release-process.rst:97
+msgid ""
+"Features moved behind this flag should always include a warning that "
+"indicates when the feature is scheduled to be removed."
+msgstr ""
+
+#: ../../html/development/release-process.rst:100
+msgid ""
+"Once the feature is removed, users who use the flag should be shown an "
+"error."
+msgstr ""
+
+#: ../../html/development/release-process.rst:103
+msgid "``--use-feature``"
+msgstr ""
+
+#: ../../html/development/release-process.rst:105
+msgid "Example: ``--use-feature=2020-resolver``"
+msgstr ""
+
+#: ../../html/development/release-process.rst:107
+msgid ""
+"Use for new features that users can test before they become pip's default"
+" behaviour (e.g. alpha or beta releases)."
+msgstr ""
+
+#: ../../html/development/release-process.rst:110
+msgid ""
+"Once the feature becomes the default behaviour, this flag can remain in "
+"place, but should issue a warning telling the user that it is no longer "
+"necessary."
+msgstr ""
+
+#: ../../html/development/release-process.rst:114
+msgid "Release Process"
+msgstr ""
+
+#: ../../html/development/release-process.rst:117
+msgid "Creating a new release"
+msgstr ""
+
+#: ../../html/development/release-process.rst:119
+msgid "Ensure you have the latest ``nox`` installed."
+msgstr ""
+
+#: ../../html/development/release-process.rst:120
+msgid "Create a new ``release/YY.N`` branch off ``main`` and switch to it."
+msgstr ""
+
+#: ../../html/development/release-process.rst:121
+msgid ""
+"Prepare for release using ``nox -s prepare-release -- YY.N``. This will "
+"update the relevant files and tag the correct commit."
+msgstr ""
+
+#: ../../html/development/release-process.rst:123
+msgid ""
+"Submit the ``release/YY.N`` branch as a pull request and ensure CI "
+"passes. Merge the changes back into ``main`` and pull them back locally."
+msgstr ""
+
+#: ../../html/development/release-process.rst:125
+msgid ""
+"Build the release artifacts using ``nox -s build-release -- YY.N``. This "
+"will checkout the tag, generate the distribution files to be uploaded and"
+" checkout the main branch again."
+msgstr ""
+
+#: ../../html/development/release-process.rst:128
+msgid "Upload the release to PyPI using ``nox -s upload-release -- YY.N``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:129
+msgid "Push the tag created by ``prepare-release``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:130
+msgid ""
+"Regenerate the ``get-pip.py`` script in the `get-pip repository`_ (as "
+"documented there) and commit the results."
+msgstr ""
+
+#: ../../html/development/release-process.rst:132
+msgid ""
+"Submit a Pull Request to `CPython`_ adding the new version of pip (and "
+"upgrading setuptools) to ``Lib/ensurepip/_bundled``, removing the "
+"existing version, and adjusting the versions listed in "
+"``Lib/ensurepip/__init__.py``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:139
+msgid ""
+"If the release dropped the support of an obsolete Python version ``M.m``,"
+" a new ``M.m/get-pip.py`` needs to be published: update the ``all`` task "
+"from ``tasks/generate.py`` in `get-pip repository`_ and make a pull "
+"request to `psf-salt repository`_ to add the new ``get-pip.py`` (and its "
+"directory) to ``salt/pypa/bootstrap/init.sls``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:148
+msgid ""
+"If the ``get-pip.py`` script needs to be updated due to changes in pip "
+"internals and if the last ``M.m/get-pip.py`` published still uses the "
+"default template, make sure to first duplicate ``templates/default.py`` "
+"as ``templates/pre-YY.N.py`` before updating it and specify in "
+"``tasks/generate.py`` that ``M.m/get-pip.py`` now needs to use "
+"``templates/pre-YY.N.py``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:156
+msgid "Creating a bug-fix release"
+msgstr ""
+
+#: ../../html/development/release-process.rst:158
+msgid ""
+"Sometimes we need to release a bugfix release of the form ``YY.N.Z+1``. "
+"In order to create one of these the changes should already be merged into"
+" the ``main`` branch."
+msgstr ""
+
+#: ../../html/development/release-process.rst:162
+msgid ""
+"Create a new ``release/YY.N.Z+1`` branch off of the ``YY.N`` tag using "
+"the command ``git checkout -b release/YY.N.Z+1 YY.N``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:164
+msgid ""
+"Cherry pick the fixed commits off of the ``main`` branch, fixing any "
+"conflicts."
+msgstr ""
+
+#: ../../html/development/release-process.rst:166
+msgid "Run ``nox -s prepare-release -- YY.N.Z+1``."
+msgstr ""
+
+#: ../../html/development/release-process.rst:167
+msgid ""
+"Merge main into your release branch and drop the news files that have "
+"been included in your release (otherwise they would also appear in the "
+"``YY.N+1`` changelog)"
+msgstr ""
+
+#: ../../html/development/release-process.rst:170
+msgid ""
+"Push the ``release/YY.N.Z+1`` branch to github and submit a PR for it "
+"against the ``main`` branch and wait for the tests to run."
+msgstr ""
+
+#: ../../html/development/release-process.rst:172
+msgid ""
+"Once tests run, merge the ``release/YY.N.Z+1`` branch into ``main``, and "
+"follow the above release process starting with step 5."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:3
+msgid "Vendoring Policy"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:5
+msgid ""
+"Vendored libraries **MUST** not be modified except as required to "
+"successfully vendor them."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:7
+msgid ""
+"Vendored libraries **MUST** be released copies of libraries available on "
+"PyPI."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:9
+msgid ""
+"Vendored libraries **MUST** be available under a license that allows them"
+" to be integrated into ``pip``, which is released under the MIT license."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:11
+msgid "Vendored libraries **MUST** be accompanied with LICENSE files."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:12
+msgid ""
+"The versions of libraries vendored in pip **MUST** be reflected in "
+"``pip/_vendor/vendor.txt``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:14
+msgid ""
+"Vendored libraries **MUST** function without any build steps such as "
+"``2to3`` or compilation of C code, practically this limits to single "
+"source 2.x/3.x and pure Python."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:17
+msgid ""
+"Any modifications made to libraries **MUST** be noted in "
+"``pip/_vendor/README.rst`` and their corresponding patches **MUST** be "
+"included ``tools/vendoring/patches``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:20
+msgid ""
+"Vendored libraries should have corresponding ``vendored()`` entries in "
+"``pip/_vendor/__init__.py``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:24
+msgid "Rationale"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:26
+msgid ""
+"Historically pip has not had any dependencies except for ``setuptools`` "
+"itself, choosing instead to implement any functionality it needed to "
+"prevent needing a dependency. However, starting with pip 1.5, we began to"
+" replace code that was implemented inside of pip with reusable libraries "
+"from PyPI. This brought the typical benefits of reusing libraries instead"
+" of reinventing the wheel like higher quality and more battle tested "
+"code, centralization of bug fixes (particularly security sensitive ones),"
+" and better/more features for less work."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:34
+msgid ""
+"However, there are several issues with having dependencies in the "
+"traditional way (via ``install_requires``) for pip. These issues are:"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:44
+msgid "**Fragility**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:38
+msgid ""
+"When pip depends on another library to function then if for whatever "
+"reason that library either isn't installed or an incompatible version is "
+"installed then pip ceases to function. This is of course true for all "
+"Python applications, however for every application *except* for pip the "
+"way you fix it is by re-running pip. Obviously, when pip can't run, you "
+"can't use pip to fix pip, so you're left having to manually resolve "
+"dependencies and installing them by hand."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:54
+msgid "**Making other libraries uninstallable**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:47
+msgid ""
+"One of pip's current dependencies is the ``requests`` library, for which "
+"pip requires a fairly recent version to run.  If pip depended on "
+"``requests`` in the traditional manner, then we'd either have to maintain"
+" compatibility with every ``requests`` version that has ever existed (and"
+" ever will), OR allow pip to render certain versions of ``requests`` "
+"uninstallable. (The second issue, although technically true for any "
+"Python application, is magnified by pip's ubiquity; pip is installed by "
+"default in Python, in ``pyvenv``, and in ``virtualenv``.)"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:68
+msgid "**Security**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:57
+msgid ""
+"This might seem puzzling at first glance, since vendoring has a tendency "
+"to complicate updating dependencies for security updates, and that holds "
+"true for pip. However, given the *other* reasons for avoiding "
+"dependencies, the alternative is for pip to reinvent the wheel itself.  "
+"This is what pip did historically. It forced pip to re-implement its own "
+"HTTPS verification routines as a workaround for the Python standard "
+"library's lack of SSL validation, which resulted in similar bugs in the "
+"validation routine in ``requests`` and ``urllib3``, except that they had "
+"to be discovered and fixed independently. Even though we're vendoring, "
+"reusing libraries keeps pip more secure by relying on the great work of "
+"our dependencies, *and* allowing for faster, easier security fixes by "
+"simply pulling in newer versions of dependencies."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:76
+msgid "**Bootstrapping**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:71
+msgid ""
+"Currently most popular methods of installing pip rely on pip's self-"
+"contained nature to install pip itself. These tools work by bundling a "
+"copy of pip, adding it to ``sys.path``, and then executing that copy of "
+"pip. This is done instead of implementing a \"mini installer\" (to reduce"
+" duplication); pip already knows how to install a Python package, and is "
+"far more battle-tested than any \"mini installer\" could ever possibly "
+"be."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:78
+msgid ""
+"Many downstream redistributors have policies against this kind of "
+"bundling, and instead opt to patch the software they distribute to "
+"debundle it and make it rely on the global versions of the software that "
+"they already have packaged (which may have its own patches applied to "
+"it). We (the pip team) would prefer it if pip was *not* debundled in this"
+" manner due to the above reasons and instead we would prefer it if pip "
+"would be left intact as it is now. The one exception to this, is it is "
+"acceptable to remove the ``pip/_vendor/requests/cacert.pem`` file "
+"provided you ensure that the ``ssl.get_default_verify_paths().cafile`` "
+"API returns the correct CA bundle for your system. This will ensure that "
+"pip will use your system provided CA bundle instead of the copy bundled "
+"with pip."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:90
+msgid ""
+"In the longer term, if someone has a *portable* solution to the above "
+"problems, other than the bundling method we currently use, that doesn't "
+"add additional problems that are unreasonable then we would be happy to "
+"consider, and possibly switch to said method. This solution must function"
+" correctly across all of the situation that we expect pip to be used and "
+"not mandate some external mechanism such as OS packages."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:99
+msgid "Modifications"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:101
+msgid "``setuptools`` is completely stripped to only keep ``pkg_resources``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:102
+msgid ""
+"``pkg_resources`` has been modified to import its dependencies from "
+"``pip._vendor``, and to use the vendored copy of ``platformdirs`` rather "
+"than ``appdirs``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:105
+msgid ""
+"``packaging`` has been modified to import its dependencies from "
+"``pip._vendor``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:107
+msgid ""
+"``html5lib`` has been modified to import six from ``pip._vendor``, to "
+"prefer importing from ``collections.abc`` instead of ``collections`` and "
+"does not import ``xml.etree.cElementTree`` on Python 3."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:110
+msgid ""
+"``CacheControl`` has been modified to import its dependencies from "
+"``pip._vendor``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:112
+msgid ""
+"``requests`` has been modified to import its other dependencies from "
+"``pip._vendor`` and to *not* load ``simplejson`` (all platforms) and "
+"``pyopenssl`` (Windows)."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:115
+msgid ""
+"``platformdirs`` has been modified to import its submodules from "
+"``pip._vendor.platformdirs``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:118
+msgid "Automatic Vendoring"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:120
+msgid ""
+"Vendoring is automated via the `vendoring "
+"<https://pypi.org/project/vendoring/>`_ tool from the content of "
+"``pip/_vendor/vendor.txt`` and the different patches in "
+"``tools/vendoring/patches``. Launch it via ``vendoring sync . -v`` "
+"(requires ``vendoring>=0.2.2``)."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:127
+msgid "Debundling"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:129
+msgid ""
+"As mentioned in the rationale, we, the pip team, would prefer it if pip "
+"was not debundled (other than optionally "
+"``pip/_vendor/requests/cacert.pem``) and that pip was left intact. "
+"However, if you insist on doing so, we have a semi-supported method (that"
+" we don't test in our CI) and requires a bit of extra work on your end in"
+" order to solve the problems described above."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:135
+msgid ""
+"Delete everything in ``pip/_vendor/`` **except** for "
+"``pip/_vendor/__init__.py`` and ``pip/_vendor/vendor.txt``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:137
+msgid ""
+"Generate wheels for each of pip's dependencies (and any of their "
+"dependencies) using your patched copies of these libraries. These must be"
+" placed somewhere on the filesystem that pip can access (``pip/_vendor`` "
+"is the default assumption)."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:141
+msgid ""
+"Modify ``pip/_vendor/__init__.py`` so that the ``DEBUNDLED`` variable is "
+"``True``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:143
+msgid ""
+"Upon installation, the ``INSTALLER`` file in pip's own ``dist-info`` "
+"directory should be set to something other than ``pip``, so that pip can "
+"detect that it wasn't installed using itself."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:146
+msgid ""
+"*(optional)* If you've placed the wheels in a location other than "
+"``pip/_vendor/``, then modify ``pip/_vendor/__init__.py`` so that the "
+"``WHEEL_DIR`` variable points to the location you've placed them."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:149
+msgid ""
+"*(optional)* Update the ``pip_self_version_check`` logic to use the "
+"appropriate logic for determining the latest available version of pip and"
+" prompt the user with the correct upgrade message."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:153
+msgid ""
+"Note that partial debundling is **NOT** supported. You need to prepare "
+"wheels for all dependencies for successful debundling."
+msgstr ""
+

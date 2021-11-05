@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/installation.md:1
+msgid "Installation"
+msgstr "安装"
+
+#: ../../html/installation.md:3
+msgid "Usually, pip is automatically installed if you are:"
+msgstr "通常下列情况，pip 会自动安装："
+
+#: ../../html/installation.md:5
+msgid ""
+"working in a {ref}`virtual environment <pypug:Creating and using Virtual "
+"Environments>`"
+msgstr ""
+"在 {ref}`虚拟环境 <pypug:Creating and using Virtual "
+"Environments>` 中工作"
+
+#: ../../html/installation.md:7
+msgid "using Python downloaded from [python.org](https://www.python.org)"
+msgstr "使用从 [python.org](https://www.python.org) 下载的 Python。"
+
+#: ../../html/installation.md:8
+msgid ""
+"using Python that has not been modified by a redistributor to remove "
+"{mod}`ensurepip`"
+msgstr ""
+"使用未被再发行者修改过的 Python，以移除 {mod}`ensurepip`"
+
+#: ../../html/installation.md:11
+msgid "Supported Methods"
+msgstr "所支持的方法"
+
+#: ../../html/installation.md:13
+msgid ""
+"If your Python environment does not have pip installed, there are 2 "
+"mechanisms to install pip supported directly by pip's maintainers:"
+msgstr ""
+"如果你的 Python 环境没有安装 pip，"
+"有两种机制可以安装 pip，由 pip 的维护者直接支持："
+
+#: ../../html/installation.md:16
+msgid "[`ensurepip`](#ensurepip)"
+msgstr ""
+
+#: ../../html/installation.md:17
+msgid "[`get-pip.py`](#get-pip-py)"
+msgstr ""
+
+#: ../../html/installation.md:19
+msgid "`ensurepip`"
+msgstr ""
+
+#: ../../html/installation.md:21
+msgid ""
+"Python comes with an {mod}`ensurepip` module[^python], which can install "
+"pip in a Python environment."
+msgstr ""
+
+#: ../../html/installation.md:11
+msgid ""
+"Linux  $ python -m ensurepip --upgrade MacOS  $ python -m ensurepip "
+"--upgrade Windows  C:> py -m ensurepip --upgrade"
+msgstr ""
+
+#: ../../html/installation.md:28
+msgid ""
+"More details about how {mod}`ensurepip` works and how it can be used, is "
+"available in the standard library documentation."
+msgstr ""
+"关于 {mod}`ensurepip` 如何工作以及如何使用它的更多细节，可在标准库文档中找到。"
+
+#: ../../html/installation.md:31
+msgid "`get-pip.py`"
+msgstr ""
+
+#: ../../html/installation.md:33
+msgid "This is a Python script that uses some bootstrapping logic to install pip."
+msgstr "这是一个 Python 脚本，使用一些引导逻辑来安装 pip。"
+
+#: ../../html/installation.md:36
+msgid "Download the script, from <https://bootstrap.pypa.io/get-pip.py>."
+msgstr "从 <https://bootstrap.pypa.io/get-pip.py> 下载该脚本。"
+
+#: ../../html/installation.md:37
+msgid ""
+"Open a terminal/command prompt, `cd` to the folder containing the `get-"
+"pip.py` file and run:"
+msgstr ""
+"打开终端/命令提示符，`cd` 到包含 `get-pip.py` 文件的文件夹并运行："
+
+#: ../../html/installation.md:11
+msgid ""
+"Linux  $ python get-pip.py MacOS  $ python get-pip.py Windows  C:> py "
+"get-pip.py"
+msgstr ""
+
+#: ../../html/installation.md:44
+msgid "More details about this script can be found in [pypa/get-pip]'s README."
+msgstr ""
+
+#: ../../html/installation.md:48
+msgid "Alternative Methods"
+msgstr "替代方法"
+
+#: ../../html/installation.md:50
+msgid ""
+"Depending on how you installed Python, there might be other mechanisms "
+"available to you for installing pip such as {ref}`using Linux package "
+"managers <pypug:installing pip/setuptools/wheel with linux package "
+"managers>`."
+msgstr ""
+"根据你安装 Python 的方式，可能有其他机制可以用来安装 pip，"
+"比如 {ref}`使用 Linux 软件包管理器 "
+"<pypug:installing pip/setuptools/wheel with linux package managers>`。"
+
+#: ../../html/installation.md:54
+msgid ""
+"These mechanisms are provided by redistributors of pip, who may have "
+"modified pip to change its behaviour. This has been a frequent source of "
+"user confusion, since it causes a mismatch between documented behaviour "
+"in this documentation and how pip works after those modifications."
+msgstr ""
+"这些机制是由 pip 的再发行者提供的，他们可能已经修改了 pip 以改变其行为。"
+"这经常成为用户困惑的来源，因为它导致本文档中记录的行为与这些修改后的管道工作方式不匹配。"
+
+#: ../../html/installation.md:59
+msgid ""
+"If you face issues when using Python and pip installed using these "
+"mechanisms, it is recommended to request for support from the relevant "
+"provider (eg: Linux distro community, cloud provider support channels, "
+"etc)."
+msgstr ""
+"如果你在使用 Python 和使用这些机制安装的 pip 时遇到问题，"
+"建议向相关供应商请求支持（例如：Linux 发行版社区、云供应商支持渠道等）。"
+
+#: ../../html/installation.md:63
+msgid "Upgrading `pip`"
+msgstr "升级 `pip`"
+
+#: ../../html/installation.md:65
+msgid "Upgrading your `pip` by running:"
+msgstr "通过运行如下命令升级你的 `pip`："
+
+#: ../../html/installation.md:11
+msgid ""
+"Linux  $ python -m pip install --upgrade pip MacOS  $ python -m pip "
+"install --upgrade pip Windows  C:> py -m pip install --upgrade pip"
+msgstr ""
+
+#: ../../html/installation.md:73
+msgid "Compatibility"
+msgstr "兼容性"
+
+#: ../../html/installation.md:75
+msgid "The current version of pip works on:"
+msgstr "当前版本的 pip 可以在以下设备上工作："
+
+#: ../../html/installation.md:77
+msgid "Windows, Linux and MacOS."
+msgstr ""
+
+#: ../../html/installation.md:78
+msgid "CPython 3.6, 3.7, 3.8, 3.9, 3.10 and latest PyPy3."
+msgstr ""
+
+#: ../../html/installation.md:80
+msgid ""
+"pip is tested to work on the latest patch version of the Python "
+"interpreter, for each of the minor versions listed above. Previous patch "
+"versions are supported on a best effort approach."
+msgstr ""
+"pip 经过测试可以在 Python 解释器的最新补丁版本上工作，"
+"对于上面列出的每个次要版本。以前的补丁版本是以尽力而为的方式支持的。"
+
+#: ../../html/installation.md:84
+msgid ""
+"pip's maintainers do not provide support for users on older versions of "
+"Python, and these users should request for support from the relevant "
+"provider (eg: Linux distro community, cloud provider support channels, "
+"etc)."
+msgstr ""
+"pip 的维护者不为 Python 旧版本的用户提供支持，"
+"这些用户应该向相关的提供者请求支持（例如：Linux 发行版社区、云提供商支持渠道等）。"
+
+#: ../../html/installation.md:88
+msgid ""
+"The `ensurepip` module was added to the Python standard library in Python"
+" 3.4."
+msgstr ""
+"在 Python 3.4 中，`ensurepip` 模块被添加到 Python 标准库中。"
+

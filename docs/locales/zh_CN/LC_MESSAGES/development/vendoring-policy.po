@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../src/pip/_vendor/README.rst:3
+msgid "Vendoring Policy"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:5
+msgid ""
+"Vendored libraries **MUST** not be modified except as required to "
+"successfully vendor them."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:7
+msgid ""
+"Vendored libraries **MUST** be released copies of libraries available on "
+"PyPI."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:9
+msgid ""
+"Vendored libraries **MUST** be available under a license that allows them"
+" to be integrated into ``pip``, which is released under the MIT license."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:11
+msgid "Vendored libraries **MUST** be accompanied with LICENSE files."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:12
+msgid ""
+"The versions of libraries vendored in pip **MUST** be reflected in "
+"``pip/_vendor/vendor.txt``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:14
+msgid ""
+"Vendored libraries **MUST** function without any build steps such as "
+"``2to3`` or compilation of C code, practically this limits to single "
+"source 2.x/3.x and pure Python."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:17
+msgid ""
+"Any modifications made to libraries **MUST** be noted in "
+"``pip/_vendor/README.rst`` and their corresponding patches **MUST** be "
+"included ``tools/vendoring/patches``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:20
+msgid ""
+"Vendored libraries should have corresponding ``vendored()`` entries in "
+"``pip/_vendor/__init__.py``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:24
+msgid "Rationale"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:26
+msgid ""
+"Historically pip has not had any dependencies except for ``setuptools`` "
+"itself, choosing instead to implement any functionality it needed to "
+"prevent needing a dependency. However, starting with pip 1.5, we began to"
+" replace code that was implemented inside of pip with reusable libraries "
+"from PyPI. This brought the typical benefits of reusing libraries instead"
+" of reinventing the wheel like higher quality and more battle tested "
+"code, centralization of bug fixes (particularly security sensitive ones),"
+" and better/more features for less work."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:34
+msgid ""
+"However, there are several issues with having dependencies in the "
+"traditional way (via ``install_requires``) for pip. These issues are:"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:44
+msgid "**Fragility**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:38
+msgid ""
+"When pip depends on another library to function then if for whatever "
+"reason that library either isn't installed or an incompatible version is "
+"installed then pip ceases to function. This is of course true for all "
+"Python applications, however for every application *except* for pip the "
+"way you fix it is by re-running pip. Obviously, when pip can't run, you "
+"can't use pip to fix pip, so you're left having to manually resolve "
+"dependencies and installing them by hand."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:54
+msgid "**Making other libraries uninstallable**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:47
+msgid ""
+"One of pip's current dependencies is the ``requests`` library, for which "
+"pip requires a fairly recent version to run.  If pip depended on "
+"``requests`` in the traditional manner, then we'd either have to maintain"
+" compatibility with every ``requests`` version that has ever existed (and"
+" ever will), OR allow pip to render certain versions of ``requests`` "
+"uninstallable. (The second issue, although technically true for any "
+"Python application, is magnified by pip's ubiquity; pip is installed by "
+"default in Python, in ``pyvenv``, and in ``virtualenv``.)"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:68
+msgid "**Security**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:57
+msgid ""
+"This might seem puzzling at first glance, since vendoring has a tendency "
+"to complicate updating dependencies for security updates, and that holds "
+"true for pip. However, given the *other* reasons for avoiding "
+"dependencies, the alternative is for pip to reinvent the wheel itself.  "
+"This is what pip did historically. It forced pip to re-implement its own "
+"HTTPS verification routines as a workaround for the Python standard "
+"library's lack of SSL validation, which resulted in similar bugs in the "
+"validation routine in ``requests`` and ``urllib3``, except that they had "
+"to be discovered and fixed independently. Even though we're vendoring, "
+"reusing libraries keeps pip more secure by relying on the great work of "
+"our dependencies, *and* allowing for faster, easier security fixes by "
+"simply pulling in newer versions of dependencies."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:76
+msgid "**Bootstrapping**"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:71
+msgid ""
+"Currently most popular methods of installing pip rely on pip's self-"
+"contained nature to install pip itself. These tools work by bundling a "
+"copy of pip, adding it to ``sys.path``, and then executing that copy of "
+"pip. This is done instead of implementing a \"mini installer\" (to reduce"
+" duplication); pip already knows how to install a Python package, and is "
+"far more battle-tested than any \"mini installer\" could ever possibly "
+"be."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:78
+msgid ""
+"Many downstream redistributors have policies against this kind of "
+"bundling, and instead opt to patch the software they distribute to "
+"debundle it and make it rely on the global versions of the software that "
+"they already have packaged (which may have its own patches applied to "
+"it). We (the pip team) would prefer it if pip was *not* debundled in this"
+" manner due to the above reasons and instead we would prefer it if pip "
+"would be left intact as it is now. The one exception to this, is it is "
+"acceptable to remove the ``pip/_vendor/requests/cacert.pem`` file "
+"provided you ensure that the ``ssl.get_default_verify_paths().cafile`` "
+"API returns the correct CA bundle for your system. This will ensure that "
+"pip will use your system provided CA bundle instead of the copy bundled "
+"with pip."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:90
+msgid ""
+"In the longer term, if someone has a *portable* solution to the above "
+"problems, other than the bundling method we currently use, that doesn't "
+"add additional problems that are unreasonable then we would be happy to "
+"consider, and possibly switch to said method. This solution must function"
+" correctly across all of the situation that we expect pip to be used and "
+"not mandate some external mechanism such as OS packages."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:99
+msgid "Modifications"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:101
+msgid "``setuptools`` is completely stripped to only keep ``pkg_resources``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:102
+msgid ""
+"``pkg_resources`` has been modified to import its dependencies from "
+"``pip._vendor``, and to use the vendored copy of ``platformdirs`` rather "
+"than ``appdirs``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:105
+msgid ""
+"``packaging`` has been modified to import its dependencies from "
+"``pip._vendor``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:107
+msgid ""
+"``html5lib`` has been modified to import six from ``pip._vendor``, to "
+"prefer importing from ``collections.abc`` instead of ``collections`` and "
+"does not import ``xml.etree.cElementTree`` on Python 3."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:110
+msgid ""
+"``CacheControl`` has been modified to import its dependencies from "
+"``pip._vendor``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:112
+msgid ""
+"``requests`` has been modified to import its other dependencies from "
+"``pip._vendor`` and to *not* load ``simplejson`` (all platforms) and "
+"``pyopenssl`` (Windows)."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:115
+msgid ""
+"``platformdirs`` has been modified to import its submodules from "
+"``pip._vendor.platformdirs``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:118
+msgid "Automatic Vendoring"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:120
+msgid ""
+"Vendoring is automated via the `vendoring "
+"<https://pypi.org/project/vendoring/>`_ tool from the content of "
+"``pip/_vendor/vendor.txt`` and the different patches in "
+"``tools/vendoring/patches``. Launch it via ``vendoring sync . -v`` "
+"(requires ``vendoring>=0.2.2``)."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:127
+msgid "Debundling"
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:129
+msgid ""
+"As mentioned in the rationale, we, the pip team, would prefer it if pip "
+"was not debundled (other than optionally "
+"``pip/_vendor/requests/cacert.pem``) and that pip was left intact. "
+"However, if you insist on doing so, we have a semi-supported method (that"
+" we don't test in our CI) and requires a bit of extra work on your end in"
+" order to solve the problems described above."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:135
+msgid ""
+"Delete everything in ``pip/_vendor/`` **except** for "
+"``pip/_vendor/__init__.py`` and ``pip/_vendor/vendor.txt``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:137
+msgid ""
+"Generate wheels for each of pip's dependencies (and any of their "
+"dependencies) using your patched copies of these libraries. These must be"
+" placed somewhere on the filesystem that pip can access (``pip/_vendor`` "
+"is the default assumption)."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:141
+msgid ""
+"Modify ``pip/_vendor/__init__.py`` so that the ``DEBUNDLED`` variable is "
+"``True``."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:143
+msgid ""
+"Upon installation, the ``INSTALLER`` file in pip's own ``dist-info`` "
+"directory should be set to something other than ``pip``, so that pip can "
+"detect that it wasn't installed using itself."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:146
+msgid ""
+"*(optional)* If you've placed the wheels in a location other than "
+"``pip/_vendor/``, then modify ``pip/_vendor/__init__.py`` so that the "
+"``WHEEL_DIR`` variable points to the location you've placed them."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:149
+msgid ""
+"*(optional)* Update the ``pip_self_version_check`` logic to use the "
+"appropriate logic for determining the latest available version of pip and"
+" prompt the user with the correct upgrade message."
+msgstr ""
+
+#: ../../../src/pip/_vendor/README.rst:153
+msgid ""
+"Note that partial debundling is **NOT** supported. You need to prepare "
+"wheels for all dependencies for successful debundling."
+msgstr ""
+

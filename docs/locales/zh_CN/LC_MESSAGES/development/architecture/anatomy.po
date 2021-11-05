@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/architecture/anatomy.rst:3
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue`_."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:9
+msgid "Repository anatomy & directory structure"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:11
+msgid ""
+"``pip``’s codebase (`GitHub repository`_) is structured as a standard "
+"Python package."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:15
+msgid "Root and tools"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:17
+msgid ""
+"The ``README``, license, ``pyproject.toml``, ``setup.py``, and so on are "
+"in the top level."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:19
+msgid "``AUTHORS.txt``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:20
+msgid "``LICENSE.txt``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:21
+msgid "``MANIFEST.in``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:22
+msgid "``NEWS.rst``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:23
+msgid "``pyproject.toml``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:24
+msgid "``README.rst``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:25
+msgid "``setup.cfg``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:26
+msgid "``setup.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:27
+msgid ""
+"``tox.ini`` -- ``pip`` uses Tox, an automation tool, configured by this "
+"`tox.ini`_ file. ``tox.ini`` describes a few environments ``pip`` uses "
+"during development for simplifying how tests are run (complicated "
+"situation there). Example: ``tox -e -py36``. We can run tests for "
+"different versions of Python by changing “36” to “27” or similar."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:28
+msgid "``.coveragerc``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:29
+msgid "``.gitattributes``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:30
+msgid "``.gitignore``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:31
+msgid "``.mailmap``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:32
+msgid "``.readthedocs.yml``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:33
+msgid "``docs/`` *[documentation, built with Sphinx]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:35
+msgid "``html/`` *[sources to HTML documentation avail. online]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:36
+msgid "``man/`` has man pages the distros can use by running ``man pip``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:37
+msgid ""
+"``pip_sphinxext.py`` *[an extension -- pip-specific plugins to Sphinx "
+"that do not apply to other packages]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:39
+msgid ""
+"``news/`` *[pip stores news fragments… Every time pip makes a user-facing"
+" change, a file is added to this directory (usually a short note "
+"referring to a GitHub issue) with the right extension & name so it gets "
+"included in changelog…. So every release the maintainers will be deleting"
+" old files in this directory? Yes - we use the towncrier automation to "
+"generate a NEWS file, and auto-delete old stuff. There’s more about this "
+"in the contributor documentation!]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:41
+msgid ""
+"``template.rst`` *[template for changelog -- this is a file towncrier "
+"uses…. Is this jinja? I don’t know, check towncrier docs]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:43
+msgid "``src/`` *[source; see below]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:44
+msgid ""
+"``tasks/`` *[invoke is a PyPI library which uses files in this directory "
+"to define automation commands that are used in pip’s development "
+"processes -- not discussing further right now. For instance, automating "
+"the release.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:45
+msgid ""
+"``tests/`` -- contains tests you can run. There are instructions in :doc"
+":`../getting-started`."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:47
+#: ../../html/development/architecture/anatomy.rst:73
+#: ../../html/development/architecture/anatomy.rst:78
+msgid "``__init__.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:48
+msgid "``conftest.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:49
+msgid ""
+"``data/`` *[test data for running tests -- pseudo package index in it!  "
+"Lots of small packages that are invalid or are valid. Test fixtures.  "
+"Used by functional tests]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:50
+msgid ""
+"``functional/`` *[functional tests of pip’s CLI -- end-to-end, invoke pip"
+" in subprocess & check results of execution against desired result. This "
+"also is what makes test suite slow]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:51
+msgid "``lib/`` *[helpers for tests]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:52
+msgid "``unit/`` *[unit tests -- fast and small and nice!]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:54
+msgid ""
+"``tools`` *[misc development workflow tools, like requirements files & CI"
+" files & helpers for tox]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:55
+msgid "``.github``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:56
+msgid "``.tox``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:61
+msgid "src directory"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:63
+msgid ""
+"In the root directory, the ``src/`` directory contains pip's core source "
+"code. Within ``src/pip/``, ``_internal/`` has the pip code that's written"
+" by pip maintainers, and ``_vendor/`` is pip's dependencies (code from "
+"other packages)."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:68
+msgid "Within ``src/``:"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:70
+msgid "``pip.egg-info/`` *[ignore the contents for now]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:71
+msgid "``pip/``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:74
+msgid "``__main__.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:75
+msgid "``__pycache__/`` *[not discussing contents right now]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:76
+msgid ""
+"``_internal/`` *[where all the pip code lives that’s written by pip "
+"maintainers -- underscore means private. pip is not a library -- it’s a "
+"command line tool! A very important distinction! People who want to "
+"install stuff with pip should not use the internals -- they should use "
+"the CLI. There’s a note on this in the docs.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:79
+msgid "``build_env.py`` [not discussing now]"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:80
+msgid ""
+"``cache.py`` *[has all the info for how to handle caching within pip -- "
+"cache-handling stuff. Uses cachecontrol from PyPI, vendored into pip]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:81
+msgid ""
+"``cli/`` *[subpackage containing helpers & additional code for managing "
+"the command line interface. Uses argparse from stdlib]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:82
+msgid ""
+"``commands/`` *[literally - each file is the name of the command on the "
+"pip CLI. Each has a class that defines what’s needed to set it up, what "
+"happens]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:83
+msgid "``configuration.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:84
+msgid "``download.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:85
+msgid "``exceptions.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:86
+msgid "``index.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:87
+msgid "``locations.py``"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:88
+msgid ""
+"``models/`` *[in-process refactoring! Goal: improve how pip internally "
+"models representations it has for data -- data representation. General "
+"overall cleanup. Data reps are spread throughout codebase….link is "
+"defined in a class in 1 file, and then another file imports Link from "
+"that file. Sometimes cyclic dependency?!?! To prevent future situations "
+"like this, etc., Pradyun started moving these into a models directory.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:89
+msgid ""
+"``operations/`` -- a bit of a weird directory….. ``Freeze.py`` used to be"
+" in there. Freeze is an operation -- there was an operations.freeze. Then"
+" “prepare” got added (the operation of preparing a pkg). Then “check” got"
+" added for checking the state of an env.] [what’s a command vs an "
+"operation? Command is on CLI; an operation would be an internal bit of "
+"code that actually does some subset of the operation the command says. "
+"``install`` command uses bits of ``check`` and ``prepare``, for instance."
+" In the long run, Pradyun’s goal: ``prepare.py`` goes away (gets "
+"refactored into other files) such that ``operations`` is just ``check`` "
+"and ``freeze``..... … Pradyun plans to refactor this. [how does this "
+"compare to ``utils``?]"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:91
+msgid ""
+"``install/`` -- for modules related to installing projects of various "
+"kinds"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:93
+msgid ""
+"``wheel.py`` is a file that manages installation of a wheel file. This "
+"handles unpacking wheels -- “unpack and spread”. There is a package on "
+"PyPI called ``wheel`` that builds wheels -- do not confuse it with this."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:95
+msgid ""
+"``pep425tags.py`` -- getting refactored into packaging.tags (a library on"
+" PyPI) which is external to pip (but vendored by pip). :pep:`425` tags: "
+"turns out lots of people want this! Compatibility tags for built "
+"distributions -> e.g., platform, Python version, etc."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:96
+msgid ""
+"``pyproject.py`` -- ``pyproject.toml`` is a new standard (:pep:`518` and "
+":pep:`517`). This file reads pyproject.toml and passes that info "
+"elsewhere. The rest of the processing happens in a different file. All "
+"the handling for 517 and 518 is in a different file."
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:97
+msgid ""
+"``req/`` *[*\\ **A DIRECTORY THAT NEEDS REFACTORING. A LOT**\\ *\\ …… "
+"Remember Step 3? Dependency resolution etc.? This is that step! Each file"
+" represents … have the entire flow of installing & uninstalling, getting "
+"info about packages…. Some files here are more than 1,000 lines long! "
+"(used to be longer?!) Refactor will deeply improve developer experience. "
+"Also, we're `improving the pip dependency resolver`_ in 2020 so a bunch "
+"of this is changing.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:98
+msgid ""
+"``utils/`` *[everything that is not “operationally” pip ….. Misc "
+"functions and files get dumped. There’s some organization here. There’s a"
+" models.py here which needs refactoring. Deprecation.py is useful, as are"
+" other things, but some things do not belong here. There ought to be some"
+" GitHub issues for refactoring some things here. Maybe a few issues with "
+"checkbox lists.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:99
+msgid ""
+"``vcs/`` *[stands for Version Control System. Where pip handles all "
+"version control stuff -- one of the ``pip install`` arguments you can use"
+" is a version control link. Are any of these commands vendored? No, via "
+"subprocesses. For performance, it makes sense (we think) to do this "
+"instead of pygitlib2 or similar -- and has to be pure Python, can’t "
+"include C libraries, because you can’t include compiled C stuff, because "
+"you might not have it for the platform you are running on.]*"
+msgstr ""
+
+#: ../../html/development/architecture/anatomy.rst:101
+msgid ""
+"``_vendor/`` *[code from other packages -- pip’s own dependencies…. Has "
+"them in its own source tree, because pip cannot depend on pip being "
+"installed on the machine already!]*"
+msgstr ""
+

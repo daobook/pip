@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/ux_research_design.rst:3
+msgid "UX Research & Design"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:5
+msgid ""
+"Over the course of 2020, the pip team has been working on improving pip's"
+" user experience."
+msgstr ""
+
+#: ../../html/ux_research_design.rst:8
+msgid "Currently, our focus is on:"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:10
+msgid "`Understanding who uses pip`_"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:11
+msgid ""
+"`Understanding how pip compares to other package managers, and how pip "
+"supports other Python packaging tools`_"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:12
+msgid ""
+"`Understanding how pip's functionality is used, and how it could be "
+"improved`_"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:13
+msgid ""
+"`Understanding how pip's documentation is used, and how it could be "
+"improved`_"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:15
+msgid ""
+"You can read the `overall plan`_ and the `mid-year update`_ to learn more"
+" about our work."
+msgstr ""
+
+#: ../../html/ux_research_design.rst:19
+msgid "How to contribute"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:22
+msgid "Participate in UX research"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:24
+msgid "It is important that we hear from pip users so that we can:"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:26
+msgid "Understand how pip is currently used by the Python community"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:27
+msgid "Understand how pip users *need* pip to behave"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:28
+msgid "Understand how pip users *would like* pip to behave"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:29
+msgid "Understand pip's strengths and shortcomings"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:30
+msgid "Make useful design recommendations for improving pip"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:32
+msgid ""
+"If you are interested in participating in pip user research, please `join"
+" pip's user panel`_. You can `read more information about the user panel "
+"here`_."
+msgstr ""
+
+#: ../../html/ux_research_design.rst:36
+msgid "We are also looking for users to:"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:38
+msgid "`Give us feedback about pip's new resolver`_"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:39
+msgid ""
+"`Tell us how pip should handle conflicts with already installed packages "
+"when updating other packages`_"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:42
+msgid "Report UX issues"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:44
+msgid ""
+"If you believe that you have found a user experience bug in pip, or you "
+"have ideas for how pip could be made better for all users, you please "
+"file an issue on the `pip issue tracker`_."
+msgstr ""
+
+#: ../../html/ux_research_design.rst:49
+msgid "Work on UX issues"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:51
+msgid ""
+"You can help improve pip's user experience by `working on UX issues`_. "
+"Issues that are ideal for new contributors are marked with \"good first "
+"issue\"."
+msgstr ""
+
+#: ../../html/ux_research_design.rst:55
+msgid "Test new features"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:57
+msgid ""
+"You can help the team by testing new features as they are released to the"
+" community. Currently, we are looking for users to `test pip's new "
+"dependency resolver`_."
+msgstr ""
+
+#: ../../html/ux_research_design.rst:62
+msgid "Next steps"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:64
+msgid "In the coming months we will extend this documentation to include:"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:66
+msgid ""
+"Summaries of our user research, including recommendations for how to "
+"improve pip"
+msgstr ""
+
+#: ../../html/ux_research_design.rst:67
+msgid ""
+"Tools for the pip team to continue to practice user centered design (e.g."
+" user personas, etc.)"
+msgstr ""
+

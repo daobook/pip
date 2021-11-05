@@ -11,6 +11,9 @@ from typing import List, Tuple
 docs_dir = os.path.dirname(os.path.dirname(__file__))
 sys.path.insert(0, docs_dir)
 
+locale_dirs = ['../locales/']   # path is example but recommended.
+gettext_compact = False     # optional.
+
 # -- General configuration ------------------------------------------------------------
 
 extensions = [

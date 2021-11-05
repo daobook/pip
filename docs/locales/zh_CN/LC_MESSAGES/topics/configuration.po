@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/topics/configuration.md:1
+msgid "Configuration"
+msgstr ""
+
+#: ../../html/topics/configuration.md:3
+msgid "pip allows a user to change its behaviour via 3 mechanisms:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid "command line options"
+msgstr ""
+
+#: ../../html/topics/configuration.md:6
+msgid "environment variables"
+msgstr ""
+
+#: ../../html/topics/configuration.md:7
+msgid "configuration files"
+msgstr ""
+
+#: ../../html/topics/configuration.md:9
+msgid ""
+"This page explains how the configuration files and environment variables "
+"work, and how they are related to pip's various command line options."
+msgstr ""
+
+#: ../../html/topics/configuration.md:12
+msgid "Configuration Files"
+msgstr ""
+
+#: ../../html/topics/configuration.md:14
+msgid ""
+"Configuration files can change the default values for command line "
+"option. They are written using a standard INI style configuration files."
+msgstr ""
+
+#: ../../html/topics/configuration.md:17
+msgid "pip has 3 \"levels\" of configuration files:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:19
+msgid "`global`: system-wide configuration file, shared across users."
+msgstr ""
+
+#: ../../html/topics/configuration.md:20
+msgid "`user`: per-user configuration file."
+msgstr ""
+
+#: ../../html/topics/configuration.md:21
+msgid "`site`: per-environment configuration file; i.e. per-virtualenv."
+msgstr ""
+
+#: ../../html/topics/configuration.md:23
+msgid "Location"
+msgstr ""
+
+#: ../../html/topics/configuration.md:25
+msgid ""
+"pip's configuration files are located in fairly standard locations. This "
+"location is different on different operating systems, and has some "
+"additional complexity for backwards compatibility reasons."
+msgstr ""
+
+#: ../../html/topics/configuration.md:1 ../../html/topics/configuration.md:93
+msgid "Global"
+msgstr ""
+
+#: ../../html/topics/configuration.md:2
+msgid ""
+"In a \"pip\" subdirectory of any of the paths set in the environment "
+"variable `XDG_CONFIG_DIRS` (if it exists), for example "
+"{file}`/etc/xdg/pip/pip.conf`."
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid "This will be followed by loading {file}`/etc/pip.conf`."
+msgstr ""
+
+#: ../../html/topics/configuration.md:4 ../../html/topics/configuration.md:7
+#: ../../html/topics/configuration.md:8 ../../html/topics/configuration.md:94
+msgid "User"
+msgstr ""
+
+#: ../../html/topics/configuration.md:8
+msgid ""
+"{file}`$HOME/.config/pip/pip.conf`, which respects the `XDG_CONFIG_HOME` "
+"environment variable."
+msgstr ""
+
+#: ../../html/topics/configuration.md:9 ../../html/topics/configuration.md:10
+msgid ""
+"The legacy \"per-user\" configuration file is also loaded, if it exists: "
+"{file}`$HOME/.pip/pip.conf`."
+msgstr ""
+
+#: ../../html/topics/configuration.md:11 ../../html/topics/configuration.md:12
+#: ../../html/topics/configuration.md:13 ../../html/topics/configuration.md:95
+msgid "Site"
+msgstr ""
+
+#: ../../html/topics/configuration.md:12 ../../html/topics/configuration.md:13
+msgid "{file}`$VIRTUAL_ENV/pip.conf`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:2
+msgid "{file}`/Library/Application Support/pip/pip.conf`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid ""
+"{file}`$HOME/Library/Application Support/pip/pip.conf` if directory "
+"`$HOME/Library/Application Support/pip` exists else "
+"{file}`$HOME/.config/pip/pip.conf`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:2
+msgid ""
+"On Windows 7 and later: {file}`C:\\\\ProgramData\\\\pip\\\\pip.ini` "
+"(hidden but writeable)"
+msgstr ""
+
+#: ../../html/topics/configuration.md:4
+msgid "On Windows Vista: Global configuration is not supported."
+msgstr ""
+
+#: ../../html/topics/configuration.md:5
+msgid ""
+"On Windows XP: {file}`C:\\\\Documents and Settings\\\\All "
+"Users\\\\Application Data\\\\pip\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:9
+msgid "{file}`%APPDATA%\\\\pip\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:11
+msgid ""
+"The legacy \"per-user\" configuration file is also loaded, if it exists: "
+"{file}`%HOME%\\\\pip\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:14
+msgid "{file}`%VIRTUAL_ENV%\\\\pip.ini`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:80
+msgid "`PIP_CONFIG_FILE`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:82
+msgid ""
+"Additionally, the environment variable `PIP_CONFIG_FILE` can be used to "
+"specify a configuration file that's loaded first, and whose values are "
+"overridden by the values set in the aforementioned files. Setting this to"
+" {any}`os.devnull` disables the loading of _all_ configuration files."
+msgstr ""
+
+#: ../../html/topics/configuration.md:87
+msgid "Loading order"
+msgstr ""
+
+#: ../../html/topics/configuration.md:89
+msgid ""
+"When multiple configuration files are found, pip combines them in the "
+"following order:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:92
+msgid "`PIP_CONFIG_FILE`, if given."
+msgstr ""
+
+#: ../../html/topics/configuration.md:97
+msgid ""
+"Each file read overrides any values read from previous files, so if the "
+"global timeout is specified in both the global file and the per-user file"
+" then the latter value will be used."
+msgstr ""
+
+#: ../../html/topics/configuration.md:101
+msgid "Naming"
+msgstr ""
+
+#: ../../html/topics/configuration.md:103
+msgid "The names of the settings are derived from the long command line option."
+msgstr ""
+
+#: ../../html/topics/configuration.md:105
+msgid ""
+"As an example, if you want to use a different package index (`--index-"
+"url`) and set the HTTP timeout (`--default-timeout`) to 60 seconds, your "
+"config file would look like this:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:115
+msgid "Per-command section"
+msgstr ""
+
+#: ../../html/topics/configuration.md:117
+msgid ""
+"Each subcommand can be configured optionally in its own section. This "
+"overrides the global setting with the same name."
+msgstr ""
+
+#: ../../html/topics/configuration.md:120
+msgid ""
+"As an example, if you want to decrease the `timeout` to `10` seconds when"
+" running the {ref}`pip freeze`, and use `60` seconds for all other "
+"commands:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:131
+msgid "Boolean options"
+msgstr ""
+
+#: ../../html/topics/configuration.md:133
+msgid ""
+"Boolean options like `--ignore-installed` or `--no-dependencies` can be "
+"set like this:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:142
+msgid ""
+"To enable the boolean options `--no-compile`, `--no-warn-script-location`"
+" and `--no-cache-dir`, falsy values have to be used:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:154
+msgid "Repeatable options"
+msgstr ""
+
+#: ../../html/topics/configuration.md:156
+msgid ""
+"For options which can be repeated like `--verbose` and `--quiet`, a non-"
+"negative integer can be used to represent the level to be specified:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:165
+msgid ""
+"It is possible to append values to a section within a configuration file."
+" This is applicable to appending options like `--find-links` or "
+"`--trusted-host`, which can be written on multiple lines:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:184
+msgid ""
+"This enables users to add additional values in the order of entry for "
+"such command line arguments."
+msgstr ""
+
+#: ../../html/topics/configuration.md:187
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../html/topics/configuration.md:189
+msgid ""
+"pip's command line options can be set with environment variables using "
+"the format `PIP_<UPPER_LONG_NAME>` . Dashes (`-`) have to be replaced "
+"with underscores (`_`)."
+msgstr ""
+
+#: ../../html/topics/configuration.md:193
+msgid "`PIP_DEFAULT_TIMEOUT=60` is the same as `--default-timeout=60`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:198
+msgid "is the same as"
+msgstr ""
+
+#: ../../html/topics/configuration.md:204
+msgid ""
+"Repeatable options that do not take a value (such as `--verbose`) can be "
+"specified using the number of repetitions:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:207
+msgid "`PIP_VERBOSE=3` is the same as `pip install -vvv`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:1
+msgid ""
+"Environment variables set to an empty string (like with `export X=` on "
+"Unix) will **not** be treated as false. Use `no`, `false` or `0` instead."
+msgstr ""
+
+#: ../../html/topics/configuration.md:214
+msgid "Precedence / Override order"
+msgstr ""
+
+#: ../../html/topics/configuration.md:216
+msgid ""
+"Command line options have override environment variables, which override "
+"the values in a configuration file. Within the configuration file, values"
+" in command-specific sections over values in the global section."
+msgstr ""
+
+#: ../../html/topics/configuration.md:220
+msgid "Examples:"
+msgstr ""
+
+#: ../../html/topics/configuration.md:222
+msgid "`--host=foo` overrides `PIP_HOST=foo`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:223
+msgid "`PIP_HOST=foo` overrides a config file with `[global] host = foo`"
+msgstr ""
+
+#: ../../html/topics/configuration.md:224
+msgid ""
+"A command specific section in the config file `[<command>] host = bar` "
+"overrides the option with same name in the `[global]` config file "
+"section."
+msgstr ""
+

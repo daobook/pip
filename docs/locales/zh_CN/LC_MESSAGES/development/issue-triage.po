@@ -1,0 +1,720 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/issue-triage.rst:3
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue "
+"<https://github.com/pypa/pip/issues/6583>`__, or just submit a pull "
+"request and mention it in that tracking issue."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:11
+msgid "Issue Triage"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:13
+msgid ""
+"This serves as an introduction to issue tracking in pip as well as how to"
+" help triage reported issues."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:18
+msgid "Issue Tracker"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:20
+msgid ""
+"The `pip issue tracker <https://github.com/pypa/pip/issues>`__ is hosted "
+"on GitHub alongside the project."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:23
+msgid ""
+"Currently, the issue tracker is used for bugs, feature requests, and "
+"general user support."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:26
+msgid ""
+"In the pip issue tracker, we make use of labels and milestones to "
+"organize and track work."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:30
+msgid "Labels"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:32
+msgid "Issue labels are used to:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:34
+msgid "Categorize issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:35
+msgid "Provide status information for contributors and reporters"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:36
+msgid "Help contributors find tasks to work on"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:38
+msgid ""
+"The current set of labels are divided into several categories identified "
+"by prefix:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:42
+msgid "**C - Category**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:42
+msgid ""
+"which area of ``pip`` functionality a feature request or issue is related"
+" to"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:44
+msgid "**K - Kind**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:47
+msgid "**O - Operating System**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:47
+msgid "for issues that are OS-specific"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:50
+msgid "**P - Project/Platform**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:50
+msgid "related to something external to ``pip``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:54
+msgid "**R - Resolution**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:53
+msgid ""
+"no more discussion is really needed, an action has been identified and "
+"the issue is waiting or closed"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:57
+msgid "**S - State**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:57
+msgid "for some automatic labels and other indicators that work is needed"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:60
+msgid "**type**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:60
+msgid "the role or flavor of an issue"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:62
+msgid ""
+"The specific labels falling into each category have a description that "
+"can be seen on the `Labels <https://github.com/pypa/pip/labels>`__ page."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:65
+msgid "In addition, there are several standalone labels:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:69
+msgid "**good first issue**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:68
+msgid ""
+"this label marks an issue as beginner-friendly and shows up in banners "
+"that GitHub displays for first-time visitors to the repository"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:72
+msgid "**triage**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:72
+msgid "default label given to issues when they are created"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:76
+msgid "**trivial**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:75
+msgid ""
+"special label for pull requests that removes the :ref:`news file "
+"requirement <choosing-news-entry-type>`"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:80
+msgid "**needs rebase or merge**"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:79
+msgid ""
+"this is a special label used by BrownTruck to mark PRs that have merge "
+"conflicts"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:83
+msgid "Automation"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:85
+msgid "There are several helpers to manage issues and pull requests."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:87
+msgid ""
+"Issues created on the issue tracker are automatically given the "
+"``triage`` label by the `triage-new-issues <https://github.com/apps"
+"/triage-new-issues>`__ bot. The label is automatically removed when "
+"another label is added."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:92
+msgid ""
+"When an issue needs feedback from the author we can label it with ``S: "
+"awaiting response``. When the author responds, the `no-response "
+"<https://github.com/apps/no-response>`__ bot removes the label."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:96
+msgid ""
+"After an issue has been closed for 30 days, the `lock "
+"<https://github.com/apps/lock>`__ bot locks the issue and adds the ``S: "
+"auto-locked`` label. This allows us to avoid monitoring existing closed "
+"issues, but unfortunately prevents and references to issues from showing "
+"up as links on the closed issue."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:104
+msgid "Triage Issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:106
+msgid "Users can make issues for a number of reasons:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:108
+msgid "Suggestions about pip features that could be added or improved"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:109
+msgid "Problems using pip"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:110
+msgid "Concerns about pip usability"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:111
+msgid "General packaging problems to be solved with pip"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:112
+msgid "Problems installing or using Python packages"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:113
+msgid "Problems managing virtual environments"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:114
+msgid "Problems managing Python installations"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:116
+msgid "To triage issues means to identify what kind of issue is happening and"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:118
+msgid "confirm bugs"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:119
+msgid "provide support"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:120
+msgid "discuss and design around the uses of the tool"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:122
+msgid "Specifically, to address an issue:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:124
+msgid "Read issue title"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:125
+msgid "Scan issue description"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:126
+msgid "Ask questions"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:127
+msgid "If time is available, try to reproduce"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:128
+msgid "Search for or remember related issues and link to them"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:129
+msgid "Identify an appropriate area of concern (if applicable)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:131
+msgid ""
+"Keep in mind that all communication is happening with other people and "
+"should be done with respect per the `Code of Conduct "
+"<https://www.pypa.io/en/latest/code-of-conduct/>`__."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:135
+msgid "The lifecycle of an issue (bug or support) generally looks like:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:137
+msgid "waiting for triage (marked with label ``triage``)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:138
+msgid ""
+"confirming issue - some discussion with the user, gathering details, "
+"trying to reproduce the issue (may be marked with a specific category, "
+"``S: awaiting-response``, ``S: discussion-needed``, or ``S: need-repro``)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:142
+msgid ""
+"confirmed - the issue is pretty consistently reproducible in a "
+"straightforward way, or a mechanism that could be causing the issue has "
+"been identified"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:145
+msgid ""
+"awaiting fix - the fix is identified and no real discussion on the issue "
+"is needed, should be marked ``R: awaiting PR``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:147
+msgid "closed - can be for several reasons"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:149
+msgid "fixed"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:150
+msgid ""
+"could not be reproduced, no more details could be obtained, and no "
+"progress can be made"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:152
+msgid ""
+"actual issue was with another project or related to system configuration "
+"and pip cannot (or will not) be adapted for it"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:157
+msgid "Requesting information"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:159
+msgid ""
+"Requesting more information to better understand the context and "
+"environment that led to the issue. Examples of specific information that "
+"may be useful depending on the situation:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:163
+msgid "pip debug: ``pip debug``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:164
+msgid "pip version: ``pip -V``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:165
+msgid "Python version: ``python -VV``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:166
+msgid "Python path: ``python -c 'import sys; print(sys.executable)'``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:167
+msgid "``python`` on ``PATH``: Unix: ``which python``; Windows: ``where python``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:168
+msgid "Python as resolved by the shell: ``type python``"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:169
+msgid ""
+"Origin of pip (get-pip.py, OS-level package manager, ensurepip, manual "
+"installation)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:171
+msgid "Using a virtual environment (with ``--system-site-packages``?)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:172
+msgid "Using a conda environment"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:173
+msgid "``PATH`` environment variable"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:174
+msgid "Network situation (e.g. airgapped environment, firewalls)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:175
+msgid "``--verbose`` output of a failing command"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:176
+msgid ""
+"(Unix) ``strace`` output from a failing command (be careful not to output"
+" into the same directory as a package that's being installed, otherwise "
+"pip will loop forever copying the log file...)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:179
+msgid ""
+"(Windows) `procmon <https://docs.microsoft.com/en-"
+"us/sysinternals/downloads/procmon>`__ output during a failing command "
+"(`example request "
+"<https://github.com/pypa/pip/issues/6814#issuecomment-516611389>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:183
+msgid ""
+"Listing of files relevant to the issue (e.g. ``ls -l venv/lib/pythonX.Y"
+"/problem-package.dist-info/``)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:184
+msgid ""
+"whether the unexpected behavior ever worked as expected - if so then what"
+" were the details of the setup (same information as above)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:188
+msgid ""
+"Generally, information is good to request if it can help confirm or rule "
+"out possible sources of error. We shouldn't request information that does"
+" not improve our understanding of the situation."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:194
+msgid "Reproducing issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:196
+msgid ""
+"Whenever an issue happens and the cause isn't obvious, it is important "
+"that we be able to reproduce it independently. This serves several "
+"purposes:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:199
+msgid ""
+"If it is a pip bug, then any fix will need tests - a good reproducer is "
+"most of the way towards that."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:201
+msgid ""
+"If it is not reproducible using the provided instructions, that helps "
+"rule out a lot of possible causes."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:203
+msgid ""
+"A clear set of instructions is an easy way to get on the same page as "
+"someone reporting an issue."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:206
+msgid "The best way to reproduce an issue is with a script."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:208
+msgid ""
+"A script can be copied into a file and executed, whereas shell output has"
+" to be manually copied a line at a time."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:211
+msgid "Scripts to reproduce issues should be:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:213
+msgid ""
+"portable (few/no assumptions about the system, other that it being Unix "
+"or Windows as applicable)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:214
+msgid "non-destructive"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:215
+msgid "convenient"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:216
+msgid "require little/no setup on the part of the runner"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:218
+msgid "Examples:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:220
+msgid ""
+"creating and installing multiple wheels with different versions (`link "
+"<https://github.com/pypa/pip/issues/4331#issuecomment-520156471>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:222
+msgid ""
+"using a small web server for authentication errors (`link "
+"<https://github.com/pypa/pip/issues/2920#issuecomment-508953118>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:224
+msgid ""
+"using docker to test system or global configuration-related issues (`link"
+" <https://github.com/pypa/pip/issues/5533#issuecomment-520159896>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:226
+msgid ""
+"using docker to test special filesystem permission/configurations (`link "
+"<https://github.com/pypa/pip/issues/6364#issuecomment-507074729>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:228
+msgid ""
+"using docker for global installation with get-pip (`link "
+"<https://github.com/pypa/pip/issues/6498#issuecomment-513501112>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:230
+msgid ""
+"get-pip on system with no ``/usr/lib64`` (`link "
+"<https://github.com/pypa/pip/issues/5379#issuecomment-515270576>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:232
+msgid ""
+"reproducing with ``pip`` from current development branch (`link "
+"<https://github.com/pypa/pip/issues/6707#issue-467770959>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:237
+msgid "Reaching resolution"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:239
+msgid ""
+"Some user support questions are more related to system configuration than"
+" pip. It's important to treat these issues with the same care and "
+"attention as others, specifically:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:243
+msgid ""
+"Unless the issue is very old and the user doesn't seem active, wait for "
+"confirmation before closing the issue"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:245
+msgid "Direct the user to the most appropriate forum for their questions:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:247
+msgid "For Ubuntu, `askubuntu <https://askubuntu.com/>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:248
+msgid "For Other linuxes/unixes, `serverfault <https://serverfault.com/>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:249
+msgid ""
+"For network connectivity issues, `serverfault "
+"<https://serverfault.com/>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:252
+msgid ""
+"Just because a user support question is best solved using some other "
+"forum doesn't mean that we can't make things easier. Try to extract and "
+"understand from the user query how things could have been made easier for"
+" them or you, for example with better warning or error messages. If an "
+"issue does not exist covering that case then create one. If an issue does"
+" exist then make sure to reference that issue before closing this one."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:258
+msgid ""
+"A user may be having trouble installing a package, where the package "
+"``setup.py`` or build-backend configuration is non-trivial. In these "
+"cases we can help to troubleshoot but the best advice is going to be to "
+"direct them to the support channels for the related projects."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:262
+msgid ""
+"Do not be hasty to assume it is one cause or another. What looks like "
+"someone else's problem may still be an issue in pip or at least something"
+" that could be improved."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:265
+msgid "For general discussion on Python packaging:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:267
+msgid "`pypa/packaging <https://github.com/pypa/packaging-problems>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:268
+msgid "`discuss.python.org/packaging <https://discuss.python.org/c/packaging>`__"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:272
+msgid "Closing issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:274
+msgid "An issue may be considered resolved and closed when:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:276
+msgid ""
+"for each possible improvement or problem represented in the issue "
+"discussion:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:279
+msgid ""
+"Consensus has been reached on a specific action and the actions appear to"
+" be external to the project, with no follow up needed in the project "
+"afterwards."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:283
+msgid ""
+"PEP updates (with a corresponding issue in `python/peps "
+"<https://github.com/python/peps>`__)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:285
+msgid "already tracked by another issue"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:287
+msgid ""
+"A project-specific issue has been identified and the issue no longer "
+"occurs as of the latest commit on the main branch."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:290
+msgid ""
+"An enhancement or feature request no longer has a proponent and the "
+"maintainers don't think it's worth keeping open."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:292
+msgid ""
+"An issue has been identified as a duplicate, and it is clearly a "
+"duplicate (i.e. the original report was very good and points directly to "
+"the issue)"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:294
+msgid ""
+"The issue has been fixed, and can be independently validated as no longer"
+" being an issue. If this is with code then the specific change/PR that "
+"led to it should be identified and posted for tracking."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:300
+msgid "Common issues"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:302
+msgid ""
+"network-related issues - any issue involving retries, address lookup, or "
+"anything like that are typically network issues."
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:304
+msgid ""
+"issues related to having multiple Python versions, or an OS package "
+"manager-managed pip/python installation (specifically with "
+"Debian/Ubuntu). These typically present themselves as:"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:308
+msgid "Not being able to find installed packages"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:309
+msgid "basic libraries not able to be found, fundamental OS components missing"
+msgstr ""
+
+#: ../../html/development/issue-triage.rst:310
+msgid ""
+"In these situations you will want to make sure that we know how they got "
+"their Python and pip. Knowing the relevant package manager commands can "
+"help, e.g. ``dpkg -S``."
+msgstr ""
+

@@ -1,0 +1,1023 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/reference/build-system/index.md:3
+msgid "Build System Interface"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:5
+msgid ""
+"When dealing with installable source distributions of a package, pip does"
+" not directly handle the build process for the package. This "
+"responsibility is delegated to \"build backends\" -- also known as "
+"\"build systems\". This means that pip needs an interface, to interact "
+"with these build backends."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:10
+msgid "There are two main interfaces that pip uses for these interactions:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:20
+msgid "[`pyproject.toml` based](pyproject-toml)"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:21
+msgid ""
+"Standards-backed interface, that has explicit declaration and management "
+"of build dependencies."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:24
+msgid "[`setup.py` based](setup-py)"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:25
+msgid ""
+"Legacy interface, that we're working to migrate users away from. Has no "
+"good mechanisms to declare build dependencies."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:29
+msgid ""
+"Details on the individual interfaces can be found on their dedicated "
+"pages, linked above. This document covers the nuances around which build "
+"system interface pip will use for a project, as well as details that "
+"apply to all the build system interfaces that pip may use."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:34
+msgid "Determining which build system interface is used"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:36
+msgid ""
+"Currently, pip uses the `pyproject.toml` based build system interface, if"
+" a `pyproject.toml` file exists. If not, the legacy build system "
+"interface is used. The intention is to switch to using the "
+"`pyproject.toml` build system interface unconditionally and to drop "
+"support for the legacy build system interface at some point in the "
+"future."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:42
+msgid ""
+"When performing a build, pip will mention which build system interface it"
+" is using. Typically, this will take the form of a message like:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:53
+msgid ""
+"The content in the brackets, refers to which build system interface is "
+"being used."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:1
+msgid ""
+"The output uses \"pyproject.toml\" instead of \"PEP 517\" to refer to be "
+"`pyproject.toml` based build system interface."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:61
+msgid "Controlling which build system interface is used"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:63
+msgid ""
+"The [`--use-pep517`](install_--use-pep517) flag (and corresponding "
+"environment variable: `PIP_USE_PEP517`) can be used to force all packages"
+" to build using the `pyproject.toml` based build system interface. There "
+"is no way to force the use of the legacy build system interface."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:70
+msgid "Controlling `setup_requires`"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:1
+msgid ""
+"This is only relevant for projects that use setuptools as the build "
+"backend, and use the `setup_requires` keyword argument in their setup.py "
+"file."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:77
+msgid ""
+"The `setup_requires` argument in `setup.py` is used to specify build-time"
+" dependencies for a package. This has been superseded by the `build-"
+"system.requires` key in `pyproject.toml` files (per {pep}`518`). However,"
+" there are situations where you might encounter a package that uses "
+"`setup_requires` (eg: the package has not been updated to use the newer "
+"approach yet!)."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:84
+msgid ""
+"If you control the package, consider adding a `pyproject.toml` file to "
+"utilise the modern build system interface. That avoids invoking the "
+"problematic behaviour by deferring to pip for the installations."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:88
+msgid ""
+"For the end users, the best solution for dealing with packages with "
+"`setup_requires` is to install the packages listed in `setup_requires` "
+"beforehand, using a prior `pip install` command. This is because there is"
+" no way to control how these dependencies are located by `easy_install`, "
+"or how setuptools will invoke `pip` using pip's command line options -- "
+"which makes it tricky to get things working appropriately."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:95
+msgid ""
+"If you wish to ensure that `easy_install` invocations do not reach out to"
+" PyPI, you will need to configure its behaviour using a [`distutils` "
+"configuration file][distutils-config]. Here are some examples:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:99
+msgid "To have the dependency located at an alternate index with `easy_install`"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:106
+msgid ""
+"To have the dependency located from a local directory and not crawl PyPI,"
+" add this:"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:114
+msgid "Historical context"
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:1
+msgid ""
+"`setuptools < 52.0` will use `easy_install` to try to fulfill "
+"`setup_requires` dependencies, which can result in weird failures -- "
+"`easy_install` does not understand many of the modern Python packaging "
+"standards, and will usually attempt to install incompatible package "
+"versions or to build packages incorrectly. It also generates improper "
+"script wrappers, which don't do the right thing in many situations."
+msgstr ""
+
+#: ../../html/reference/build-system/index.md:8
+msgid ""
+"Newer versions of `setuptools` will use `pip` for these installations, "
+"but have limited ability to pass through any command line arguments. This"
+" can also result in weird failures and subtly-incorrect behaviour."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:1
+msgid "`pyproject.toml`"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:7
+msgid ""
+"Modern Python packages can contain a `pyproject.toml` file, first "
+"introduced in {pep}`518` and later expanded in {pep}`517`, {pep}`621` and"
+" {pep}`660`. This file contains build system requirements and "
+"information, which are used by pip to build the package."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:12
+#: ../../html/reference/build-system/setup-py.md:21
+msgid "Build process"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:14
+#: ../../html/reference/build-system/setup-py.md:23
+msgid "The overall process for building a package is:"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:16
+msgid "Create an isolated build environment."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:17
+msgid "Populate the build environment with build dependencies."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:18
+msgid "Generate the package's metadata, if necessary and possible."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:19
+#: ../../html/reference/build-system/setup-py.md:26
+msgid "Generate a wheel for the package."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:21
+#: ../../html/reference/build-system/setup-py.md:30
+msgid "The wheel can then be used to perform an installation, if necessary."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:23
+msgid "Build Isolation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:25
+msgid ""
+"For building packages using this interface, pip uses an _isolated "
+"environment_. That is, pip will install build-time Python dependencies in"
+" a temporary directory which will be added to `sys.path` for the build "
+"commands. This ensures that build requirements are handled independently "
+"of the user's runtime environment."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:31
+msgid ""
+"For example, a project that needs an older version of setuptools to build"
+" can still be installed, even if the user has an newer version installed "
+"(and without silently replacing that version)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:35
+msgid "Build-time dependencies"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:37
+msgid ""
+"Introduced in {pep}`518`, the `build-system.requires` key in the "
+"`pyproject.toml` file is a list of requirement specifiers for build-time "
+"dependencies of a package."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:46
+msgid ""
+"It is also possible for a build backend to provide dynamically calculated"
+" build dependencies, using {pep}`517`'s `get_requires_for_build_wheel` "
+"hook. This hook will be called by pip, and dependencies it describes will"
+" also be installed in the build environment. For example, newer versions "
+"of setuptools expose the contents of `setup_requires` to pip via this "
+"hook."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:52
+#: ../../html/reference/build-system/setup-py.md:32
+msgid "Metadata Generation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:58
+msgid ""
+"Once the build environment has been created and populated with build-time"
+" dependencies, `pip` will usually need metadata about a package (name, "
+"version, dependencies, and more)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:62
+msgid ""
+"If {pep}`517`'s `prepare_metadata_for_build_wheel` hook is provided by "
+"the build backend, that will be used to generate the packages' metadata. "
+"Otherwise, a wheel will be generated (as described below) and the "
+"metadata contained within such a wheel will be used."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:67
+#: ../../html/reference/build-system/setup-py.md:42
+msgid "Wheel Generation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:73
+msgid ""
+"For generating a wheel, pip uses the {pep}`517` `build_wheel` hook that "
+"has to be provided by the build backend. The build backend will generate "
+"a wheel, which may involve compiling extension code written in C/C++ (or "
+"other languages)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:78
+msgid ""
+"Wheels generated using this mechanism can be [cached](wheel-caching) for "
+"reuse, to speed up future installations."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:81
+#: ../../html/reference/build-system/setup-py.md:68
+msgid "Editable Installation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:87
+msgid ""
+"For performing editable installs, pip will use {pep}`660` "
+"`build_wheel_for_editable` hook that has to be provided by the build "
+"backend. The wheels generated using this mechanism are not cached."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:91
+msgid "Compatibility fallback"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:1
+msgid ""
+"If this hook is missing on the build backend _and_ there's a `setup.py` "
+"file in the project, pip will fallback to the legacy setup.py-based "
+"editable installation."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:5
+msgid ""
+"This is considered a stopgap solution until setuptools adds support for "
+"{pep}`660`, at which point this functionality will be removed; following "
+"pip's regular {ref}`deprecation policy <Deprecation Policy>`."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:101
+msgid "Build output"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:103
+msgid ""
+"It is the responsibility of the build backend to ensure that the output "
+"is in the correct encoding, as described in {pep}`517`. This likely "
+"involves dealing with [the same challenges as pip has for legacy builds"
+"](build-output)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:107
+msgid "Fallback Behaviour"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:109
+msgid ""
+"If a project does not have a `pyproject.toml` file containing a `build-"
+"system` section, it will be assumed to have the following backend "
+"settings:"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:118
+msgid "If a project has a `build-system` section but no `build-backend`, then:"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:120
+msgid ""
+"It is expected to include `setuptools` and `wheel` as build requirements."
+" An error is reported if the available version of `setuptools` is not "
+"recent enough."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:124
+msgid "The `setuptools.build_meta:__legacy__` build backend will be used."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:126
+msgid "Disabling build isolation"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:128
+msgid ""
+"This can be disabled using the `--no-build-isolation` flag -- users "
+"supplying this flag are responsible for ensuring the build environment is"
+" managed appropriately, including ensuring that all required build-time "
+"dependencies are installed, since pip does not manage build-time "
+"dependencies when this flag is passed."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:134
+msgid "Historical notes"
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:136
+msgid ""
+"As this feature was incrementally rolled out, there have been various "
+"notable changes and improvements in it."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:139
+msgid ""
+"setuptools 40.8.0 is the first version of setuptools that offers a "
+"{pep}`517` backend that closely mimics directly executing `setup.py`."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:141
+msgid ""
+"Prior to pip 18.0, pip only supports installing build requirements from "
+"wheels, and does not support the use of environment markers and extras "
+"(only version specifiers are respected)."
+msgstr ""
+
+#: ../../html/reference/build-system/pyproject-toml.md:144
+msgid ""
+"Prior to pip 18.1, build dependencies using `.pth` files are not properly"
+" supported; as a result namespace packages do not work under Python 3.2 "
+"and earlier."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:1
+msgid "`setup.py` (legacy)"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:3
+msgid ""
+"Prior to the introduction of pyproject.toml-based builds (in {pep}`517` "
+"and {pep}`518`), pip had only supported installing packages using "
+"`setup.py` files that were built using {pypi}`setuptools`."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:7
+msgid ""
+"The interface documented here is retained currently solely for legacy "
+"purposes, until the migration to `pyproject.toml`-based builds can be "
+"completed."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:1
+msgid ""
+"The arguments and syntax of the various invocations of `setup.py` made by"
+" pip, are considered an implementation detail that is strongly coupled "
+"with {pypi}`setuptools`. This build system interface is not meant to be "
+"used by any other build backend, which should be based on the {doc"
+"}`pyproject-toml` build system interface instead."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:7
+msgid ""
+"Further, projects should _not_ expect to rely on there being any form of "
+"backward compatibility guarantees around the `setup.py` interface."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:25
+msgid "Generate the package's metadata."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:27
+msgid ""
+"If this fails and we're trying to install the package, attempt a direct "
+"installation."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:34
+msgid ""
+"As a first step, `pip` needs to get metadata about a package (name, "
+"version, dependencies, and more). It collects this by calling `setup.py "
+"egg_info`."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:37
+msgid ""
+"The `egg_info` command generates the metadata for the package, which pip "
+"can then consume and proceed to gather all the dependencies of the "
+"package. Once the dependency resolution process is complete, pip will "
+"proceed to the next stage of the build process for these packages."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:44
+msgid ""
+"When provided with a {term}`pypug:source distribution (or \"sdist\")` for"
+" a package, pip will attempt to build a {term}`pypug:wheel`. Since wheel "
+"distributions can be [cached](wheel-caching), this can greatly speed up "
+"future installations for the package."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:49
+msgid ""
+"This is done by calling `setup.py bdist_wheel` which requires the "
+"{pypi}`wheel` package to be installed."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:52
+msgid ""
+"If this wheel generation is successful (this can include compiling C/C++ "
+"code, depending on the package), the generated wheel is added to pip's "
+"wheel cache and will be used for this installation. The built wheel is "
+"cached locally by pip to avoid repeated identical builds."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:57
+msgid ""
+"If this wheel generation fails, pip runs `setup.py clean` to clean up any"
+" build artifacts that may have been generated. After that, pip will "
+"attempt a direct installation."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:61
+msgid "Direct Installation"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:63
+msgid ""
+"When all else fails, pip will invoke `setup.py install` to install a "
+"package using setuptools' mechanisms to perform the installation. This is"
+" currently the last-resort fallback for projects that cannot be built "
+"into wheels, and may not be supported in the future."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:70
+msgid ""
+"For installing packages in \"editable\" mode ({ref}`pip install "
+"--editable <install_--editable>`), pip will invoke `setup.py develop`, "
+"which will use setuptools' mechanisms to perform an editable/development "
+"installation."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:75
+msgid "Setuptools Injection"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:77
+msgid ""
+"To support projects that directly use `distutils`, pip injects "
+"`setuptools` into `sys.modules` before invoking `setup.py`. This "
+"injection should be transparent to `distutils`-based projects."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:81
+msgid "Customising the build"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:83
+msgid ""
+"The `--global-option` and `--build-option` arguments to the `pip install`"
+" and `pip wheel` inject additional arguments into the `setup.py` command "
+"(`--build-option` is only available in `pip wheel`)."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:1
+msgid ""
+"The use of `--global-option` and `--build-option` is highly setuptools "
+"specific, and is considered more an accident of the current "
+"implementation than a supported interface. It is documented here for "
+"completeness. These flags will not be supported, once this build system "
+"interface is dropped."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:94
+msgid "These arguments are included in the command as follows:"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:100
+msgid ""
+"The options are passed unmodified, and presently offer direct access to "
+"the distutils command line. For example:"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:11
+msgid ""
+"Linux  $ python -m pip wheel --global-option bdist_ext --global-option "
+"-DFOO wheel MacOS  $ python -m pip wheel --global-option bdist_ext "
+"--global-option -DFOO wheel Windows  C:> py -m pip wheel --global-option "
+"bdist_ext --global-option -DFOO wheel"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:107
+msgid "will result in pip invoking:"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:113
+msgid "This passes a preprocessor symbol to the extension build."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:117
+msgid "Build Output"
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:119
+msgid ""
+"Any output produced by the build system will be read by pip (for display "
+"to the user if requested). In order to correctly read the build system "
+"output, pip requires that the output is written in a well-defined "
+"encoding, specifically the encoding the user has configured for text "
+"output (which can be obtained in Python using "
+"`locale.getpreferredencoding`). If the configured encoding is ASCII, pip "
+"assumes UTF-8 (to account for the behaviour of some Unix systems)."
+msgstr ""
+
+#: ../../html/reference/build-system/setup-py.md:126
+msgid ""
+"Build systems should ensure that any tools they invoke (compilers, etc) "
+"produce output in the correct encoding. In practice - and in particular "
+"on Windows, where tools are inconsistent in their use of the \"OEM\" and "
+"\"ANSI\" codepages - this may not always be possible. pip will therefore "
+"attempt to recover cleanly if presented with incorrectly encoded build "
+"tool output, by translating unexpected byte sequences to Python-style "
+"hexadecimal escape sequences (`\"\\x80\\xff\"`, etc). However, it is "
+"still possible for output to be displayed using an incorrect encoding "
+"(mojibake)."
+msgstr ""
+
+#: ../../html/reference/index.md:1
+msgid "Reference"
+msgstr ""
+
+#: ../../html/reference/index.md:3
+msgid ""
+"Reference provides information about various file formats, interfaces and"
+" interoperability standards that pip utilises/implements."
+msgstr ""
+
+#: ../../html/reference/pip.rst:3
+msgid "3; url=../../cli/pip/"
+msgstr ""
+
+#: ../../html/reference/pip.rst:8 ../../html/reference/pip_cache.rst:8
+#: ../../html/reference/pip_check.rst:8 ../../html/reference/pip_config.rst:8
+#: ../../html/reference/pip_debug.rst:8 ../../html/reference/pip_download.rst:8
+#: ../../html/reference/pip_freeze.rst:8 ../../html/reference/pip_hash.rst:8
+#: ../../html/reference/pip_install.rst:8 ../../html/reference/pip_list.rst:8
+#: ../../html/reference/pip_search.rst:8 ../../html/reference/pip_show.rst:8
+#: ../../html/reference/pip_uninstall.rst:8
+#: ../../html/reference/pip_wheel.rst:8
+msgid "This page has moved"
+msgstr ""
+
+#: ../../html/reference/pip.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip`"
+msgstr ""
+
+#: ../../html/reference/pip_cache.rst:3
+msgid "3; url=../../cli/pip_cache/"
+msgstr ""
+
+#: ../../html/reference/pip_cache.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_cache`"
+msgstr ""
+
+#: ../../html/reference/pip_check.rst:3
+msgid "3; url=../../cli/pip_check/"
+msgstr ""
+
+#: ../../html/reference/pip_check.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_check`"
+msgstr ""
+
+#: ../../html/reference/pip_config.rst:3
+msgid "3; url=../../cli/pip_config/"
+msgstr ""
+
+#: ../../html/reference/pip_config.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_config`"
+msgstr ""
+
+#: ../../html/reference/pip_debug.rst:3
+msgid "3; url=../../cli/pip_debug/"
+msgstr ""
+
+#: ../../html/reference/pip_debug.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_debug`"
+msgstr ""
+
+#: ../../html/reference/pip_download.rst:3
+msgid "3; url=../../cli/pip_download/"
+msgstr ""
+
+#: ../../html/reference/pip_download.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_download`"
+msgstr ""
+
+#: ../../html/reference/pip_freeze.rst:3
+msgid "3; url=../../cli/pip_freeze/"
+msgstr ""
+
+#: ../../html/reference/pip_freeze.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_freeze`"
+msgstr ""
+
+#: ../../html/reference/pip_hash.rst:3
+msgid "3; url=../../cli/pip_hash/"
+msgstr ""
+
+#: ../../html/reference/pip_hash.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_hash`"
+msgstr ""
+
+#: ../../html/reference/pip_install.rst:3
+msgid "3; url=../../cli/pip_install/"
+msgstr ""
+
+#: ../../html/reference/pip_install.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_install`"
+msgstr ""
+
+#: ../../html/reference/pip_list.rst:3
+msgid "3; url=../../cli/pip_list/"
+msgstr ""
+
+#: ../../html/reference/pip_list.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_list`"
+msgstr ""
+
+#: ../../html/reference/pip_search.rst:3
+msgid "3; url=../../cli/pip_search/"
+msgstr ""
+
+#: ../../html/reference/pip_search.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_search`"
+msgstr ""
+
+#: ../../html/reference/pip_show.rst:3
+msgid "3; url=../../cli/pip_show/"
+msgstr ""
+
+#: ../../html/reference/pip_show.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_show`"
+msgstr ""
+
+#: ../../html/reference/pip_uninstall.rst:3
+msgid "3; url=../../cli/pip_uninstall/"
+msgstr ""
+
+#: ../../html/reference/pip_uninstall.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_uninstall`"
+msgstr ""
+
+#: ../../html/reference/pip_wheel.rst:3
+msgid "3; url=../../cli/pip_wheel/"
+msgstr ""
+
+#: ../../html/reference/pip_wheel.rst:10
+msgid ""
+"You should be redirected automatically in 3 seconds. If that didn't work,"
+" here's a link: :doc:`../cli/pip_wheel`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:3
+msgid "Requirements File Format"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:5
+msgid ""
+"Requirements files serve as a list of items to be installed by pip, when "
+"using {ref}`pip install`. Files that use this format are often called "
+"\"pip requirements.txt files\", since `requirements.txt` is usually what "
+"these files are named (although, that is not a requirement)."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:1
+msgid ""
+"The requirements file format is closely tied to a number of internal "
+"details of pip (e.g., pip's command line options). The basic format is "
+"relatively stable and portable but the full syntax, as described here, is"
+" only intended for consumption by pip, and other tools should take that "
+"into account before using it for their own purposes."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:18
+msgid "Structure"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:20
+msgid ""
+"Each line of the requirements file indicates something to be installed, "
+"or arguments to {ref}`pip install`. The following forms are supported:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:23
+msgid "`[[--option]...]`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:24
+msgid "`<requirement specifier> [; markers] [[--option]...]`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:25
+msgid "`<archive url/path>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:26
+msgid "`[-e] <local project path>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:27
+msgid "`[-e] <vcs project url>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:29
+msgid ""
+"For details on requirement specifiers, see {ref}`Requirement Specifiers`."
+" For examples of all these forms, see {ref}`pip install Examples`."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:32
+msgid "Encoding"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:34
+msgid ""
+"Requirements files are `utf-8` encoding by default and also support "
+"{pep}`263` style comments to change the encoding (i.e. `# -*- coding: "
+"<encoding name> -*-`)."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:38
+msgid "Line continuations"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:40
+msgid ""
+"A line ending in an unescaped `\\` is treated as a line continuation and "
+"the newline following it is effectively ignored."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:43
+msgid "Comments"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:45
+msgid ""
+"A line that begins with `#` is treated as a comment and ignored. "
+"Whitespace followed by a `#` causes the `#` and the remainder of the line"
+" to be treated as a comment."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:49
+msgid "Comments are stripped _after_ line continuations are processed."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:51
+msgid "Supported options"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:53
+msgid ""
+"Requirements files only supports certain pip install options, which are "
+"listed below."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:56
+msgid "Global options"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:58
+msgid ""
+"The following options have an effect on the _entire_ `pip install` run, "
+"and must be specified on their individual lines."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:10
+msgid ""
+"-i, --index-url  --extra-index-url  --no-index  -c, --constraint  -r, "
+"--requirement  -e, --editable  -f, --find-links  --no-binary  --only-"
+"binary  --prefer-binary  --require-hashes  --pre  --trusted-host  --use-"
+"feature"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-i, --index-url<install_--index-url>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--extra-index-url<install_--extra-index-url>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--no-index<install_--no-index>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-c, --constraint<install_--constraint>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-r, --requirement<install_--requirement>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-e, --editable<install_--editable>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`-f, --find-links<install_--find-links>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--no-binary<install_--no-binary>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--only-binary<install_--only-binary>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--prefer-binary<install_--prefer-binary>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--require-hashes<install_--require-hashes>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--pre<install_--pre>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--trusted-host<--trusted-host>`"
+msgstr ""
+
+#: ../../
+msgid ":ref:`--use-feature<--use-feature>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:65
+#: ../../html/reference/requirements-file-format.md:121
+msgid "Example"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:1
+msgid ""
+"To specify {ref}`--pre <install_--pre>`, {ref}`--no-index <install_--no-"
+"index>` and two {ref}`--find-links <install_--find-links>` locations:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:77
+msgid "Per-requirement options"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:79
+msgid "The options which can be applied to individual requirements are:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:81
+msgid "{ref}`--install-option <install_--install-option>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:82
+msgid "{ref}`--global-option <install_--global-option>`"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:83
+msgid "`--hash` (for {ref}`Hash-Checking mode`)"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:85
+msgid "If you wish, you can refer to other requirements files, like this:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:91
+msgid ""
+"You can also refer to {ref}`constraints files <Constraints Files>`, like "
+"this:"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:97
+msgid "Using environment variables"
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:103
+msgid ""
+"pip supports the use of environment variables inside the requirements "
+"file."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:106
+msgid ""
+"You have to use the POSIX format for variable names including brackets "
+"around the uppercase name as shown in this example: `${API_TOKEN}`. pip "
+"will attempt to find the corresponding environment variable defined on "
+"the host system at runtime."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:1
+msgid ""
+"There is no support for other variable expansion syntaxes such as "
+"`$VARIABLE` and `%VARIABLE%`."
+msgstr ""
+
+#: ../../html/reference/requirements-file-format.md:116
+msgid ""
+"You can now store sensitive data (tokens, keys, etc.) in environment "
+"variables and only specify the variable name for your requirements, "
+"letting pip lookup the value at runtime. This approach aligns with the "
+"commonly used [12-factor configuration "
+"pattern](https://12factor.net/config)."
+msgstr ""
+

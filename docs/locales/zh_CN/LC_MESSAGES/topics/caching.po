@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/topics/caching.md:1
+msgid "Caching"
+msgstr ""
+
+#: ../../html/topics/caching.md:7
+msgid ""
+"pip provides an on-by-default caching, designed to reduce the amount of "
+"time spent on duplicate downloads and builds."
+msgstr ""
+
+#: ../../html/topics/caching.md:10
+msgid "What is cached"
+msgstr ""
+
+#: ../../html/topics/caching.md:12
+msgid "HTTP responses"
+msgstr ""
+
+#: ../../html/topics/caching.md:14
+msgid "This cache functions like a web browser cache."
+msgstr ""
+
+#: ../../html/topics/caching.md:16
+msgid ""
+"When making any HTTP request, pip will first check its local cache to "
+"determine if it has a suitable response stored for that request which has"
+" not expired. If it does then it returns that response and doesn't re-"
+"download the content."
+msgstr ""
+
+#: ../../html/topics/caching.md:20
+msgid ""
+"If it has a response stored but it has expired, then it will attempt to "
+"make a conditional request to refresh the cache which will either return "
+"an empty response telling pip to simply use the cached item (and refresh "
+"the expiration timer) or it will return a whole new response which pip "
+"can then store in the cache."
+msgstr ""
+
+#: ../../html/topics/caching.md:26
+msgid ""
+"While this cache attempts to minimize network activity, it does not "
+"prevent network access altogether. If you want a local install solution "
+"that circumvents accessing PyPI, see {ref}`Installing from local "
+"packages`."
+msgstr ""
+
+#: ../../html/topics/caching.md:32
+msgid "Locally built wheels"
+msgstr ""
+
+#: ../../html/topics/caching.md:34
+msgid "pip attempts to use wheels from its local wheel cache whenever possible."
+msgstr ""
+
+#: ../../html/topics/caching.md:36
+msgid ""
+"This means that if there is a cached wheel for the same version of a "
+"specific package name, pip will use that wheel instead of rebuilding the "
+"project."
+msgstr ""
+
+#: ../../html/topics/caching.md:39
+msgid ""
+"When no wheels are found for a source distribution, pip will attempt to "
+"build a wheel using the package's build system. If the build is "
+"successful, this wheel is added to the cache and used in subsequent "
+"installs for the same package version."
+msgstr ""
+
+#: ../../html/topics/caching.md:44
+msgid ""
+"Wheels built from source distributions provided to pip as a direct path "
+"(such as `pip install .`) are not cached across runs, though they may be "
+"reused within the same `pip` execution."
+msgstr ""
+
+#: ../../html/topics/caching.md:1
+msgid ""
+"pip now caches wheels when building from an immutable Git reference (i.e."
+" a commit hash)."
+msgstr ""
+
+#: ../../html/topics/caching.md:53
+msgid "Avoiding caching"
+msgstr ""
+
+#: ../../html/topics/caching.md:55
+msgid ""
+"pip tries to use its cache whenever possible, and it is designed do the "
+"right thing by default."
+msgstr ""
+
+#: ../../html/topics/caching.md:58
+msgid ""
+"In some cases, pip's caching behaviour can be undesirable. As an example,"
+" if you have package with optional C extensions, that generates a pure "
+"Python wheel when the C extension can’t be built, pip will use that "
+"cached wheel even when you later invoke it from an environment that could"
+" have built those optional C extensions. This is because pip is seeing a "
+"cached wheel for that matches the package being built, and pip assumes "
+"that the result of building a package from a package index is "
+"deterministic."
+msgstr ""
+
+#: ../../html/topics/caching.md:66
+msgid ""
+"The recommended approach for dealing with these situations is to directly"
+" install from a source distribution instead of letting pip auto-discover "
+"the package when it is trying to install. Installing directly from a "
+"source distribution will make pip build a wheel, regardless of whether "
+"there is a matching cached wheel. This usually means doing something "
+"like:"
+msgstr ""
+
+#: ../../html/topics/caching.md:13
+msgid ""
+"Linux  $ python -m pip download sampleproject==1.0.0 --no-binary :all: $ "
+"python -m pip install sampleproject-1.0.0.tar.gz MacOS  $ python -m pip "
+"download sampleproject==1.0.0 --no-binary :all: $ python -m pip install "
+"sampleproject-1.0.0.tar.gz Windows  C:> py -m pip download "
+"sampleproject==1.0.0 --no-binary :all: C:> py -m pip install "
+"sampleproject-1.0.0.tar.gz"
+msgstr ""
+
+#: ../../html/topics/caching.md:77
+msgid ""
+"It is also a good idea to remove the offending cached wheel using the "
+"{ref}`pip cache` command."
+msgstr ""
+
+#: ../../html/topics/caching.md:80
+msgid "Cache management"
+msgstr ""
+
+#: ../../html/topics/caching.md:82
+msgid "The {ref}`pip cache` command can be used to manage pip's cache."
+msgstr ""
+
+#: ../../html/topics/caching.md:84
+msgid ""
+"The exact filesystem structure of pip's cache is considered to be an "
+"implementation detail and may change between any two versions of pip."
+msgstr ""
+
+#: ../../html/topics/caching.md:87
+msgid "Disabling caching"
+msgstr ""
+
+#: ../../html/topics/caching.md:89
+msgid ""
+"pip's caching behaviour is disabled by passing the `--no-cache-dir` "
+"option."
+msgstr ""
+
+#: ../../html/topics/caching.md:91
+msgid ""
+"It is, however, recommended to **NOT** disable pip's caching. Doing so "
+"can significantly slow down pip (due to repeated operations and package "
+"builds) and result in significantly more network usage."
+msgstr ""
+

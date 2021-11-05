@@ -1,0 +1,734 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/cli/pip_install.rst:5
+msgid "pip install"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:10
+msgid "Usage"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:28
+msgid "Overview"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:30
+msgid "pip install has several stages:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:32
+msgid ""
+"Identify the base requirements. The user supplied arguments are processed"
+" here."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:34
+msgid "Resolve dependencies. What will be installed is determined here."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:35
+msgid "Build wheels. All the dependencies that can be are built into wheels."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:36
+msgid "Install the packages (and uninstall anything being upgraded/replaced)."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:38
+msgid ""
+"Note that ``pip install`` prefers to leave the installed version as-is "
+"unless ``--upgrade`` is specified."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:42
+msgid "Argument Handling"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:44
+msgid ""
+"When looking at the items to be installed, pip checks what type of item "
+"each is, in the following order:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:47
+msgid "Project or archive URL."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:48
+msgid ""
+"Local directory (which must contain a ``setup.py``, or pip will report an"
+" error)."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:50
+msgid ""
+"Local file (a sdist or wheel format archive, following the naming "
+"conventions for those formats)."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:52
+msgid "A requirement, as specified in :pep:`440`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:54
+msgid ""
+"Each item identified is added to the set of requirements to be satisfied "
+"by the install."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:58
+msgid "Working Out the Name and Version"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:60
+msgid ""
+"For each candidate item, pip needs to know the project name and version. "
+"For wheels (identified by the ``.whl`` file extension) this can be "
+"obtained from the filename, as per the Wheel spec. For local directories,"
+" or explicitly specified sdist files, the ``setup.py egg_info`` command "
+"is used to determine the project metadata. For sdists located via an "
+"index, the filename is parsed for the name and project version (this is "
+"in theory slightly less reliable than using the ``egg_info`` command, but"
+" avoids downloading and processing unnecessary numbers of files)."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:69
+msgid ""
+"Any URL may use the ``#egg=name`` syntax (see :doc:`../topics/vcs-"
+"support`) to explicitly state the project name."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:73
+msgid "Satisfying Requirements"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:75
+msgid ""
+"Once pip has the set of requirements to satisfy, it chooses which version"
+" of each requirement to install using the simple rule that the latest "
+"version that satisfies the given constraints will be installed (but see "
+":ref:`here <Pre Release Versions>` for an exception regarding pre-release"
+" versions). Where more than one source of the chosen version is "
+"available, it is assumed that any source is acceptable (as otherwise the "
+"versions would differ)."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:83
+msgid "Installation Order"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:87
+msgid ""
+"This section is only about installation order of runtime dependencies, "
+"and does not apply to build dependencies (those are specified using PEP "
+"518)."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:90
+msgid ""
+"As of v6.1.0, pip installs dependencies before their dependents, i.e. in "
+"\"topological order.\"  This is the only commitment pip currently makes "
+"related to order.  While it may be coincidentally true that pip will "
+"install things in the order of the install arguments or in the order of "
+"the items in a requirements file, this is not a promise."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:96
+msgid ""
+"In the event of a dependency cycle (aka \"circular dependency\"), the "
+"current implementation (which might possibly change later) has it such "
+"that the first encountered member of the cycle is installed last."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:100
+msgid ""
+"For instance, if quux depends on foo which depends on bar which depends "
+"on baz, which depends on foo:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:128
+msgid "Prior to v6.1.0, pip made no commitments about install order."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:130
+msgid ""
+"The decision to install topologically is based on the principle that "
+"installations should proceed in a way that leaves the environment usable "
+"at each step. This has two main practical benefits:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:134
+msgid ""
+"Concurrent use of the environment during the install is more likely to "
+"work."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:135
+msgid ""
+"A failed install is less likely to leave a broken environment.  Although "
+"pip would like to support failure rollbacks eventually, in the mean time,"
+" this is an improvement."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:139
+msgid ""
+"Although the new install order is not intended to replace (and does not "
+"replace) the use of ``setup_requires`` to declare build dependencies, it "
+"may help certain projects install from sdist (that might previously fail)"
+" that fit the following profile:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:144
+msgid ""
+"They have build dependencies that are also declared as install "
+"dependencies using ``install_requires``."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:146
+msgid ""
+"``python setup.py egg_info`` works without their build dependencies being"
+" installed."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:148
+msgid ""
+"For whatever reason, they don't or won't declare their build dependencies"
+" using ``setup_requires``."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:153
+msgid "Requirements File Format"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:155
+msgid ""
+"This section has been moved to :doc:`../reference/requirements-file-"
+"format`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:160
+msgid "Requirement Specifiers"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:162
+msgid ""
+"pip supports installing from a package index using a :term:`requirement "
+"specifier <pypug:Requirement Specifier>`. Generally speaking, a "
+"requirement specifier is composed of a project name followed by optional "
+":term:`version specifiers <pypug:Version Specifier>`.  :pep:`508` "
+"contains a full specification of the format of a requirement. Since "
+"version 18.1 pip supports the ``url_req``-form specification."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:169
+msgid "Some examples:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:179
+msgid ""
+"Since version 6.0, pip also supports specifiers containing `environment "
+"markers <https://www.python.org/dev/peps/pep-0508/#environment-"
+"markers>`__ like so:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:187
+msgid ""
+"Since version 19.1, pip also supports `direct references "
+"<https://www.python.org/dev/peps/pep-0440/#direct-references>`__ like so:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:194
+msgid ""
+"Environment markers are supported in the command line and in requirements"
+" files."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:198
+msgid ""
+"Use quotes around specifiers in the shell when using ``>``, ``<``, or "
+"when using environment markers. Don't use quotes in requirement files. "
+"[1]_"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:205
+msgid "Per-requirement Overrides"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:207
+msgid ""
+"Since version 7.0 pip supports controlling the command line options given"
+" to ``setup.py`` via requirements files. This disables the use of wheels "
+"(cached or otherwise) for that package, as ``setup.py`` does not exist "
+"for wheels."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:211
+msgid ""
+"The ``--global-option`` and ``--install-option`` options are used to pass"
+" options to ``setup.py``. For example:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:220
+msgid ""
+"The above translates roughly into running FooProject's ``setup.py`` "
+"script as:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:227
+msgid ""
+"Note that the only way of giving more than one option to ``setup.py`` is "
+"through multiple ``--global-option`` and ``--install-option`` options, as"
+" shown in the example above. The value of each option is passed as a "
+"single argument to the ``setup.py`` script. Therefore, a line such as the"
+" following is invalid and would result in an installation error."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:243
+msgid "Pre-release Versions"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:245
+msgid ""
+"Starting with v1.4, pip will only install stable versions as specified by"
+" `pre-releases`_ by default. If a version cannot be parsed as a compliant"
+" :pep:`440` version then it is assumed to be a pre-release."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:249
+msgid ""
+"If a Requirement specifier includes a pre-release or development version "
+"(e.g. ``>=0.0.dev0``) then pip will allow pre-release and development "
+"versions for that requirement. This does not include the != flag."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:253
+msgid ""
+"The ``pip install`` command also supports a :ref:`--pre <install_--pre>` "
+"flag that enables installation of pre-releases and development releases."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:263
+msgid "VCS Support"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:265
+msgid "This is now covered in :doc:`../topics/vcs-support`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:268
+msgid "Finding Packages"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:270
+msgid ""
+"pip searches for packages on `PyPI`_ using the `HTTP simple interface "
+"<https://pypi.org/simple/>`_, which is documented `here "
+"<https://packaging.python.org/specifications/simple-repository-api/>`_ "
+"and `there <https://www.python.org/dev/peps/pep-0503/>`_."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:275
+msgid ""
+"pip offers a number of package index options for modifying how packages "
+"are found."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:278
+msgid ""
+"pip looks for packages in a number of places: on PyPI (if not disabled "
+"via ``--no-index``), in the local filesystem, and in any additional "
+"repositories specified via ``--find-links`` or ``--index-url``. There is "
+"no ordering in the locations that are searched. Rather they are all "
+"checked, and the \"best\" match for the requirements (in terms of version"
+" number - see :pep:`440` for details) is selected."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:285
+msgid "See the :ref:`pip install Examples<pip install Examples>`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:291
+msgid "SSL Certificate Verification"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:293
+msgid ""
+"Starting with v1.3, pip provides SSL certificate verification over HTTP, "
+"to prevent man-in-the-middle attacks against PyPI downloads. This does "
+"not use the system certificate store but instead uses a bundled CA "
+"certificate store. The default bundled CA certificate store certificate "
+"store may be overridden by using ``--cert`` option or by using "
+"``PIP_CERT``, ``REQUESTS_CA_BUNDLE``, or ``CURL_CA_BUNDLE`` environment "
+"variables."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:304
+msgid "Caching"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:306 ../../html/cli/pip_install.rst:313
+msgid "This is now covered in :doc:`../topics/caching`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:311
+msgid "Wheel Cache"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:318
+msgid "Hash-Checking Mode"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:320
+msgid ""
+"Since version 8.0, pip can check downloaded package archives against "
+"local hashes to protect against remote tampering. To verify a package "
+"against one or more hashes, add them to the end of the line::"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:327
+msgid ""
+"(The ability to use multiple hashes is important when a package has both "
+"binary and source distributions or when it offers binary distributions "
+"for a variety of platforms.)"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:331
+msgid ""
+"The recommended hash algorithm at the moment is sha256, but stronger ones"
+" are allowed, including all those supported by ``hashlib``. However, "
+"weaker ones such as md5, sha1, and sha224 are excluded to avoid giving a "
+"false sense of security."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:336
+msgid ""
+"Hash verification is an all-or-nothing proposition. Specifying a "
+"``--hash`` against any requirement not only checks that hash but also "
+"activates a global *hash-checking mode*, which imposes several other "
+"security restrictions:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:340
+msgid ""
+"Hashes are required for all requirements. This is because a partially-"
+"hashed requirements file is of little use and thus likely an error: a "
+"malicious actor could slip bad code into the installation via one of the "
+"unhashed requirements. Note that hashes embedded in URL-style "
+"requirements via the ``#md5=...`` syntax suffice to satisfy this rule "
+"(regardless of hash strength, for legacy reasons), though you should use "
+"a stronger hash like sha256 whenever possible."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:347
+msgid ""
+"Hashes are required for all dependencies. An error results if there is a "
+"dependency that is not spelled out and hashed in the requirements file."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:349
+msgid ""
+"Requirements that take the form of project names (rather than URLs or "
+"local filesystem paths) must be pinned to a specific version using "
+"``==``. This prevents a surprising hash mismatch upon the release of a "
+"new version that matches the requirement specifier."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:353
+msgid ""
+"``--egg`` is disallowed, because it delegates installation of "
+"dependencies to setuptools, giving up pip's ability to enforce any of the"
+" above."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:358
+msgid ""
+"Hash-checking mode can be forced on with the ``--require-hashes`` "
+"command-line option:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:390
+msgid ""
+"This can be useful in deploy scripts, to ensure that the author of the "
+"requirements file provided hashes. It is also a convenient way to "
+"bootstrap your list of hashes, since it shows the hashes of the packages "
+"it fetched. It fetches only the preferred archive for each package, so "
+"you may still need to add hashes for alternatives archives using "
+":ref:`pip hash`: for instance if there is both a binary and a source "
+"distribution."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:397
+msgid ""
+"The :ref:`wheel cache <Wheel cache>` is disabled in hash-checking mode to"
+" prevent spurious hash mismatch errors. These would otherwise occur while"
+" installing sdists that had already been automatically built into cached "
+"wheels: those wheels would be selected for installation, but their hashes"
+" would not match the sdist ones from the requirements file. A further "
+"complication is that locally built wheels are nondeterministic: "
+"contemporary modification times make their way into the archive, making "
+"hashes unpredictable across machines and cache flushes. Compilation of C "
+"code adds further nondeterminism, as many compilers include random-seeded"
+" values in their output. However, wheels fetched from index servers are "
+"the same every time. They land in pip's HTTP cache, not its wheel cache, "
+"and are used normally in hash-checking mode. The only downside of having "
+"the wheel cache disabled is thus extra build time for sdists, and this "
+"can be solved by making sure pre-built wheels are available from the "
+"index server."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:412
+msgid ""
+"Hash-checking mode also works with :ref:`pip download` and :ref:`pip "
+"wheel`. See :doc:`../topics/repeatable-installs` for a comparison of "
+"hash-checking mode with other repeatability strategies."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:418
+msgid ""
+"Beware of the ``setup_requires`` keyword arg in :file:`setup.py`. The "
+"(rare) packages that use it will cause those dependencies to be "
+"downloaded by setuptools directly, skipping pip's hash-checking. If you "
+"need to use such a package, see :ref:`Controlling setup_requires "
+"<controlling-setup_requires>`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:426
+msgid ""
+"Be careful not to nullify all your security work when you install your "
+"actual project by using setuptools directly: for example, by calling "
+"``python setup.py install``, ``python setup.py develop``, or "
+"``easy_install``. Setuptools will happily go out and download, unchecked,"
+" anything you missed in your requirements file—and it’s easy to miss "
+"things as your project evolves. To be safe, install your project using "
+"pip and :ref:`--no-deps <install_--no-deps>`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:434
+msgid "Instead of ``python setup.py develop``, use..."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:449
+msgid "Instead of ``python setup.py install``, use..."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:464
+msgid "Hashes from PyPI"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:466
+msgid ""
+"PyPI provides an MD5 hash in the fragment portion of each package "
+"download URL, like ``#md5=123...``, which pip checks as a protection "
+"against download corruption. Other hash algorithms that have guaranteed "
+"support from ``hashlib`` are also supported here: sha1, sha224, sha384, "
+"sha256, and sha512. Since this hash originates remotely, it is not a "
+"useful guard against tampering and thus does not satisfy the ``--require-"
+"hashes`` demand that every package have a local hash."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:476
+msgid "Local project installs"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:478
+msgid ""
+"pip supports installing local project in both regular mode and editable "
+"mode. You can install local projects by specifying the project path to "
+"pip:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:495
+msgid ""
+"Depending on the build backend used by the project, this may generate "
+"secondary build artifacts in the project directory, such as the ``.egg-"
+"info`` and ``build`` directories in the case of the setuptools backend."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:500
+msgid ""
+"Pip has a legacy behaviour that copies the entire project directory to a "
+"temporary location and installs from there. This approach was the cause "
+"of several performance and correctness issues, so it is now disabled by "
+"default, and it is planned that pip 22.1 will remove it."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:505
+msgid ""
+"To opt in to the legacy behavior, specify the ``--use-deprecated=out-of-"
+"tree-build`` option in pip's command line."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:512
+msgid "\"Editable\" Installs"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:514
+msgid ""
+"\"Editable\" installs are fundamentally `\"setuptools develop mode\" "
+"<https://setuptools.readthedocs.io/en/latest/userguide/development_mode.html>`_"
+" installs."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:518
+msgid "You can install local projects or VCS projects in \"editable\" mode:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:535
+msgid ""
+"(See the :doc:`../topics/vcs-support` section above for more information "
+"on VCS-related syntax.)"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:537
+msgid ""
+"For local projects, the \"SomeProject.egg-info\" directory is created "
+"relative to the project path.  This is one advantage over just using "
+"``setup.py develop``, which creates the \"egg-info\" directly relative "
+"the current working directory."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:543
+msgid "Build System Interface"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:545
+msgid "This is now covered in :doc:`../reference/build-system/index`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:552
+msgid "Options"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:563
+msgid "Examples"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:565
+msgid ""
+"Install ``SomePackage`` and its dependencies from `PyPI`_ using "
+":ref:`Requirement Specifiers`"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:584
+msgid ""
+"Install a list of requirements specified in a file.  See the "
+":ref:`Requirements files <Requirements Files>`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:599
+msgid "Upgrade an already installed ``SomePackage`` to the latest from PyPI."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:615
+msgid ""
+"This will guarantee an update to ``SomePackage`` as it is a direct "
+"requirement, and possibly upgrade dependencies if their installed "
+"versions do not meet the minimum requirements of ``SomePackage``. Any "
+"non-requisite updates of its dependencies (indirect requirements) will be"
+" affected by the ``--upgrade-strategy`` command."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:621
+msgid ""
+"Install a local project in \"editable\" mode. See the section on "
+":ref:`Editable Installs <editable-installs>`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:638
+msgid "Install a project from VCS"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:653
+msgid ""
+"Install a project from VCS in \"editable\" mode. See the sections on "
+":doc:`../topics/vcs-support` and :ref:`Editable Installs <editable-"
+"installs>`."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:675
+msgid "Install a package with `setuptools extras`_."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:697
+msgid "Install a particular source archive file."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:713
+msgid ""
+"Install a particular source archive file following :pep:`440` direct "
+"references."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:731
+msgid "Install from alternative package repositories."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:733
+msgid "Install from a different index, and not `PyPI`_"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:747
+msgid ""
+"Install from a local flat directory containing archives (and don't scan "
+"indexes):"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:765
+msgid "Search an additional index during install, in addition to `PyPI`_"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:769
+msgid ""
+"Using this option to search for packages which are not in the main "
+"repository (such as private packages) is unsafe, per a security "
+"vulnerability called `dependency confusion <https://azure.microsoft.com"
+"/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/>`_:"
+" an attacker can claim the package on the public repository in a way that"
+" will ensure it gets chosen over the private package."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:789
+msgid ""
+"Find pre-release and development versions, in addition to stable "
+"versions.  By default, pip only finds stable versions."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:804
+msgid "Install packages from source."
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:806
+msgid "Do not use any binary packages"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:820
+msgid "Specify ``SomePackage1`` to be installed from source:"
+msgstr ""
+
+#: ../../html/cli/pip_install.rst:836
+msgid ""
+"This is true with the exception that pip v7.0 and v7.0.1 required quotes "
+"around specifiers containing environment markers in requirement files."
+msgstr ""
+

@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/cli/pip_list.rst:5
+msgid "pip list"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:10
+msgid "Usage"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:22
+msgid "Description"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:28
+msgid "Options"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:36
+msgid "Examples"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:38
+msgid "List installed packages (with the default column formatting)."
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:62
+msgid "List outdated packages with column formatting."
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:84
+msgid ""
+"List packages that are not dependencies of other packages. Can be "
+"combined with other options."
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:105
+msgid "Use json formatting"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:121
+msgid "Use freeze formatting"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:143
+msgid "List packages installed in editable mode"
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:145
+msgid ""
+"When some packages are installed in editable mode, ``pip list`` outputs "
+"an additional column that shows the directory where the editable project "
+"is located (i.e. the directory that contains the ``pyproject.toml`` or "
+"``setup.py`` file)."
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:175
+msgid "The json format outputs an additional ``editable_project_location`` field."
+msgstr ""
+
+#: ../../html/cli/pip_list.rst:229
+msgid ""
+"Contrary to the ``freeze``  comand, ``pip list --format=freeze`` will not"
+" report editable install information, but the version of the package at "
+"the time it was installed."
+msgstr ""
+

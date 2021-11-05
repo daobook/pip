@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/index.rst:3
+msgid "Development"
+msgstr ""
+
+#: ../../html/development/index.rst:5
+msgid ""
+"pip is a volunteer maintained open source project and we welcome "
+"contributions of all forms. The sections below will help you get started "
+"with development, testing, and documentation."
+msgstr ""
+
+#: ../../html/development/index.rst:9
+msgid ""
+"You can also join ``#pypa`` (general packaging discussion and user "
+"support) and ``#pypa-dev`` (discussion about development of packaging "
+"tools) `on Libera.chat`_, or the `distutils-sig mailing list`_, to ask "
+"questions or get involved."
+msgstr ""
+
+#: ../../html/development/index.rst:26
+msgid ""
+"pip's development documentation has been rearranged and some older "
+"references might be broken."
+msgstr ""
+

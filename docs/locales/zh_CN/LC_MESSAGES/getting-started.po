@@ -1,0 +1,203 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/getting-started.md:1
+msgid "Getting Started"
+msgstr "入门指南"
+
+#: ../../html/getting-started.md:3
+msgid "To get started with using pip, you should [install Python] on your system."
+msgstr ""
+
+#: ../../html/getting-started.md:7
+msgid "Ensure you have a working pip"
+msgstr "确保你有一个可以工作的 pip"
+
+#: ../../html/getting-started.md:9
+msgid ""
+"As a first step, you should check that you have a working Python with pip"
+" installed. This can be done by running the following commands and making"
+" sure that the output looks similar."
+msgstr "作为第一步，你应该检查你是否有一个安装了 pip 的工作 Python。这可以通过运行以下命令来完成，并确保输出结果看起来类似。"
+
+#: ../../html/getting-started.md:17
+msgid ""
+"Linux  $ python --version Python 3.N.N $ python -m pip --version pip "
+"X.Y.Z from ... (python 3.N.N) MacOS  $ python --version Python 3.N.N $ "
+"python -m pip --version pip X.Y.Z from ... (python 3.N.N) Windows  C:> py"
+" --version Python 3.N.N C:> py -m pip --version pip X.Y.Z from ... "
+"(python 3.N.N)"
+msgstr ""
+
+#: ../../html/getting-started.md:20
+msgid ""
+"If that worked, congratulations! You have a working pip in your "
+"environment."
+msgstr "如果这起作用了，恭喜你！你有一个在你的环境中工作的 pip。"
+
+#: ../../html/getting-started.md:22
+msgid ""
+"If you got output that does not look like the sample above, please read "
+"the {doc}`installation` page. It provides guidance on how to install pip "
+"within a Python environment that doesn't have it."
+msgstr ""
+"如果你得到的输出与上面的样本不一样，请阅读 {doc}`installation` 页面。它提供了关于如何在一个没有 pip 的 Python "
+"环境中安装 pip 的指导。"
+
+#: ../../html/getting-started.md:26
+msgid "Common tasks"
+msgstr "普通任务"
+
+#: ../../html/getting-started.md:28
+msgid "Install a package"
+msgstr "安装包"
+
+#: ../../html/getting-started.md:15
+msgid ""
+"Linux  $ python -m pip install sampleproject [...] Successfully installed"
+" sampleproject MacOS  $ python -m pip install sampleproject [...] "
+"Successfully installed sampleproject Windows  C:> py -m pip install "
+"sampleproject [...] Successfully installed sampleproject"
+msgstr ""
+
+#: ../../html/getting-started.md:36
+msgid ""
+"By default, pip will fetch packages from [Python Package Index][PyPI], a "
+"repository of software for the Python programming language where anyone "
+"can upload packages."
+msgstr ""
+"默认情况下，pip 会从 "
+"[Python Package Index][PyPI] "
+"获取软件包，这是一个 Python 编程语言的软件库，任何人都可以在这里上传软件包。"
+
+#: ../../html/getting-started.md:42
+msgid "Install a package from GitHub"
+msgstr "从 GitHub 上安装一个软件包"
+
+#: ../../html/getting-started.md:15
+msgid ""
+"Linux  $ python -m pip install "
+"git+https://github.com/pypa/sampleproject.git@main [...] Successfully "
+"installed sampleproject MacOS  $ python -m pip install "
+"git+https://github.com/pypa/sampleproject.git@main [...] Successfully "
+"installed sampleproject Windows  C:> py -m pip install "
+"git+https://github.com/pypa/sampleproject.git@main [...] Successfully "
+"installed sampleproject"
+msgstr ""
+
+#: ../../html/getting-started.md:50
+msgid "See {doc}`topics/vcs-support` for more information about this syntax."
+msgstr "关于这个语法的更多信息，请参见 {doc}`topics/vcs-support`。"
+
+#: ../../html/getting-started.md:52
+msgid "Install a package from a distribution file"
+msgstr "从发行文件中安装一个软件包"
+
+#: ../../html/getting-started.md:54
+msgid ""
+"pip can install directly from distribution files as well. They come in 2 "
+"forms:"
+msgstr "pip 也可以直接从发行文件中安装。它们有两种形式："
+
+#: ../../html/getting-started.md:56
+msgid ""
+"{term}`source distribution <Source Distribution (or \"sdist\")>` (usually"
+" shortened to \"sdist\")"
+msgstr ""
+"{term}`source distribution <Source Distribution (or \"sdist\")>` （通常简称为 "
+"“sdist”）"
+
+#: ../../html/getting-started.md:57
+msgid "{term}`wheel distribution <Wheel>` (usually shortened to \"wheel\")"
+msgstr "{term}`wheel distribution <Wheel>` （通常简称为 “wheel”）"
+
+#: ../../html/getting-started.md:21
+msgid ""
+"Linux  $ python -m pip install sampleproject-1.0.tar.gz [...] "
+"Successfully installed sampleproject $ python -m pip install "
+"sampleproject-1.0-py3-none-any.whl [...] Successfully installed "
+"sampleproject MacOS  $ python -m pip install sampleproject-1.0.tar.gz "
+"[...] Successfully installed sampleproject $ python -m pip install "
+"sampleproject-1.0-py3-none-any.whl [...] Successfully installed "
+"sampleproject Windows  C:> py -m pip install sampleproject-1.0.tar.gz "
+"[...] Successfully installed sampleproject C:> py -m pip install "
+"sampleproject-1.0-py3-none-any.whl [...] Successfully installed "
+"sampleproject"
+msgstr ""
+
+#: ../../html/getting-started.md:68
+msgid "Install multiple packages using a requirements file"
+msgstr "使用一个需求文件安装多个软件包"
+
+#: ../../html/getting-started.md:70
+msgid ""
+"Many Python projects use {file}`requirements.txt` files, to specify the "
+"list of packages that need to be installed for the project to run. To "
+"install the packages listed in that file, you can run:"
+msgstr ""
+"许多 Python 项目使用 {file}`requirements.txt` "
+"文件，来指定项目运行所需安装的软件包列表。要安装该文件中列出的软件包，你可以运行："
+
+#: ../../html/getting-started.md:15
+msgid ""
+"Linux  $ python -m pip install -r requirements.txt [...] Successfully "
+"installed sampleproject MacOS  $ python -m pip install -r "
+"requirements.txt [...] Successfully installed sampleproject Windows  C:> "
+"py -m pip install -r requirements.txt [...] Successfully installed "
+"sampleproject"
+msgstr ""
+
+#: ../../html/getting-started.md:80
+msgid "Upgrade a package"
+msgstr "升级软件包"
+
+#: ../../html/getting-started.md:19
+msgid ""
+"Linux  $ python -m pip install --upgrade sampleproject Uninstalling "
+"sampleproject:    [...] Proceed (y/n)? y Successfully uninstalled "
+"sampleproject MacOS  $ python -m pip install --upgrade sampleproject "
+"Uninstalling sampleproject:    [...] Proceed (y/n)? y Successfully "
+"uninstalled sampleproject Windows  C:> py -m pip install --upgrade "
+"sampleproject Uninstalling sampleproject:    [...] Proceed (y/n)? y "
+"Successfully uninstalled sampleproject"
+msgstr ""
+
+#: ../../html/getting-started.md:90
+msgid "Uninstall a package"
+msgstr "卸载软件包"
+
+#: ../../html/getting-started.md:19
+msgid ""
+"Linux  $ python -m pip uninstall sampleproject Uninstalling "
+"sampleproject:    [...] Proceed (y/n)? y Successfully uninstalled "
+"sampleproject MacOS  $ python -m pip uninstall sampleproject Uninstalling"
+" sampleproject:    [...] Proceed (y/n)? y Successfully uninstalled "
+"sampleproject Windows  C:> py -m pip uninstall sampleproject Uninstalling"
+" sampleproject:    [...] Proceed (y/n)? y Successfully uninstalled "
+"sampleproject"
+msgstr ""
+
+#: ../../html/getting-started.md:100
+msgid "Next Steps"
+msgstr "下一步行动"
+
+#: ../../html/getting-started.md:102
+msgid ""
+"It is recommended to learn about what virtual environments are and how to"
+" use them. This is covered in the [\"Installing "
+"Packages\"](pypug:tutorials/installing-packages) tutorial on "
+"packaging.python.org."
+msgstr ""
+"建议了解一下什么是虚拟环境以及如何使用它们。这在 packaging.python.org 上的 [安装包](pypug:tutorials"
+"/installing-packages) 教程中有所阐述。"

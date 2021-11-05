@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/architecture/upgrade-options.rst:3
+msgid "Options that control the installation process"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:5
+msgid ""
+"When installing packages, pip chooses a distribution file, and installs "
+"it in the user's environment. There are many choices (which are `still "
+"evolving`_) involved in deciding which file to install, and these are "
+"controlled by a variety of options."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:12
+msgid ""
+"This section of the documentation needs to be updated per :ref:`Resolver "
+"changes 2020`."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:16
+msgid "Controlling what gets installed"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:18
+msgid ""
+"These options directly affect how the resolver uses the list of available"
+" distribution files to decide which one to install. So these modify the "
+"resolution algorithm itself, rather than the input to that algorithm."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:22
+msgid "``--upgrade``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:24
+msgid ""
+"Allow installing a newer version of an installed package. In principle, "
+"this option actually affects \"what gets considered\", in the sense that "
+"it allows the resolver to see other versions of installed packages. "
+"Without ``--upgrade``, the resolver will only see the installed version "
+"as a candidate."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:30
+msgid "``--upgrade-strategy``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:32
+msgid ""
+"This option affects which packages are allowed to be installed. It is "
+"only relevant if ``--upgrade`` is specified (except for the ``to-satisfy-"
+"only`` option mentioned below). The base behaviour is to allow packages "
+"specified on pip's command line to be upgraded. This option controls what"
+" *other* packages can be upgraded:"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:38
+msgid ""
+"``eager`` - all packages will be upgraded to the latest possible version."
+" It should be noted here that pip's current resolution algorithm isn't "
+"even aware of packages other than those specified on the command line, "
+"and those identified as dependencies. This may or may not be true of the "
+"new resolver."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:43
+msgid ""
+"``only-if-needed`` - packages are only upgraded if they are named in the "
+"pip command or a requirement file (i.e, they are direct requirements), or"
+" an upgraded parent needs a later version of the dependency than is "
+"currently installed."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:47
+msgid ""
+"``to-satisfy-only`` (**undocumented, please avoid**) - packages are not "
+"upgraded (not even direct requirements) unless the currently installed "
+"version fails to satisfy a requirement (either explicitly specified or a "
+"dependency)."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:52
+msgid ""
+"This is actually the \"default\" upgrade strategy when ``--upgrade`` is "
+"*not set*, i.e. ``pip install AlreadyInstalled`` and ``pip install "
+"--upgrade --upgrade-strategy=to-satisfy-only AlreadyInstalled`` yield the"
+" same behavior."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:57
+msgid "``--force-reinstall``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:59
+msgid ""
+"Doesn't affect resolution, but if the resolved result is the same as what"
+" is currently installed, uninstall and reinstall it rather than leaving "
+"the current version in place. This occurs even if ``--upgrade`` is not "
+"set."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:63
+msgid "``--ignore-installed``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:65
+msgid ""
+"Act as if the currently installed version isn't there - so don't care "
+"about ``--upgrade``, and don't uninstall before (re-)installing."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:70
+msgid "Controlling what gets considered"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:72
+msgid ""
+"These options affect the list of distribution files that the resolver "
+"will consider as candidates for installation. As such, they affect the "
+"data that the resolver has to work with, rather than influencing what pip"
+" does with the resolution result."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:77
+msgid "Prereleases"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:79
+msgid "``--pre``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:81
+msgid "Source vs Binary"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:83
+msgid "``--no-binary``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:85
+msgid "``--only-binary``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:87
+msgid "``--prefer-binary``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:89
+msgid "Wheel tag specification"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:91
+msgid "``--platform``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:93
+msgid "``--implementation``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:95
+msgid "``--abi``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:97
+msgid "Index options"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:99
+msgid "``--index-url``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:101
+msgid "``--extra-index-url``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:103
+msgid "``--no-index``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:105
+msgid "``--find-links``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:109
+msgid "Controlling dependency data"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:111
+msgid ""
+"These options control what dependency data the resolver sees for any "
+"given package (or, in the case of ``--python-version``, the environment "
+"information the resolver uses to *check* the dependency)."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:115
+msgid "``--no-deps``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:117
+msgid "``--python-version``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:119
+msgid "``--ignore-requires-python``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:123
+msgid "Special cases"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:125
+msgid ""
+"These need further investigation. They affect the install process, but "
+"not necessarily resolution or what gets installed."
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:128
+msgid "``--require-hashes``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:130
+msgid "``--constraint``"
+msgstr ""
+
+#: ../../html/development/architecture/upgrade-options.rst:132
+msgid "``--editable <LOCATION>``"
+msgstr ""
+

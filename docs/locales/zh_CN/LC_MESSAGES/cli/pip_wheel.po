@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/cli/pip_wheel.rst:6
+msgid "pip wheel"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:11
+msgid "Usage"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:29
+msgid "Build System Interface"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:31
+msgid "This is now covered in :doc:`../reference/build-system/index`."
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:34
+msgid "Options"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:42
+msgid "Examples"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:44
+msgid ""
+"Build wheels for a requirement (and all its dependencies), and then "
+"install"
+msgstr ""
+
+#: ../../html/cli/pip_wheel.rst:60
+msgid "Build a wheel for a package from source"
+msgstr ""
+

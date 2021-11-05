@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/architecture/configuration-files.rst:3
+msgid "Configuration File Handling"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:5
+msgid ""
+"The ``pip._internal.configuration`` module is responsible for handling "
+"(eg. loading from and saving values to) configuration files that are used"
+" by pip. The module's functionality is largely exposed through and "
+"coordinated by the module's ``Configuration`` class."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:12
+msgid ""
+"This section of the documentation is currently being written. pip "
+"developers welcome your help to complete this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue "
+"<https://github.com/pypa/pip/issues/6831>`_."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:21
+msgid "Overview"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:23
+msgid ""
+"pip stores configuration files in standard OS-appropriate locations, "
+"which are determined by ``appdirs``. These files are in the INI format "
+"and are processed with ``RawConfigParser``."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:27
+msgid "pip uses configuration files in two operations:"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:29
+msgid "During processing of command line options."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:31
+#: ../../html/development/architecture/configuration-files.rst:35
+msgid "Reading from *all* configuration sources"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:33
+msgid "As part of ``pip config`` command."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:36
+#: ../../html/development/architecture/configuration-files.rst:101
+msgid "Manipulating a single configuration file"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:38
+msgid ""
+"Both of these operations utilize functionality provided the "
+"``Configuration`` object, which encapsulates all the logic for handling "
+"configuration files and provides APIs for the same."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:42
+msgid ""
+"The remainder of this section documents the ``Configuration`` class, and "
+"discusses potential future refactoring ideas."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:49
+msgid "``Configuration`` class"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:51
+msgid ""
+"``Configuration`` loads configuration values from sources in the local "
+"environment: a combination of configuration files and environment "
+"variables."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:54
+msgid ""
+"It can be used in two \"modes\", for reading all the values from the "
+"local environment and for manipulating a single configuration file. It "
+"differentiates between these two modes using the ``load_only`` attribute,"
+" which can be None or represent the :ref:`kind <config-kinds>` of the "
+"configuration file to be manipulated."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:60
+msgid ""
+"The ``isolated`` attribute determines which sources are used when loading"
+" the configuration. If ``isolated`` is ``True``, user-specific "
+"configuration files and environment variables are not used."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:65
+msgid "Reading from local environment"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:67
+msgid ""
+"``Configuration`` can be used to read from all configuration sources in "
+"the local environment and access the values, as per the precedence logic "
+"described in the :ref:`Config Precedence <config-precedence>` section."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:71
+msgid ""
+"For this use case, the ``Configuration.load_only`` attribute would be "
+"``None``, and the methods used would be:"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:78
+msgid ""
+"Handles all the interactions with the environment, to load all the "
+"configuration data into objects in memory."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:83
+msgid ""
+"Provides key-value pairs (like ``dict.items()``) from the loaded-in-"
+"memory information, handling all of the override ordering logic."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:88
+msgid ""
+"Provides the value of the given key from the loaded configuration. The "
+"loaded configuration may have ``load_only`` be None or non-None. This "
+"uses the same underlying mechanism as ``Configuration.items()`` and does "
+"follow the precedence logic described in :ref:`Config Precedence <config-"
+"precedence>`."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:94
+msgid ""
+"At the time of writing, the parts of the codebase that use "
+"``Configuration`` in this manner are: ``ConfigOptionParser``, to "
+"transparently include configuration handling as part of the command line "
+"processing logic, and ``pip config get``, for printing the entire "
+"configuration when no :ref:`kind <config-kinds>` is specified via the "
+"CLI."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:103
+msgid ""
+"``Configuration`` can be used to manipulate a single configuration file, "
+"such as to add, change or remove certain key-value pairs."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:106
+msgid ""
+"For this use case, the ``load_only`` attribute would be non-None, and "
+"would represent the :ref:`kind <config-kinds>` of the configuration file "
+"to be manipulated. In addition to the methods discussed in the previous "
+"section, the methods used would be:"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:116
+msgid ""
+"Provides the \"highest priority\" file, for the :ref:`kind <config-"
+"kinds>` of configuration file specified by ``load_only``. This requires "
+"``load_only`` to be non-None."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:122
+msgid ""
+"Provides a way to add/change a single key-value pair, in the file "
+"specified by ``Configuration.get_file_to_edit()``."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:127
+msgid ""
+"Provides a way to remove a single key-value pair, in the file specified "
+"by ``Configuration.get_file_to_edit()``."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:132
+msgid ""
+"Saves the in-memory state of to the original files, saving any "
+"modifications made to the ``Configuration`` object back into the local "
+"environment."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:138
+msgid "kinds"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:140
+msgid ""
+"This is an enumeration that provides values to represent a \"source\" for"
+" configuration. This includes environment variables and various types of "
+"configuration files (global, site-specific, user_specific, specified via "
+"``PIP_CONFIG_FILE``)."
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:146
+msgid "Future Refactoring Ideas"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:149
+msgid "Break up the ``Configuration`` class into 2 smaller classes, by use case"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:149
+msgid "``Command`` use-case (read only) -- ``ConfigurationReader``"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:150
+msgid ""
+"``pip config`` use-case (read / write) -- ``ConfigurationModifier`` "
+"(inherit from ``ConfigurationReader``)"
+msgstr ""
+
+#: ../../html/development/architecture/configuration-files.rst:151
+msgid "Eagerly populate ``Configuration._dictionary`` on load."
+msgstr ""
+

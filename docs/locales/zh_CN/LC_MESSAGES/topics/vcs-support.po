@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/topics/vcs-support.md:1
+msgid "VCS Support"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:3
+msgid ""
+"pip supports installing from various version control systems (VCS). This "
+"support requires a working executable to be available (for the version "
+"control system being used). It is used through URL prefixes:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:7
+msgid "Git -- `git+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:8
+msgid "Mercurial -- `hg+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:9
+msgid "Subversion -- `svn+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:10
+msgid "Bazaar -- `bzr+`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:12
+msgid "Supported VCS"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:14
+msgid "Git"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:16
+msgid ""
+"The supported schemes are `git+file`, `git+https`, `git+ssh`, `git+http`,"
+" `git+git` and `git`. Here are some of the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:1
+msgid ""
+"The use of `git`, `git+git`, and `git+http` schemes is discouraged. The "
+"former two use [the Git Protocol], which lacks authentication, and HTTP "
+"is insecure due to lack of TLS based encryption."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:33
+msgid ""
+"It is also possible to specify a \"git ref\" such as branch name, a "
+"commit hash or a tag name:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:43
+msgid ""
+"When passing a commit hash, specifying a full hash is preferable to a "
+"partial hash because a full hash allows pip to operate more efficiently "
+"(e.g. by making fewer network calls)."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:47
+msgid "Mercurial"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:49
+msgid ""
+"The supported schemes are `hg+file`, `hg+http`, `hg+https`, `hg+ssh` and "
+"`hg+static-http`. Here are some of the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:59
+msgid ""
+"It is also possible to specify a revision number, a revision hash, a tag "
+"name or a local branch name:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:69
+msgid "Subversion"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:71
+msgid ""
+"The supported schemes are `svn`, `svn+svn`, `svn+http`, `svn+https` and "
+"`svn+ssh`. Here are some of the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:80
+msgid "You can also give specific revisions to an SVN URL, like so:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:87
+msgid ""
+"Note that you need to use [Editable VCS installs](#editable-vcs-installs)"
+" for using specific revisions from Subversion."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:90
+msgid "Bazaar"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:92
+msgid ""
+"The supported schemes are `bzr+http`, `bzr+https`, `bzr+ssh`, `bzr+sftp`,"
+" `bzr+ftp` and `bzr+lp`. Here are the supported forms:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:103
+msgid "Tags or revisions can be installed like so:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:112
+msgid "Editable VCS installs"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:114
+msgid ""
+"VCS projects can be installed in {ref}`editable mode <editable-installs>`"
+" (using the {ref}`--editable <install_--editable>` option) or not."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:117
+msgid "The default clone location (for editable installs) is:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:119
+msgid "`<venv path>/src/SomeProject` in virtual environments"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:120
+msgid "`<cwd>/src/SomeProject` for global Python installs"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:122
+msgid ""
+"The {ref}`--src <install_--src>` option can be used to modify this "
+"location."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:124
+msgid ""
+"For non-editable installs, the project is built locally in a temp dir and"
+" then installed normally."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:127
+msgid ""
+"Note that if a satisfactory version of the package is already installed, "
+"the VCS source will not overwrite it without an `--upgrade` flag. "
+"Further, pip looks at the package version, at the target revision to "
+"determine what action to take on the VCS requirement (not the commit "
+"itself)."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:132
+msgid ""
+"The {ref}`pip freeze` subcommand will record the VCS requirement "
+"specifier (referencing a specific commit) only if the install is done "
+"with the editable option."
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:136
+msgid "URL fragments"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:138
+msgid "pip looks at 2 fragments for VCS URLs:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:140
+msgid ""
+"`egg`: For specifying the \"project name\" for use in pip's dependency "
+"resolution logic. eg: `egg=project_name`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:142
+msgid ""
+"`subdirectory`: For specifying the path to the Python package, when it is"
+" not in the root of the VCS directory. eg: `pkg_dir`"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:145
+msgid "Example"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:1
+msgid "If your repository layout is:"
+msgstr ""
+
+#: ../../html/topics/vcs-support.md:12
+msgid "Then, to install from this repository, the syntax would be:"
+msgstr ""
+

@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/development/ci.rst:3
+msgid "This section of the documentation is currently out of date."
+msgstr ""
+
+#: ../../html/development/ci.rst:5
+msgid ""
+"pip developers welcome your help to update this documentation. If you're "
+"interested in helping out, please let us know in the `tracking issue`_, "
+"or just submit a pull request and mention it in that tracking issue."
+msgstr ""
+
+#: ../../html/development/ci.rst:14
+msgid "Continuous Integration"
+msgstr ""
+
+#: ../../html/development/ci.rst:17
+msgid "Supported interpreters"
+msgstr ""
+
+#: ../../html/development/ci.rst:19
+msgid "pip support a variety of Python interpreters:"
+msgstr ""
+
+#: ../../html/development/ci.rst:21
+msgid "CPython 3.6"
+msgstr ""
+
+#: ../../html/development/ci.rst:22
+msgid "CPython 3.7"
+msgstr ""
+
+#: ../../html/development/ci.rst:23
+msgid "CPython 3.8"
+msgstr ""
+
+#: ../../html/development/ci.rst:24
+msgid "CPython 3.9"
+msgstr ""
+
+#: ../../html/development/ci.rst:25
+msgid "Latest PyPy3"
+msgstr ""
+
+#: ../../html/development/ci.rst:27
+msgid "on different operating systems:"
+msgstr ""
+
+#: ../../html/development/ci.rst:29 ../../html/development/ci.rst:80
+#: ../../html/development/ci.rst:120
+msgid "Linux"
+msgstr ""
+
+#: ../../html/development/ci.rst:30 ../../html/development/ci.rst:81
+#: ../../html/development/ci.rst:100
+msgid "Windows"
+msgstr ""
+
+#: ../../html/development/ci.rst:31 ../../html/development/ci.rst:82
+#: ../../html/development/ci.rst:140
+msgid "MacOS"
+msgstr ""
+
+#: ../../html/development/ci.rst:33
+msgid "and on different architectures:"
+msgstr ""
+
+#: ../../html/development/ci.rst:35 ../../html/development/ci.rst:103
+#: ../../html/development/ci.rst:123 ../../html/development/ci.rst:143
+msgid "x64"
+msgstr ""
+
+#: ../../html/development/ci.rst:36 ../../html/development/ci.rst:93
+#: ../../html/development/ci.rst:113 ../../html/development/ci.rst:133
+msgid "x86"
+msgstr ""
+
+#: ../../html/development/ci.rst:38
+msgid "so 42 hypothetical interpreters."
+msgstr ""
+
+#: ../../html/development/ci.rst:42
+msgid "Checks"
+msgstr ""
+
+#: ../../html/development/ci.rst:44
+msgid "``pip`` CI runs different kind of tests:"
+msgstr ""
+
+#: ../../html/development/ci.rst:46
+msgid "lint (defined in ``.pre-commit-config.yaml``)"
+msgstr ""
+
+#: ../../html/development/ci.rst:47 ../../html/development/ci.rst:78
+msgid "docs"
+msgstr ""
+
+#: ../../html/development/ci.rst:48
+msgid "vendoring (is the ``src/_internal/_vendor`` directory cleanly vendored)"
+msgstr ""
+
+#: ../../html/development/ci.rst:49
+msgid "unit tests (present in ``tests/unit``)"
+msgstr ""
+
+#: ../../html/development/ci.rst:50
+msgid "\"integration\" tests (mostly present in ``tests/functional``)"
+msgstr ""
+
+#: ../../html/development/ci.rst:51
+msgid "package (test the packaging steps)"
+msgstr ""
+
+#: ../../html/development/ci.rst:53
+msgid ""
+"Since lint, docs, vendoring and package tests only need to run on a pip "
+"developer/contributor machine, they only need to be tested on the x64 "
+"variant of the 3 different operating systems, and when an interpreter "
+"needs to be specified it's ok to require the latest CPython interpreter."
+msgstr ""
+
+#: ../../html/development/ci.rst:58
+msgid ""
+"So only unit tests and integration tests would need to be run with the "
+"different interpreters."
+msgstr ""
+
+#: ../../html/development/ci.rst:63
+msgid "Services"
+msgstr ""
+
+#: ../../html/development/ci.rst:65
+msgid ""
+"pip test suite and checks are distributed on `GitHub Actions`_ which "
+"provides free executors for open source packages."
+msgstr ""
+
+#: ../../html/development/ci.rst:72
+msgid "Current run tests"
+msgstr ""
+
+#: ../../html/development/ci.rst:75
+msgid "Developer tasks"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "OS"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "lint"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "vendoring"
+msgstr ""
+
+#: ../../html/development/ci.rst:78
+msgid "packaging"
+msgstr ""
+
+#: ../../html/development/ci.rst:80 ../../html/development/ci.rst:81
+#: ../../html/development/ci.rst:82 ../../html/development/ci.rst:101
+#: ../../html/development/ci.rst:107 ../../html/development/ci.rst:121
+#: ../../html/development/ci.rst:123 ../../html/development/ci.rst:125
+#: ../../html/development/ci.rst:127 ../../html/development/ci.rst:141
+#: ../../html/development/ci.rst:143 ../../html/development/ci.rst:145
+#: ../../html/development/ci.rst:147
+msgid "Github"
+msgstr ""
+
+#: ../../html/development/ci.rst:86
+msgid "Actual testing"
+msgstr ""
+
+#: ../../html/development/ci.rst:89
+msgid "**interpreter**"
+msgstr ""
+
+#: ../../html/development/ci.rst:89
+msgid "**unit**"
+msgstr ""
+
+#: ../../html/development/ci.rst:89
+msgid "**integration**"
+msgstr ""
+
+#: ../../html/development/ci.rst:91 ../../html/development/ci.rst:101
+#: ../../html/development/ci.rst:111 ../../html/development/ci.rst:121
+#: ../../html/development/ci.rst:131 ../../html/development/ci.rst:141
+msgid "CP3.6"
+msgstr ""
+
+#: ../../html/development/ci.rst:93 ../../html/development/ci.rst:103
+#: ../../html/development/ci.rst:113 ../../html/development/ci.rst:123
+#: ../../html/development/ci.rst:133 ../../html/development/ci.rst:143
+msgid "CP3.7"
+msgstr ""
+
+#: ../../html/development/ci.rst:95 ../../html/development/ci.rst:105
+#: ../../html/development/ci.rst:115 ../../html/development/ci.rst:125
+#: ../../html/development/ci.rst:135 ../../html/development/ci.rst:145
+msgid "CP3.8"
+msgstr ""
+
+#: ../../html/development/ci.rst:97 ../../html/development/ci.rst:107
+#: ../../html/development/ci.rst:117 ../../html/development/ci.rst:127
+#: ../../html/development/ci.rst:137 ../../html/development/ci.rst:147
+msgid "CP3.9"
+msgstr ""
+
+#: ../../html/development/ci.rst:99 ../../html/development/ci.rst:109
+#: ../../html/development/ci.rst:119 ../../html/development/ci.rst:129
+#: ../../html/development/ci.rst:139 ../../html/development/ci.rst:149
+msgid "PyPy3"
+msgstr ""
+

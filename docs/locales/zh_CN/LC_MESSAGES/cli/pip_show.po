@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The pip developers
+# This file is distributed under the same license as the pip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pip 22.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../html/cli/pip_show.rst:5
+msgid "pip show"
+msgstr ""
+
+#: ../../html/cli/pip_show.rst:10
+msgid "Usage"
+msgstr ""
+
+#: ../../html/cli/pip_show.rst:22
+msgid "Description"
+msgstr ""
+
+#: ../../html/cli/pip_show.rst:28
+msgid "Options"
+msgstr ""
+
+#: ../../html/cli/pip_show.rst:34
+msgid "Examples"
+msgstr ""
+
+#: ../../html/cli/pip_show.rst:36
+msgid "Show information about a package:"
+msgstr ""
+
+#: ../../html/cli/pip_show.rst:68
+msgid "Show all information about a package"
+msgstr ""
+
