@@ -19,15 +19,16 @@ msgstr ""
 
 #: ../../html/topics/index.md:1
 msgid "Topic Guides"
-msgstr ""
+msgstr "主题指南"
 
 #: ../../html/topics/index.md:3
 msgid "These pages provide detailed information on individual topics."
-msgstr ""
+msgstr "这些页面提供了关于个别主题的详细信息。"
 
 #: ../../html/topics/index.md:1
 msgid ""
 "This section of the documentation is currently being fleshed out. See "
 "{issue}`9475` for more details."
 msgstr ""
+"文件的这一部分目前正在充实中。更多细节见 {issue}`9475`。"
 
