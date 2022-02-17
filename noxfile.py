@@ -134,11 +134,14 @@ def docs(session: nox.Session) -> None:
         return [
             "sphinx-build",
             "-W",
-            "-c", "docs/html",  # see note above
-            "-d", "docs/build/doctrees/" + kind,
-            "-b", kind,
-            "docs/" + kind,
-            "docs/build/" + kind,
+            "-c",
+            "docs/html",
+            "-d",
+            f'docs/build/doctrees/{kind}',
+            "-b",
+            kind,
+            f'docs/{kind}',
+            f'docs/build/{kind}',
         ]
         # fmt: on
 
@@ -316,12 +319,11 @@ def build_dists(session: nox.Session) -> List[str]:
         "# Check if there's any Git-untracked files before building the wheel",
     )
 
-    has_forbidden_git_untracked_files = any(
+    if has_forbidden_git_untracked_files := any(
         # Don't report the environment this session is running in
         not untracked_file.startswith(".nox/build-release/")
         for untracked_file in release.get_git_untracked_files()
-    )
-    if has_forbidden_git_untracked_files:
+    ):
         session.error(
             "There are untracked files in the working directory. "
             "Remove them and try again",

@@ -101,17 +101,14 @@ def ensure_dir(path: str) -> None:
         os.makedirs(path)
     except OSError as e:
         # Windows can raise spurious ENOTEMPTY errors. See #6426.
-        if e.errno != errno.EEXIST and e.errno != errno.ENOTEMPTY:
+        if e.errno not in [errno.EEXIST, errno.ENOTEMPTY]:
             raise
 
 
 def get_prog() -> str:
     try:
         prog = os.path.basename(sys.argv[0])
-        if prog in ("__main__.py", "-c"):
-            return f"{sys.executable} -m pip"
-        else:
-            return prog
+        return f"{sys.executable} -m pip" if prog in ("__main__.py", "-c") else prog
     except (AttributeError, TypeError, IndexError):
         pass
     return "pip"
@@ -149,7 +146,7 @@ def display_path(path: str) -> str:
     if possible."""
     path = os.path.normcase(os.path.abspath(path))
     if path.startswith(os.getcwd() + os.path.sep):
-        path = "." + path[len(os.getcwd()) :]
+        path = f'.{path[len(os.getcwd()) :]}'
     return path
 
 
@@ -279,10 +276,7 @@ def normalize_path(path: str, resolve_symlinks: bool = True) -> str:
 
     """
     path = os.path.expanduser(path)
-    if resolve_symlinks:
-        path = os.path.realpath(path)
-    else:
-        path = os.path.abspath(path)
+    path = os.path.realpath(path) if resolve_symlinks else os.path.abspath(path)
     return os.path.normcase(path)
 
 
@@ -432,14 +426,7 @@ def split_auth_from_netloc(netloc: str) -> NetlocTuple:
     # the password attribute of urlsplit()'s return value).
     auth, netloc = netloc.rsplit("@", 1)
     pw: Optional[str] = None
-    if ":" in auth:
-        # Split from the left because that's how urllib.parse.urlsplit()
-        # behaves if more than one : is present (which again can be checked
-        # using the password attribute of the return value)
-        user, pw = auth.split(":", 1)
-    else:
-        user, pw = auth, None
-
+    user, pw = auth.split(":", 1) if ":" in auth else (auth, None)
     user = urllib.parse.unquote(user)
     if pw is not None:
         pw = urllib.parse.unquote(pw)
@@ -532,12 +519,7 @@ class HiddenText:
 
     # This is useful for testing.
     def __eq__(self, other: Any) -> bool:
-        if type(self) != type(other):
-            return False
-
-        # The string being used for redaction doesn't also have to match,
-        # just the raw, original string.
-        return self.secret == other.secret
+        return False if type(self) != type(other) else self.secret == other.secret
 
 
 def hide_value(value: str) -> HiddenText:
@@ -561,12 +543,11 @@ def protect_pip_from_modification_on_windows(modifying_pip: bool) -> None:
         "pip{}.{}.exe".format(*sys.version_info[:2]),
     ]
 
-    # See https://github.com/pypa/pip/issues/1299 for more discussion
-    should_show_use_python_msg = (
-        modifying_pip and WINDOWS and os.path.basename(sys.argv[0]) in pip_names
-    )
-
-    if should_show_use_python_msg:
+    if should_show_use_python_msg := (
+        modifying_pip
+        and WINDOWS
+        and os.path.basename(sys.argv[0]) in pip_names
+    ):
         new_command = [sys.executable, "-m", "pip"] + sys.argv[1:]
         raise CommandError(
             "To modify pip, please run the following command:\n{}".format(

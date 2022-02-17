@@ -63,7 +63,7 @@ class Subversion(VersionControl):
 
             if base == location:
                 assert dirurl is not None
-                base = dirurl + "/"  # save the root url
+                base = f'{dirurl}/'
             elif not dirurl or not dirurl.startswith(base):
                 dirs[:] = []
                 continue  # not part of the same svn tree, skip it
@@ -90,7 +90,7 @@ class Subversion(VersionControl):
         # hotfix the URL scheme after removing svn+ from svn+ssh:// readd it
         url, rev, user_pass = super().get_url_rev_and_auth(url)
         if url.startswith("ssh://"):
-            url = "svn+" + url
+            url = f'svn+{url}'
         return url, rev, user_pass
 
     @staticmethod
@@ -172,11 +172,7 @@ class Subversion(VersionControl):
             except InstallationError:
                 url, revs = None, []
 
-        if revs:
-            rev = max(revs)
-        else:
-            rev = 0
-
+        rev = max(revs) if revs else 0
         return url, rev
 
     @classmethod
@@ -287,10 +283,7 @@ class Subversion(VersionControl):
             rev_display,
             display_path(dest),
         )
-        if verbosity <= 0:
-            flag = "--quiet"
-        else:
-            flag = ""
+        flag = "--quiet" if verbosity <= 0 else ""
         cmd_args = make_command(
             "checkout",
             flag,

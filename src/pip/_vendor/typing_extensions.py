@@ -5,12 +5,7 @@ import operator
 import sys
 import typing
 
-# After PEP 560, internal typing API was substantially reworked.
-# This is especially important for Protocol class which uses internal APIs
-# quite extensively.
-PEP_560 = sys.version_info[:3] >= (3, 7, 0)
-
-if PEP_560:
+if PEP_560 := sys.version_info[:3] >= (3, 7, 0):
     GenericMeta = type
 else:
     # 3.6
@@ -133,7 +128,7 @@ elif sys.version_info[:2] >= (3, 7):
     class _FinalForm(typing._SpecialForm, _root=True):
 
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
         def __getitem__(self, parameters):
             item = typing._type_check(parameters,
@@ -250,7 +245,7 @@ elif sys.version_info[:2] >= (3, 7):
     class _LiteralForm(typing._SpecialForm, _root=True):
 
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
         def __getitem__(self, parameters):
             return typing._GenericAlias(self, parameters)
@@ -528,12 +523,15 @@ elif PEP_560:
                  _is_callable_members_only(cls)) and
                     issubclass(instance.__class__, cls)):
                 return True
-            if cls._is_protocol:
-                if all(hasattr(instance, attr) and
-                       (not callable(getattr(cls, attr, None)) or
-                        getattr(instance, attr) is not None)
-                       for attr in _get_protocol_attrs(cls)):
-                    return True
+            if cls._is_protocol and all(
+                hasattr(instance, attr)
+                and (
+                    not callable(getattr(cls, attr, None))
+                    or getattr(instance, attr) is not None
+                )
+                for attr in _get_protocol_attrs(cls)
+            ):
+                return True
             return super().__instancecheck__(instance)
 
     class Protocol(metaclass=_ProtocolMeta):
@@ -823,12 +821,15 @@ else:
                     _is_callable_members_only(self)) and
                     issubclass(instance.__class__, self)):
                 return True
-            if self._is_protocol:
-                if all(hasattr(instance, attr) and
-                        (not callable(getattr(self, attr, None)) or
-                         getattr(instance, attr) is not None)
-                        for attr in _get_protocol_attrs(self)):
-                    return True
+            if self._is_protocol and all(
+                hasattr(instance, attr)
+                and (
+                    not callable(getattr(self, attr, None))
+                    or getattr(instance, attr) is not None
+                )
+                for attr in _get_protocol_attrs(self)
+            ):
+                return True
             return super(GenericMeta, self).__instancecheck__(instance)
 
         def __subclasscheck__(self, cls):
@@ -1289,7 +1290,7 @@ else:
 
         def __new__(cls, name, bases, namespace, **kwargs):
             if any(b is not object for b in bases):
-                raise TypeError("Cannot subclass " + str(Annotated))
+                raise TypeError(f'Cannot subclass {str(Annotated)}')
             return super().__new__(cls, name, bases, namespace, **kwargs)
 
         @property
@@ -1324,10 +1325,7 @@ else:
             tree = self._subs_tree()
             while isinstance(tree, tuple) and tree[0] is Annotated:
                 tree = tree[1]
-            if isinstance(tree, tuple):
-                return tree[0]
-            else:
-                return tree
+            return tree[0] if isinstance(tree, tuple) else tree
 
         @typing._tp_cache
         def __getitem__(self, params):
@@ -1487,7 +1485,7 @@ if hasattr(typing, 'TypeAlias'):
 elif sys.version_info[:2] >= (3, 9):
     class _TypeAliasForm(typing._SpecialForm, _root=True):
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
     @_TypeAliasForm
     def TypeAlias(self, parameters):
@@ -1506,7 +1504,7 @@ elif sys.version_info[:2] >= (3, 9):
 elif sys.version_info[:2] >= (3, 7):
     class _TypeAliasForm(typing._SpecialForm, _root=True):
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
     TypeAlias = _TypeAliasForm('TypeAlias',
                                doc="""Special marker indicating that an assignment should
@@ -1800,7 +1798,7 @@ elif sys.version_info[:2] >= (3, 9):
 elif sys.version_info[:2] >= (3, 7):
     class _ConcatenateForm(typing._SpecialForm, _root=True):
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
         def __getitem__(self, parameters):
             return _concatenate_getitem(self, parameters)
@@ -1861,7 +1859,7 @@ if hasattr(typing, 'TypeGuard'):
 elif sys.version_info[:2] >= (3, 9):
     class _TypeGuardForm(typing._SpecialForm, _root=True):
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
     @_TypeGuardForm
     def TypeGuard(self, parameters):
@@ -1914,7 +1912,7 @@ elif sys.version_info[:2] >= (3, 7):
     class _TypeGuardForm(typing._SpecialForm, _root=True):
 
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
         def __getitem__(self, parameters):
             item = typing._type_check(parameters,
@@ -2142,7 +2140,7 @@ if hasattr(typing, 'Required'):
 elif sys.version_info[:2] >= (3, 9):
     class _ExtensionsSpecialForm(typing._SpecialForm, _root=True):
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
     @_ExtensionsSpecialForm
     def Required(self, parameters):
@@ -2184,7 +2182,7 @@ elif sys.version_info[:2] >= (3, 9):
 elif sys.version_info[:2] >= (3, 7):
     class _RequiredForm(typing._SpecialForm, _root=True):
         def __repr__(self):
-            return 'typing_extensions.' + self._name
+            return f'typing_extensions.{self._name}'
 
         def __getitem__(self, parameters):
             item = typing._type_check(parameters,

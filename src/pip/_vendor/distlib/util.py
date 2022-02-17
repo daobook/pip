@@ -63,9 +63,7 @@ def parse_marker(marker_string):
     variable (such as os_name).
     """
     def marker_var(remaining):
-        # either identifier, or literal string
-        m = IDENTIFIER.match(remaining)
-        if m:
+        if m := IDENTIFIER.match(remaining):
             result = m.groups()[0]
             remaining = remaining[m.end():]
         elif not remaining:
@@ -294,13 +292,11 @@ def get_resources_dests(resources_root, rules):
 
 
 def in_venv():
-    if hasattr(sys, 'real_prefix'):
-        # virtualenv venvs
-        result = True
-    else:
-        # PEP 405 venvs
-        result = sys.prefix != getattr(sys, 'base_prefix', sys.prefix)
-    return result
+    return (
+        True
+        if hasattr(sys, 'real_prefix')
+        else sys.prefix != getattr(sys, 'base_prefix', sys.prefix)
+    )
 
 
 def get_executable():
@@ -340,11 +336,7 @@ def proceed(prompt, allowed_chars, error_prompt=None, default=None):
 def extract_by_key(d, keys):
     if isinstance(keys, string_types):
         keys = keys.split()
-    result = {}
-    for key in keys:
-        if key in d:
-            result[key] = d[key]
-    return result
+    return {key: d[key] for key in keys if key in d}
 
 def read_exports(stream):
     if sys.version_info[0] >= 3:
@@ -529,7 +521,7 @@ class FileOperator(object):
                 elif os.path.exists(outfile) and not os.path.isfile(outfile):
                     msg = '%s is a non-regular file' % outfile
             if msg:
-                raise ValueError(msg + ' which would be overwritten')
+                raise ValueError(f'{msg} which would be overwritten')
             shutil.copyfile(infile, outfile)
         self.record_as_written(outfile)
 
@@ -604,25 +596,21 @@ class FileOperator(object):
         return dpath
 
     def ensure_removed(self, path):
-        if os.path.exists(path):
-            if os.path.isdir(path) and not os.path.islink(path):
-                logger.debug('Removing directory tree at %s', path)
-                if not self.dry_run:
-                    shutil.rmtree(path)
-                if self.record:
-                    if path in self.dirs_created:
-                        self.dirs_created.remove(path)
-            else:
-                if os.path.islink(path):
-                    s = 'link'
-                else:
-                    s = 'file'
-                logger.debug('Removing %s %s', s, path)
-                if not self.dry_run:
-                    os.remove(path)
-                if self.record:
-                    if path in self.files_written:
-                        self.files_written.remove(path)
+        if not os.path.exists(path):
+            return
+        if os.path.isdir(path) and not os.path.islink(path):
+            logger.debug('Removing directory tree at %s', path)
+            if not self.dry_run:
+                shutil.rmtree(path)
+            if self.record and path in self.dirs_created:
+                self.dirs_created.remove(path)
+        else:
+            s = 'link' if os.path.islink(path) else 'file'
+            logger.debug('Removing %s %s', s, path)
+            if not self.dry_run:
+                os.remove(path)
+            if self.record and path in self.files_written:
+                self.files_written.remove(path)
 
     def is_writable(self, path):
         result = False
@@ -656,8 +644,7 @@ class FileOperator(object):
             # reverse so that subdirs appear before their parents
             dirs = sorted(self.dirs_created, reverse=True)
             for d in dirs:
-                flist = os.listdir(d)
-                if flist:
+                if flist := os.listdir(d):
                     assert flist == ['__pycache__']
                     sd = os.path.join(d, flist[0])
                     os.rmdir(sd)
@@ -695,14 +682,16 @@ class ExportEntry(object):
                                                 self.suffix, self.flags)
 
     def __eq__(self, other):
-        if not isinstance(other, ExportEntry):
-            result = False
-        else:
-            result = (self.name == other.name and
-                      self.prefix == other.prefix and
-                      self.suffix == other.suffix and
-                      self.flags == other.flags)
-        return result
+        return (
+            False
+            if not isinstance(other, ExportEntry)
+            else (
+                self.name == other.name
+                and self.prefix == other.prefix
+                and self.suffix == other.suffix
+                and self.flags == other.flags
+            )
+        )
 
     __hash__ = object.__hash__
 
@@ -713,23 +702,17 @@ ENTRY_RE = re.compile(r'''(?P<name>(\w|[-.+])+)
                       ''', re.VERBOSE)
 
 def get_export_entry(specification):
-    m = ENTRY_RE.search(specification)
-    if not m:
-        result = None
-        if '[' in specification or ']' in specification:
-            raise DistlibException("Invalid specification "
-                                   "'%s'" % specification)
-    else:
+    if m := ENTRY_RE.search(specification):
         d = m.groupdict()
         name = d['name']
         path = d['callable']
         colons = path.count(':')
         if colons == 0:
             prefix, suffix = path, None
+        elif colons != 1:
+            raise DistlibException("Invalid specification "
+                                   "'%s'" % specification)
         else:
-            if colons != 1:
-                raise DistlibException("Invalid specification "
-                                       "'%s'" % specification)
             prefix, suffix = path.split(':')
         flags = d['flags']
         if flags is None:
@@ -740,6 +723,11 @@ def get_export_entry(specification):
         else:
             flags = [f.strip() for f in flags.split(',')]
         result = ExportEntry(name, prefix, suffix, flags)
+    else:
+        result = None
+        if '[' in specification or ']' in specification:
+            raise DistlibException("Invalid specification "
+                                   "'%s'" % specification)
     return result
 
 
@@ -802,9 +790,7 @@ def path_to_cache_dir(path):
 
 
 def ensure_slash(s):
-    if not s.endswith('/'):
-        return s + '/'
-    return s
+    return f'{s}/' if not s.endswith('/') else s
 
 
 def parse_credentials(netloc):
@@ -828,12 +814,8 @@ def get_process_umask():
     return result
 
 def is_string_sequence(seq):
-    result = True
     i = None
-    for i, s in enumerate(seq):
-        if not isinstance(s, string_types):
-            result = False
-            break
+    result = next((False for s in seq if not isinstance(s, string_types)), True)
     assert i is not None
     return result
 
@@ -851,18 +833,15 @@ def split_filename(filename, project_name=None):
     result = None
     pyver = None
     filename = unquote(filename).replace(' ', '-')
-    m = PYTHON_VERSION.search(filename)
-    if m:
+    if m := PYTHON_VERSION.search(filename):
         pyver = m.group(1)
         filename = filename[:m.start()]
     if project_name and len(filename) > len(project_name) + 1:
-        m = re.match(re.escape(project_name) + r'\b', filename)
-        if m:
+        if m := re.match(f'{re.escape(project_name)}\\b', filename):
             n = m.end()
             result = filename[:n], filename[n + 1:], pyver
     if result is None:
-        m = PROJECT_NAME_AND_VERSION.match(filename)
-        if m:
+        if m := PROJECT_NAME_AND_VERSION.match(filename):
             result = m.group(1), m.group(3), pyver
     return result
 
@@ -935,8 +914,7 @@ _external_data_base_url = 'https://www.red-dove.com/pypi/projects/'
 def get_project_data(name):
     url = '%s/%s/project.json' % (name[0].upper(), name)
     url = urljoin(_external_data_base_url, url)
-    result = _get_external_data(url)
-    return result
+    return _get_external_data(url)
 
 def get_package_data(name, version):
     url = '%s/%s/package-%s.json' % (name[0].upper(), name, version)
@@ -1110,10 +1088,9 @@ class Sequencer(object):
     def get_steps(self, final):
         if not self.is_step(final):
             raise ValueError('Unknown: %r' % final)
-        result = []
-        todo = []
         seen = set()
-        todo.append(final)
+        todo = [final]
+        result = []
         while todo:
             step = todo.pop(0)
             if step in seen:
@@ -1188,10 +1165,8 @@ class Sequencer(object):
         result = ['digraph G {']
         for succ in self._preds:
             preds = self._preds[succ]
-            for pred in preds:
-                result.append('  %s -> %s;' % (pred, succ))
-        for node in self._nodes:
-            result.append('  %s;' % node)
+            result.extend('  %s -> %s;' % (pred, succ) for pred in preds)
+        result.extend('  %s;' % node for node in self._nodes)
         result.append('}')
         return '\n'.join(result)
 
@@ -1317,22 +1292,19 @@ class Progress(object):
     @property
     def percentage(self):
         if self.done:
-            result = '100 %'
+            return '100 %'
         elif self.max is None:
-            result = ' ?? %'
+            return ' ?? %'
         else:
             v = 100.0 * (self.cur - self.min) / (self.max - self.min)
-            result = '%3d %%' % v
-        return result
+            return '%3d %%' % v
 
     def format_duration(self, duration):
-        if (duration <= 0) and self.max is None or self.cur == self.min:
-            result = '??:??:??'
-        #elif duration < 1:
-        #    result = '--:--:--'
-        else:
-            result = time.strftime('%H:%M:%S', time.gmtime(duration))
-        return result
+        return (
+            '??:??:??'
+            if (duration <= 0) and self.max is None or self.cur == self.min
+            else time.strftime('%H:%M:%S', time.gmtime(duration))
+        )
 
     @property
     def ETA(self):
@@ -1355,10 +1327,7 @@ class Progress(object):
 
     @property
     def speed(self):
-        if self.elapsed == 0:
-            result = 0.0
-        else:
-            result = (self.cur - self.min) / self.elapsed
+        result = 0.0 if self.elapsed == 0 else (self.cur - self.min) / self.elapsed
         for unit in UNITS:
             if result < 1000:
                 break
@@ -1391,26 +1360,22 @@ def _iglob(path_glob):
         assert len(rich_path_glob) == 3, rich_path_glob
         prefix, set, suffix = rich_path_glob
         for item in set.split(','):
-            for path in _iglob(''.join((prefix, item, suffix))):
-                yield path
+            yield from _iglob(''.join((prefix, item, suffix)))
+    elif '**' not in path_glob:
+        yield from std_iglob(path_glob)
     else:
-        if '**' not in path_glob:
-            for item in std_iglob(path_glob):
-                yield item
+        prefix, radical = path_glob.split('**', 1)
+        if prefix == '':
+            prefix = '.'
+        if radical == '':
+            radical = '*'
         else:
-            prefix, radical = path_glob.split('**', 1)
-            if prefix == '':
-                prefix = '.'
-            if radical == '':
-                radical = '*'
-            else:
-                # we support both
-                radical = radical.lstrip('/')
-                radical = radical.lstrip('\\')
-            for path, dir, files in os.walk(prefix):
-                path = os.path.normpath(path)
-                for fn in _iglob(os.path.join(path, radical)):
-                    yield fn
+            # we support both
+            radical = radical.lstrip('/')
+            radical = radical.lstrip('\\')
+        for path, dir, files in os.walk(prefix):
+            path = os.path.normpath(path)
+            yield from _iglob(os.path.join(path, radical))
 
 if ssl:
     from .compat import (HTTPSHandler as BaseHTTPSHandler, match_hostname,
@@ -1542,10 +1507,7 @@ class ServerProxy(xmlrpclib.ServerProxy):
             # scheme = splittype(uri)  # deprecated as of Python 3.8
             scheme = urlparse(uri)[0]
             use_datetime = kwargs.get('use_datetime', 0)
-            if scheme == 'https':
-                tcls = SafeTransport
-            else:
-                tcls = Transport
+            tcls = SafeTransport if scheme == 'https' else Transport
             kwargs['transport'] = t = tcls(timeout, use_datetime=use_datetime)
             self.transport = t
         xmlrpclib.ServerProxy.__init__(self, uri, **kwargs)
@@ -1636,17 +1598,11 @@ class Configurator(BaseConfigurator):
     def configure_custom(self, config):
         def convert(o):
             if isinstance(o, (list, tuple)):
-                result = type(o)([convert(i) for i in o])
+                return type(o)([convert(i) for i in o])
             elif isinstance(o, dict):
-                if '()' in o:
-                    result = self.configure_custom(o)
-                else:
-                    result = {}
-                    for k in o:
-                        result[k] = convert(o[k])
+                return self.configure_custom(o) if '()' in o else {k: convert(o[k]) for k in o}
             else:
-                result = self.convert(o)
-            return result
+                return self.convert(o)
 
         c = config.pop('()')
         if not callable(c):
@@ -1763,18 +1719,13 @@ class PyPIRCFile(object):
             if 'distutils' in sections:
                 # let's get the list of servers
                 index_servers = config.get('distutils', 'index-servers')
-                _servers = [server.strip() for server in
-                            index_servers.split('\n')
-                            if server.strip() != '']
-                if _servers == []:
-                    # nothing set, let's try to get the default pypi
-                    if 'pypi' in sections:
-                        _servers = ['pypi']
-                else:
+                if _servers := [
+                    server.strip()
+                    for server in index_servers.split('\n')
+                    if server.strip() != ''
+                ]:
                     for server in _servers:
-                        result = {'server': server}
-                        result['username'] = config.get(server, 'username')
-
+                        result = {'server': server, 'username': config.get(server, 'username')}
                         # optional params
                         for key, default in (('repository', self.DEFAULT_REPOSITORY),
                                              ('realm', self.DEFAULT_REALM),
@@ -1793,6 +1744,8 @@ class PyPIRCFile(object):
                         elif (result['server'] != repository and
                               result['repository'] != repository):
                             result = {}
+                elif 'pypi' in sections:
+                    _servers = ['pypi']
             elif 'server-login' in sections:
                 # old format
                 server = 'server-login'
@@ -1904,8 +1857,7 @@ def get_host_platform():
     elif osname[:6] == 'cygwin':
         osname = 'cygwin'
         rel_re = re.compile (r'[\d.]+', re.ASCII)
-        m = rel_re.match(release)
-        if m:
+        if m := rel_re.match(release):
             release = m.group()
     elif osname[:6] == 'darwin':
         import _osx_support, distutils.sysconfig

@@ -37,11 +37,7 @@ def _prefix_with_indent(
     prefix: str,
     indent: str,
 ) -> Text:
-    if isinstance(s, Text):
-        text = s
-    else:
-        text = console.render_str(s)
-
+    text = s if isinstance(s, Text) else console.render_str(s)
     return console.render_str(prefix, overflow="ignore") + console.render_str(
         f"\n{indent}", overflow="ignore"
     ).join(text.split(allow_blank=True))
@@ -115,34 +111,32 @@ class DiagnosticPipError(PipError):
         yield f"[{colour} bold]{self.kind}[/]: [bold]{self.reference}[/]"
         yield ""
 
-        if not options.ascii_only:
-            # Present the main message, with relevant context indented.
-            if self.context is not None:
-                yield _prefix_with_indent(
-                    self.message,
-                    console,
-                    prefix=f"[{colour}]×[/] ",
-                    indent=f"[{colour}]│[/] ",
-                )
-                yield _prefix_with_indent(
-                    self.context,
-                    console,
-                    prefix=f"[{colour}]╰─>[/] ",
-                    indent=f"[{colour}]   [/] ",
-                )
-            else:
-                yield _prefix_with_indent(
-                    self.message,
-                    console,
-                    prefix="[red]×[/] ",
-                    indent="  ",
-                )
-        else:
+        if options.ascii_only:
             yield self.message
             if self.context is not None:
                 yield ""
                 yield self.context
 
+        elif self.context is not None:
+            yield _prefix_with_indent(
+                self.message,
+                console,
+                prefix=f"[{colour}]×[/] ",
+                indent=f"[{colour}]│[/] ",
+            )
+            yield _prefix_with_indent(
+                self.context,
+                console,
+                prefix=f"[{colour}]╰─>[/] ",
+                indent=f"[{colour}]   [/] ",
+            )
+        else:
+            yield _prefix_with_indent(
+                self.message,
+                console,
+                prefix="[red]×[/] ",
+                indent="  ",
+            )
         if self.note_stmt is not None or self.hint_stmt is not None:
             yield ""
 
@@ -571,13 +565,7 @@ class HashMissing(HashError):
             # In the case of URL-based requirements, display the original URL
             # seen in the requirements file rather than the package name,
             # so the output can be directly copied into the requirements file.
-            package = (
-                self.req.original_link
-                if self.req.original_link
-                # In case someone feeds something downright stupid
-                # to InstallRequirement's constructor.
-                else getattr(self.req, "req", None)
-            )
+            package = self.req.original_link or getattr(self.req, "req", None)
         return "    {} --hash={}:{}".format(
             package or "unknown package", FAVORITE_HASH, self.gotten_hash
         )

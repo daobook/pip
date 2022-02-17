@@ -54,7 +54,7 @@ def _strip_extras(path: str) -> Tuple[str, Optional[str]]:
 def convert_extras(extras: Optional[str]) -> Set[str]:
     if not extras:
         return set()
-    return get_requirement("placeholder" + extras.lower()).extras
+    return get_requirement(f'placeholder{extras.lower()}').extras
 
 
 def parse_editable(editable_req: str) -> Tuple[Optional[str], str, Set[str]]:
@@ -83,8 +83,9 @@ def parse_editable(editable_req: str) -> Tuple[Optional[str], str, Set[str]]:
             return (
                 package_name,
                 url_no_extras,
-                get_requirement("placeholder" + extras.lower()).extras,
+                get_requirement(f'placeholder{extras.lower()}').extras,
             )
+
         else:
             return package_name, url_no_extras, set()
 
@@ -330,9 +331,7 @@ def parse_req_from_line(name: str, line_source: Optional[str]) -> RequirementPar
     extras = convert_extras(extras_as_string)
 
     def with_source(text: str) -> str:
-        if not line_source:
-            return text
-        return f"{text} (from {line_source})"
+        return text if not line_source else f"{text} (from {line_source})"
 
     def _parse_req_string(req_as_string: str) -> Requirement:
         try:
@@ -341,8 +340,8 @@ def parse_req_from_line(name: str, line_source: Optional[str]) -> RequirementPar
             if os.path.sep in req_as_string:
                 add_msg = "It looks like a path."
                 add_msg += deduce_helpful_msg(req_as_string)
-            elif "=" in req_as_string and not any(
-                op in req_as_string for op in operators
+            elif "=" in req_as_string and all(
+                op not in req_as_string for op in operators
             ):
                 add_msg = "= is not a valid operator. Did you mean == ?"
             else:
@@ -449,18 +448,14 @@ def install_req_from_parsed_requirement(
     use_pep517: Optional[bool] = None,
     user_supplied: bool = False,
 ) -> InstallRequirement:
-    if parsed_req.is_editable:
-        req = install_req_from_editable(
+    return install_req_from_editable(
             parsed_req.requirement,
             comes_from=parsed_req.comes_from,
             use_pep517=use_pep517,
             constraint=parsed_req.constraint,
             isolated=isolated,
             user_supplied=user_supplied,
-        )
-
-    else:
-        req = install_req_from_line(
+        ) if parsed_req.is_editable else install_req_from_line(
             parsed_req.requirement,
             comes_from=parsed_req.comes_from,
             use_pep517=use_pep517,
@@ -470,7 +465,6 @@ def install_req_from_parsed_requirement(
             line_source=parsed_req.line_source,
             user_supplied=user_supplied,
         )
-    return req
 
 
 def install_req_from_link_and_ireq(

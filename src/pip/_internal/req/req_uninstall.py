@@ -84,10 +84,8 @@ def uninstallation_paths(dist: BaseDistribution) -> Iterator[str]:
         if path.endswith(".py"):
             dn, fn = os.path.split(path)
             base = fn[:-3]
-            path = os.path.join(dn, base + ".pyc")
-            yield path
-            path = os.path.join(dn, base + ".pyo")
-            yield path
+            yield os.path.join(dn, f'{base}.pyc')
+            yield os.path.join(dn, f'{base}.pyo')
 
 
 def compact(paths: Iterable[str]) -> Set[str]:
@@ -607,10 +605,7 @@ class UninstallPthEntries:
             # windows uses '\r\n' with py3k, but uses '\n' with py2.x
             lines = fh.readlines()
             self._saved_lines = lines
-        if any(b"\r\n" in line for line in lines):
-            endline = "\r\n"
-        else:
-            endline = "\n"
+        endline = "\r\n" if any(b"\r\n" in line for line in lines) else "\n"
         # handle missing trailing newline
         if lines and not lines[-1].endswith(endline.encode("utf-8")):
             lines[-1] = lines[-1] + endline.encode("utf-8")

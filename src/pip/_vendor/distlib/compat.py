@@ -115,7 +115,9 @@ except ImportError: # pragma: no cover
             # policy among SSL implementations showed it to be a
             # reasonable choice.
             raise CertificateError(
-                "too many wildcards in certificate DNS name: " + repr(dn))
+                f'too many wildcards in certificate DNS name: {repr(dn)}'
+            )
+
 
         # speed up common case w/o wildcards
         if not wildcards:
@@ -139,9 +141,7 @@ except ImportError: # pragma: no cover
             pats.append(re.escape(leftmost).replace(r'\*', '[^.]*'))
 
         # add the remaining fragments, ignore any wildcards
-        for frag in remainder:
-            pats.append(re.escape(frag))
-
+        pats.extend(re.escape(frag) for frag in remainder)
         pat = re.compile(r'\A' + r'\.'.join(pats) + r'\Z', re.IGNORECASE)
         return pat.match(hostname)
 
@@ -619,10 +619,7 @@ except ImportError:  # pragma: no cover
         assert path.endswith('.py')
         if debug_override is None:
             debug_override = __debug__
-        if debug_override:
-            suffix = 'c'
-        else:
-            suffix = 'o'
+        suffix = 'c' if debug_override else 'o'
         return path + suffix
 
 try:
@@ -783,10 +780,7 @@ except ImportError: # pragma: no cover
             elif not args:
                 raise TypeError('update() takes at least 1 argument (0 given)')
             self = args[0]
-            # Make progressively weaker assumptions about "other"
-            other = ()
-            if len(args) == 2:
-                other = args[1]
+            other = args[1] if len(args) == 2 else ()
             if isinstance(other, dict):
                 for key in other:
                     self[key] = other[key]
@@ -940,11 +934,13 @@ except ImportError: # pragma: no cover
     def pop(self, key, default=None):
         value = dict.pop(self, key, default)
         result = self.configurator.convert(value)
-        if value is not result:
-            if type(result) in (ConvertingDict, ConvertingList,
-                                ConvertingTuple):
-                result.parent = self
-                result.key = key
+        if value is not result and type(result) in (
+            ConvertingDict,
+            ConvertingList,
+            ConvertingTuple,
+        ):
+            result.parent = self
+            result.key = key
         return result
 
     class ConvertingList(list):
@@ -964,10 +960,12 @@ except ImportError: # pragma: no cover
         def pop(self, idx=-1):
             value = list.pop(self, idx)
             result = self.configurator.convert(value)
-            if value is not result:
-                if type(result) in (ConvertingDict, ConvertingList,
-                                    ConvertingTuple):
-                    result.parent = self
+            if value is not result and type(result) in (
+                ConvertingDict,
+                ConvertingList,
+                ConvertingTuple,
+            ):
+                result.parent = self
             return result
 
     class ConvertingTuple(tuple):
@@ -975,11 +973,13 @@ except ImportError: # pragma: no cover
         def __getitem__(self, key):
             value = tuple.__getitem__(self, key)
             result = self.configurator.convert(value)
-            if value is not result:
-                if type(result) in (ConvertingDict, ConvertingList,
-                                    ConvertingTuple):
-                    result.parent = self
-                    result.key = key
+            if value is not result and type(result) in (
+                ConvertingDict,
+                ConvertingList,
+                ConvertingTuple,
+            ):
+                result.parent = self
+                result.key = key
             return result
 
     class BaseConfigurator(object):
@@ -1016,7 +1016,7 @@ except ImportError: # pragma: no cover
             try:
                 found = self.importer(used)
                 for frag in name:
-                    used += '.' + frag
+                    used += f'.{frag}'
                     try:
                         found = getattr(found, frag)
                     except AttributeError:
@@ -1039,31 +1039,30 @@ except ImportError: # pragma: no cover
             m = self.WORD_PATTERN.match(rest)
             if m is None:
                 raise ValueError("Unable to convert %r" % value)
-            else:
-                rest = rest[m.end():]
-                d = self.config[m.groups()[0]]
-                #print d, rest
-                while rest:
-                    m = self.DOT_PATTERN.match(rest)
+            rest = rest[m.end():]
+            d = self.config[m.groups()[0]]
+            #print d, rest
+            while rest:
+                m = self.DOT_PATTERN.match(rest)
+                if m:
+                    d = d[m.groups()[0]]
+                else:
+                    m = self.INDEX_PATTERN.match(rest)
                     if m:
-                        d = d[m.groups()[0]]
-                    else:
-                        m = self.INDEX_PATTERN.match(rest)
-                        if m:
-                            idx = m.groups()[0]
-                            if not self.DIGIT_PATTERN.match(idx):
+                        idx = m.groups()[0]
+                        if not self.DIGIT_PATTERN.match(idx):
+                            d = d[idx]
+                        else:
+                            try:
+                                n = int(idx) # try as number first (most likely)
+                                d = d[n]
+                            except TypeError:
                                 d = d[idx]
-                            else:
-                                try:
-                                    n = int(idx) # try as number first (most likely)
-                                    d = d[n]
-                                except TypeError:
-                                    d = d[idx]
-                    if m:
-                        rest = rest[m.end():]
-                    else:
-                        raise ValueError('Unable to convert '
-                                         '%r at %r' % (value, rest))
+                if m:
+                    rest = rest[m.end():]
+                else:
+                    raise ValueError('Unable to convert '
+                                     '%r at %r' % (value, rest))
             #rest should be empty
             return d
 
@@ -1084,12 +1083,10 @@ except ImportError: # pragma: no cover
                 value = ConvertingTuple(value)
                 value.configurator = self
             elif isinstance(value, string_types):
-                m = self.CONVERT_PATTERN.match(value)
-                if m:
+                if m := self.CONVERT_PATTERN.match(value):
                     d = m.groupdict()
                     prefix = d['prefix']
-                    converter = self.value_converters.get(prefix, None)
-                    if converter:
+                    if converter := self.value_converters.get(prefix, None):
                         suffix = d['suffix']
                         converter = getattr(self, converter)
                         value = converter(suffix)

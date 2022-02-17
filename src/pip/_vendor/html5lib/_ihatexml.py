@@ -145,8 +145,11 @@ def missingRanges(charList):
     rv = []
     if charList[0] != 0:
         rv.append([0, charList[0][0] - 1])
-    for i, item in enumerate(charList[:-1]):
-        rv.append([item[1] + 1, charList[i + 1][0] - 1])
+    rv.extend(
+        [item[1] + 1, charList[i + 1][0] - 1]
+        for i, item in enumerate(charList[:-1])
+    )
+
     if charList[-1][1] != max_unicode:
         rv.append([charList[-1][1] + 1, max_unicode])
     return rv
@@ -158,8 +161,7 @@ def listToRegexpStr(charList):
         if item[0] == item[1]:
             rv.append(escapeRegexp(chr(item[0])))
         else:
-            rv.append(escapeRegexp(chr(item[0])) + "-" +
-                      escapeRegexp(chr(item[1])))
+            rv.append((f'{escapeRegexp(chr(item[0]))}-' + escapeRegexp(chr(item[1]))))
     return "[%s]" % "".join(rv)
 
 
@@ -171,7 +173,7 @@ def escapeRegexp(string):
     specialCharacters = (".", "^", "$", "*", "+", "?", "{", "}",
                          "[", "]", "|", "(", ")", "-")
     for char in specialCharacters:
-        string = string.replace(char, "\\" + char)
+        string = string.replace(char, f'\\{char}')
 
     return string
 
@@ -241,7 +243,7 @@ class InfosetFilter(object):
 
     def coercePubid(self, data):
         dataOutput = data
-        for char in nonPubidCharRegexp.findall(data):
+        for char in nonPubidCharRegexp.findall(dataOutput):
             warnings.warn("Coercing non-XML pubid", DataLossWarning)
             replacement = self.getReplacementCharacter(char)
             dataOutput = dataOutput.replace(char, replacement)
@@ -253,8 +255,7 @@ class InfosetFilter(object):
     def toXmlName(self, name):
         nameFirst = name[0]
         nameRest = name[1:]
-        m = nonXmlNameFirstBMPRegexp.match(nameFirst)
-        if m:
+        if m := nonXmlNameFirstBMPRegexp.match(nameFirst):
             warnings.warn("Coercing non-XML name: %s" % name, DataLossWarning)
             nameFirstOutput = self.getReplacementCharacter(nameFirst)
         else:
@@ -269,11 +270,11 @@ class InfosetFilter(object):
         return nameFirstOutput + nameRestOutput
 
     def getReplacementCharacter(self, char):
-        if char in self.replaceCache:
-            replacement = self.replaceCache[char]
-        else:
-            replacement = self.escapeChar(char)
-        return replacement
+        return (
+            self.replaceCache[char]
+            if char in self.replaceCache
+            else self.escapeChar(char)
+        )
 
     def fromXmlName(self, name):
         for item in set(self.replacementRegexp.findall(name)):

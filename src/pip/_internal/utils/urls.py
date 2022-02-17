@@ -8,9 +8,7 @@ from .compat import WINDOWS
 
 
 def get_url_scheme(url: str) -> Optional[str]:
-    if ":" not in url:
-        return None
-    return url.split(":", 1)[0].lower()
+    return None if ":" not in url else url.split(":", 1)[0].lower()
 
 
 def path_to_url(path: str) -> str:
@@ -19,8 +17,7 @@ def path_to_url(path: str) -> str:
     quoted path parts.
     """
     path = os.path.normpath(os.path.abspath(path))
-    url = urllib.parse.urljoin("file:", urllib.request.pathname2url(path))
-    return url
+    return urllib.parse.urljoin("file:", urllib.request.pathname2url(path))
 
 
 def url_to_path(url: str) -> str:
@@ -38,7 +35,7 @@ def url_to_path(url: str) -> str:
         netloc = ""
     elif WINDOWS:
         # If we have a UNC path, prepend UNC share notation.
-        netloc = "\\\\" + netloc
+        netloc = f'\\\\{netloc}'
     else:
         raise ValueError(
             f"non-local file URIs are not supported on this platform: {url!r}"

@@ -135,9 +135,9 @@ class InstallRequirement:
         # Set to True after successful installation
         self.install_succeeded: Optional[bool] = None
         # Supplied options
-        self.install_options = install_options if install_options else []
-        self.global_options = global_options if global_options else []
-        self.hash_options = hash_options if hash_options else {}
+        self.install_options = install_options or []
+        self.global_options = global_options or []
+        self.hash_options = hash_options or {}
         # Set to True after successful preparation of this requirement
         self.prepared = False
         # User supplied requirement are explicitly requested for installation
@@ -212,9 +212,7 @@ class InstallRequirement:
     # Things that are valid for all kinds of requirements?
     @property
     def name(self) -> Optional[str]:
-        if self.req is None:
-            return None
-        return self.req.name
+        return None if self.req is None else self.req.name
 
     @functools.lru_cache()  # use cached_property in python 3.8+
     def supports_pyproject_editable(self) -> bool:
@@ -295,7 +293,7 @@ class InstallRequirement:
             else:
                 comes_from = self.comes_from.from_path()
             if comes_from:
-                s += "->" + comes_from
+                s += f'->{comes_from}'
         return s
 
     def ensure_build_location(
@@ -391,24 +389,10 @@ class InstallRequirement:
         if not existing_dist:
             return
 
-        version_compatible = self.req.specifier.contains(
+        if version_compatible := self.req.specifier.contains(
             existing_dist.version,
             prereleases=True,
-        )
-        if not version_compatible:
-            self.satisfied_by = None
-            if use_user_site:
-                if existing_dist.in_usersite:
-                    self.should_reinstall = True
-                elif running_under_virtualenv() and existing_dist.in_site_packages:
-                    raise InstallationError(
-                        f"Will not install to the user site because it will "
-                        f"lack sys.path precedence to {existing_dist.raw_name} "
-                        f"in {existing_dist.location}"
-                    )
-            else:
-                self.should_reinstall = True
-        else:
+        ):
             if self.editable:
                 self.should_reinstall = True
                 # when installing editables, nothing pre-existing should ever
@@ -417,12 +401,26 @@ class InstallRequirement:
             else:
                 self.satisfied_by = existing_dist
 
+        else:
+            self.satisfied_by = None
+            if use_user_site and existing_dist.in_usersite or not use_user_site:
+                self.should_reinstall = True
+            elif (
+                use_user_site
+                and not existing_dist.in_usersite
+                and running_under_virtualenv()
+                and existing_dist.in_site_packages
+            ):
+                raise InstallationError(
+                    f"Will not install to the user site because it will "
+                    f"lack sys.path precedence to {existing_dist.raw_name} "
+                    f"in {existing_dist.location}"
+                )
+
     # Things valid for wheels
     @property
     def is_wheel(self) -> bool:
-        if not self.link:
-            return False
-        return self.link.is_wheel
+        return False if not self.link else self.link.is_wheel
 
     # Things valid for sdists
     @property
@@ -434,16 +432,12 @@ class InstallRequirement:
     @property
     def setup_py_path(self) -> str:
         assert self.source_dir, f"No source dir for {self}"
-        setup_py = os.path.join(self.unpacked_source_directory, "setup.py")
-
-        return setup_py
+        return os.path.join(self.unpacked_source_directory, "setup.py")
 
     @property
     def setup_cfg_path(self) -> str:
         assert self.source_dir, f"No source dir for {self}"
-        setup_cfg = os.path.join(self.unpacked_source_directory, "setup.cfg")
-
-        return setup_cfg
+        return os.path.join(self.unpacked_source_directory, "setup.cfg")
 
     @property
     def pyproject_toml_path(self) -> str:
@@ -704,7 +698,7 @@ class InstallRequirement:
                         parentdir=dirpath,
                         rootdir=dir,
                     )
-                    zipdir = zipfile.ZipInfo(dir_arcname + "/")
+                    zipdir = zipfile.ZipInfo(f'{dir_arcname}/')
                     zipdir.external_attr = 0x1ED << 16  # 0o755
                     zip_output.writestr(zipdir, "")
                 for filename in filenames:

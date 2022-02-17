@@ -122,19 +122,13 @@ class BaseDistribution(Protocol):
         This is the directory where pyproject.toml or setup.py is located.
         None if the distribution is not installed in editable mode.
         """
-        # TODO: this property is relatively costly to compute, memoize it ?
-        direct_url = self.direct_url
-        if direct_url:
+        if direct_url := self.direct_url:
             if direct_url.is_local_editable():
                 return url_to_path(direct_url.url)
-        else:
-            # Search for an .egg-link file by walking sys.path, as it was
-            # done before by dist_is_editable().
-            egg_link_path = egg_link_path_from_sys_path(self.raw_name)
-            if egg_link_path:
-                # TODO: get project location from second line of egg_link file
-                #       (https://github.com/pypa/pip/issues/10243)
-                return self.location
+        elif egg_link_path := egg_link_path_from_sys_path(self.raw_name):
+            # TODO: get project location from second line of egg_link file
+            #       (https://github.com/pypa/pip/issues/10243)
+            return self.location
         return None
 
     @property
@@ -148,8 +142,7 @@ class BaseDistribution(Protocol):
 
         The returned location is normalized (in particular, with symlinks removed).
         """
-        egg_link = egg_link_path_from_location(self.raw_name)
-        if egg_link:
+        if egg_link := egg_link_path_from_location(self.raw_name):
             location = egg_link
         elif self.location:
             location = self.location
@@ -281,8 +274,7 @@ class BaseDistribution(Protocol):
         except (OSError, ValueError, NoneMetadataError):
             return ""  # Fail silently if the installer file cannot be read.
         for line in installer_text.splitlines():
-            cleaned_line = line.strip()
-            if cleaned_line:
+            if cleaned_line := line.strip():
                 return cleaned_line
         return ""
 
